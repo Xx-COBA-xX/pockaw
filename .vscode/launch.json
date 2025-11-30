@@ -5,21 +5,37 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "pockaw",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "pockaw (profile mode)",
+            "name": "Staging (Debug)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "program": "lib/main.dart",
+            "flutterMode": "debug",
+            "args": [
+                "--flavor",
+                "staging"
+            ]
         },
         {
-            "name": "pockaw (release mode)",
+            "name": "Staging (Profile)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
-        }
+            "program": "lib/main.dart",
+            "flutterMode": "profile",
+            "args": [
+                "--flavor",
+                "staging"
+            ]
+        },
+        {
+            "name": "Production (Release)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "flutterMode": "release",
+            "args": [
+                "--flavor",
+                "production"
+            ]
+        },
     ]
 }
