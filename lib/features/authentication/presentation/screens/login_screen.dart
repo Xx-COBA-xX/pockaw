@@ -76,7 +76,6 @@ class LoginScreen extends HookConsumerWidget {
     }
 
     return CustomScaffold(
-      context: context,
       showBackButton: false,
       showBalance: false,
       actions: [

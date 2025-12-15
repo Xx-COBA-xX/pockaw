@@ -34,7 +34,6 @@ class BasicMonthlyReportScreen extends HookConsumerWidget {
     );
 
     return CustomScaffold(
-      context: context,
       title: '${selectedDate.value.toMonthYear()} Report',
       actions: [
         CustomIconButton(

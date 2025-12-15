@@ -20,7 +20,6 @@ class GoalScreen extends ConsumerWidget {
     final asyncGoals = ref.watch(goalsListProvider);
 
     return CustomScaffold(
-      context: context,
       showBackButton: false,
       title: 'My Goals',
       actions: [

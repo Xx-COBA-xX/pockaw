@@ -25,6 +25,14 @@ class SplashScreen extends HookConsumerWidget {
     // Use useEffect to run side effects once when the widget is built
     useEffect(() {
       Future<void> initializeApp() async {
+        // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+        /* SystemChrome.setEnabledSystemUIMode(
+          SystemUiMode.manual,
+          overlays: [
+            SystemUiOverlay.top,
+          ],
+        ); */
+
         // Initialize database (this also triggers onCreate population services)
         ref.read(databaseProvider);
 

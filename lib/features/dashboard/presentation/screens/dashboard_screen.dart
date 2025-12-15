@@ -51,6 +51,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
       child: Scaffold(
         backgroundColor: context.colors.surface,
         appBar: const PreferredSize(

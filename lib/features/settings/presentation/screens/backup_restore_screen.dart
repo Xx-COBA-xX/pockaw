@@ -38,7 +38,6 @@ class BackupRestoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      context: context,
       title: 'Backup & Restore',
       showBalance: false,
       body: SingleChildScrollView(

@@ -16,7 +16,6 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      context: context,
       showBackButton: false,
       showBalance: false,
       actions: [ThemeModeSwitcher()],

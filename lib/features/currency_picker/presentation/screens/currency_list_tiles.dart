@@ -19,7 +19,6 @@ class CurrencyListTiles extends ConsumerWidget {
     final currenciesAsyncValue = ref.watch(currenciesProvider);
 
     return CustomScaffold(
-      context: context,
       title: 'Choose Currency',
       showBalance: false,
       body: currenciesAsyncValue.when(

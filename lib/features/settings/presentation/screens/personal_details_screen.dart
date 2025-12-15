@@ -35,7 +35,6 @@ class PersonalDetailsScreen extends HookConsumerWidget {
     }, [auth]);
 
     return CustomScaffold(
-      context: context,
       title: 'Personal Details',
       showBalance: false,
       body: Stack(

@@ -102,7 +102,6 @@ class AccountDeletionScreen extends HookConsumerWidget {
     return Stack(
       children: [
         CustomScaffold(
-          context: context,
           title: 'Delete Account',
           showBalance: false,
           body: Padding(

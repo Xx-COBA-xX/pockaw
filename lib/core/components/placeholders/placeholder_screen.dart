@@ -13,7 +13,6 @@ class PlaceholderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      context: context,
       showBalance: false,
       title: 'Coming Soon',
       body: Column(

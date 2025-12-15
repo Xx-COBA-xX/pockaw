@@ -48,16 +48,19 @@ class MainScreen extends ConsumerWidget {
                   Expanded(child: pageViewWidget),
                 ],
               )
-            : Stack(
-                children: [
-                  pageViewWidget,
-                  Positioned(
-                    bottom: AppSpacing.spacing8,
-                    left: AppSpacing.spacing16,
-                    right: AppSpacing.spacing16,
-                    child: navigationControls,
-                  ),
-                ],
+            : SafeArea(
+                top: false,
+                child: Stack(
+                  children: [
+                    pageViewWidget,
+                    Positioned(
+                      bottom: AppSpacing.spacing8,
+                      left: AppSpacing.spacing16,
+                      right: AppSpacing.spacing16,
+                      child: navigationControls,
+                    ),
+                  ],
+                ),
               ),
       ),
     );

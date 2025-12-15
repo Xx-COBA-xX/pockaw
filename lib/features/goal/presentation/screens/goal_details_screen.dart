@@ -56,7 +56,6 @@ class GoalDetailsScreen extends ConsumerWidget {
     final checklistItemsAsync = ref.watch(checklistItemsProvider(goalId));
 
     return CustomScaffold(
-      context: context,
       title: 'My Goals',
       showBalance: false,
       actions: [

@@ -19,7 +19,6 @@ class DeveloperPortalScreen extends HookConsumerWidget {
     final isLoading = useState(false);
 
     return CustomScaffold(
-      context: context,
       title: 'Developer Portal',
       body: isLoading.value
           ? const Center(child: LoadingIndicator())

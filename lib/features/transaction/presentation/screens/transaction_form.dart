@@ -53,7 +53,6 @@ class TransactionForm extends HookConsumerWidget {
     );
 
     return CustomScaffold(
-      context: context,
       title: !isEditing ? 'Add Transaction' : 'Edit Transaction',
       actions: [
         if (isEditing)

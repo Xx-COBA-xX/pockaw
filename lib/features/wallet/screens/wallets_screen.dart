@@ -22,7 +22,6 @@ class WalletsScreen extends ConsumerWidget {
     final allWalletsAsync = ref.watch(allWalletsStreamProvider);
 
     return CustomScaffold(
-      context: context,
       title: 'Manage Wallets',
       showBalance: false,
       actions: [

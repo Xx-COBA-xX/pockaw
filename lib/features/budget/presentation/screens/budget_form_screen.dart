@@ -205,7 +205,6 @@ class BudgetFormScreen extends HookConsumerWidget {
     }
 
     return CustomScaffold(
-      context: context,
       title: isEditing ? 'Edit Budget' : 'Create Budget',
       showBackButton: true,
       showBalance: false,

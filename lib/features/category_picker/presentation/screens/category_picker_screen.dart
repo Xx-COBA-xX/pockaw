@@ -22,7 +22,6 @@ class CategoryPickerScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CustomScaffold(
-      context: context,
       title: isManageCategories ? 'Manage Categories' : 'Picking Category',
       showBalance: false,
       body: Column(

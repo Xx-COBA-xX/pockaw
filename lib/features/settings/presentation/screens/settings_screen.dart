@@ -41,7 +41,6 @@ class SettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CustomScaffold(
-      context: context,
       title: 'Settings',
       showBackButton: true,
       actions: [ThemeModeSwitcher()],

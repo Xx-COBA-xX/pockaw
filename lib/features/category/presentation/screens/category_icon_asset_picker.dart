@@ -31,7 +31,6 @@ class CategoryIconAssetPicker extends ConsumerWidget {
     final iconsAsync = ref.watch(categoryIconsProvider);
 
     return CustomScaffold(
-      context: context,
       title: 'Select Category Icon',
       showBalance: false,
       body: iconsAsync.when(

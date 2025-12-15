@@ -22,7 +22,6 @@ class BudgetScreen extends HookConsumerWidget {
     final allBudgetsAsyncValue = ref.watch(budgetListProvider);
 
     return CustomScaffold(
-      context: context,
       title: 'My Budgets',
       showBackButton: false,
       actions: [

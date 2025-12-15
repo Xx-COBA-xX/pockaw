@@ -22,7 +22,6 @@ class TransactionScreen extends ConsumerWidget {
     final isFilterActive = ref.watch(transactionFilterProvider);
 
     return CustomScaffold(
-      context: context,
       showBackButton: false,
       showBalance: true,
       title: 'My Transactions',

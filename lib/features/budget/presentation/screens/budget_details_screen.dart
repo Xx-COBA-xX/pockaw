@@ -27,7 +27,6 @@ class BudgetDetailsScreen extends ConsumerWidget {
       data: (budget) {
         if (budget == null) {
           return CustomScaffold(
-            context: context,
             title: 'Budget Not Found',
             showBackButton: true,
             body: const Center(
@@ -36,7 +35,6 @@ class BudgetDetailsScreen extends ConsumerWidget {
           );
         }
         return CustomScaffold(
-          context: context,
           title: 'Budget Report',
           showBackButton: true,
           actions: [
@@ -82,13 +80,11 @@ class BudgetDetailsScreen extends ConsumerWidget {
         );
       },
       loading: () => CustomScaffold(
-        context: context,
         title: 'Loading Budget...',
         showBackButton: true,
         body: const Center(child: CircularProgressIndicator()),
       ),
       error: (err, stack) => CustomScaffold(
-        context: context,
         title: 'Error',
         showBackButton: true,
         body: Center(child: Text('Error loading budget: $err')),
