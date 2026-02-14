@@ -23,13 +23,15 @@ android {
     ndkVersion = "26.1.10909125"
 
     compileOptions {
+        // Flag to enable support for the new language APIs
         coreLibraryDesugaringEnabled true
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        // Sets Java compatibility to Java 11
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = "11"
     }
 
     defaultConfig {
@@ -98,4 +100,6 @@ dependencies {
 
     // Add the dependency for the Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window-java:1.0.0'
 }
