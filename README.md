@@ -30,7 +30,7 @@
 
 > _\* Coming Soon_
 
-## 🔔 Subscribe to Release Notification
+## Subscribe to Release Notification
 
 Don't forget to watch or subscribe to receive release notifications.
 
@@ -40,12 +40,12 @@ Don't forget to watch or subscribe to receive release notifications.
 
 **Hello, Pockies!** say goodbye to spreadsheet-based expense and budget tracking! **Pockaw** is your new intuitive, user-friendly app for seamless pocket and wallet-sized finance buddy, tailored for both personal use and small businesses. **Pockaw** offers powerful features to simplify cash flow management:
 
-* **💸 Expense Tracking**: Easily log daily expenses and categorize them (e.g., groceries, entertainment), so you know exactly where your money goes.
-* **💰 Income Management**: Track multiple income sources, from salaries to side hustles, in one convenient place.
-* **🎯 Budget Goals**: Set and monitor monthly or weekly spending goals to stay within budget and work towards your financial objectives.
-* **📊 Expense Analytics**: Gain insights through visual breakdowns of spending, trends over time, and custom filters for a personalized view.
-* **⏰ Reminders & Notifications**: Get timely alerts for upcoming bill due dates and monthly goals, keeping you on track.
-* **🌍 Multi-Currency Support**: Perfect for a global audience, **Pockaw** makes it easy to manage finances across different currencies.
+* **Expense Tracking**: Easily log daily expenses and categorize them (e.g., groceries, entertainment), so you know exactly where your money goes.
+* **Income Management**: Track multiple income sources, from salaries to side hustles, in one convenient place.
+* **Budget Goals**: Set and monitor monthly or weekly spending goals to stay within budget and work towards your financial objectives.
+* **Expense Analytics**: Gain insights through visual breakdowns of spending, trends over time, and custom filters for a personalized view.
+* **Reminders & Notifications**: Get timely alerts for upcoming bill due dates and monthly goals, keeping you on track.
+* **Multi-Currency Support**: Perfect for a global audience, **Pockaw** makes it easy to manage finances across different currencies.
 
 ***
 
@@ -58,9 +58,8 @@ Don't forget to watch or subscribe to receive release notifications.
 * **Offline-first**: Your data is always accessible, even offline. Connect only when you want to sync across devices.
 * **Security focused**: For offline use, you are in charge of your own data.
 
-#### 🎉 Signature Feature
-
-* **Advanced Goal Planning:** Set up multiple checklist goals for any occasion, from a wedding gifts, new house furniture, to wishlist shopping.
+> **Signature Feature**
+> **Advanced Goal Planning:** Set up multiple checklist goals for any occasion, from a wedding gifts, new house furniture, to wishlist shopping.
 
 > \* Coming soon
 
@@ -71,31 +70,31 @@ Don't forget to watch or subscribe to receive release notifications.
 #### Designed For
 
 * **Individuals (Ages 20-35)**
-  * 🎓**Students** who want to easily track their daily spending's and build financial awareness.
-  * 💼**Employees** interested in managing their monthly income, expenses, and budgeting for future goals.
-  * 👨‍👩‍👧**Families** needing a simple, effective way to monitor and optimize their household cash flow.
-  * 💰**Goal-Driven Savers** looking to turn financial goals and wishlists into reality, keeping an eye on every penny along the way!
+  * **Students** who want to easily track their daily spending's and build financial awareness.
+  * **Employees** interested in managing their monthly income, expenses, and budgeting for future goals.
+  * **Families** needing a simple, effective way to monitor and optimize their household cash flow.
+  * **Goal-Driven Savers** looking to turn financial goals and wishlists into reality, keeping an eye on every penny along the way!
 * **Micro to Small Businesses**
-  * 👥**Size**: Perfect for teams of 1-5 people, ideal for small operations needing basic cash flow insights.
-  * 💵**Income**: Suited for businesses with a yearly income of approximately **$3,800 - $4,000 USD** (or **€3,500 - €3,700 EUR**), focusing on streamlined, essential budgeting tools.
+  * **Size**: Perfect for teams of 1-5 people, ideal for small operations needing basic cash flow insights.
+  * **Income**: Suited for businesses with a yearly income of approximately **$3,800 - $4,000 USD** (or **€3,500 - €3,700 EUR**), focusing on streamlined, essential budgeting tools.
 
 #### Not Designed For
 
-* 🔗**Bank Account Integration**: This app is geared toward users who manage finances manually, so it doesn’t support linking to bank accounts.
-* 🏢**Large Enterprises**: If your business requires bank integration, payroll systems, or vendor payment management, this app may not be the best fit.
+* **Bank Account Integration**: This app is geared toward users who manage finances manually, so it doesn’t support linking to bank accounts.
+* **Large Enterprises**: If your business requires bank integration, payroll systems, or vendor payment management, this app may not be the best fit.
 
 > **Why This Matters**
-> 
+>
 > Defining our user target helps ensure contributors share the same vision: to build a tool focused on simplicity and accessibility for individuals and small businesses. Our goal with Pockaw is to empower users with an easy-to-use, playful, and effective budgeting tool, without the complexities often found in enterprise solutions.
 
 ***
 
-### 🔧 Tools We Use
+### Tools We Use
 
-* 🎨**Figma**: Our go-to design tool for creating beautiful, user-friendly interfaces.
-* 💻**Flutter & Dart**: The powerhouse behind Pockaw's cross-platform experience, allowing us to build one app for multiple devices.
-* 🛠️**GitHub**: Serving as our central hub for issue tracking and project management, keeping us organized and on track.
-* 🌐**Crowdin**: Enabling seamless collaborative translation and localization so Pockaw reaches users in their native languages.
+* **Figma**: Our go-to design tool for creating beautiful, user-friendly interfaces.
+* **Flutter & Dart**: The powerhouse behind Pockaw's cross-platform experience, allowing us to build one app for multiple devices.
+* **GitHub**: Serving as our central hub for issue tracking and project management, keeping us organized and on track.
+* **Crowdin**: Enabling seamless collaborative translation and localization so Pockaw reaches users in their native languages.
 
 These tools help us bring **Pockaw** to life with efficiency, collaboration, and community-driven improvements.
 
@@ -181,7 +180,7 @@ Connect with other Pockies, share tips, and contribute to the growth of Pockaw. 
 
 * [ ] Breaking change is possible at this stage.
 
-## 🖥️ Platform Release Priority
+## Platform Release Priority
 
 * [x] **Android** - Available on PlayStore and GitHub
 * [ ] **Web**
@@ -195,7 +194,7 @@ Connect with other Pockies, share tips, and contribute to the growth of Pockaw. 
 
 ***
 
-### 🚀 Innovation and Future Releases
+### Innovation and Future Releases
 
 💸**Multi-Currency Support**
 
@@ -249,7 +248,7 @@ We welcome contributions to Pockaw! Feel free to **fork** this project, **submit
 
 ### 🖥️ Landing Page
 
-Interested in making some changes for our landing page? Just head to our dedicated [landing page repo](https://github.com/layground/pockaw-landing-page) then do above steps. 
+Interested in making some changes for our landing page? Just head to our dedicated [landing page repo](https://github.com/layground/pockaw-landing-page) then do above steps.
 
 ***
 
