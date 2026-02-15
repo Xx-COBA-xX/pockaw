@@ -1,4 +1,4 @@
-# Welcome to Pockaw!
+# Welcome to Pockaw
 
 <img src="https://pockaw.com/assets/images/pockaw-cover-github_readme.webp" alt="Pockaw Cover">
 
@@ -15,7 +15,7 @@
 ![Activity](https://img.shields.io/github/commit-activity/w/layground/pockaw?style=social)
 ![PR Closed](https://img.shields.io/github/issues-pr-closed/layground/pockaw?style=social&color=9929EA)
 
-[![Join our Discord](https://img.shields.io/badge/Join_Discord_Community-7289DA?logo=discord&logoColor=white)](https://discord.gg/xt5wDe4w)
+[![Join our Telegram Group](https://img.shields.io/badge/Join_Telegram_Group-25a0dd?logo=telegram&logoColor=white)](https://t.me/PockawApp)
 
 <a href="https://github.com/Codelessly/ResponsiveFramework">
   <img alt="Built with Responsive Framework"
@@ -105,7 +105,7 @@ These tools help us bring **Pockaw** to life with efficiency, collaboration, and
 
 Connect with other Pockies, share tips, and contribute to the growth of Pockaw. Whether you're seeking advice, reporting issues, or sharing feedback, our community spaces are here for you.
 
-* **[Discord Server](https://discord.gg/xt5wDe4w)**: Engage conversation with the community.
+* **[Telegram Group](https://t.me/PockawApp)**: Engage conversation with the community.
 * **[GitHub Discussions](https://github.com/layground/pockaw/discussions)**: Join in-depth technical features discussion.
 
 ***
@@ -233,7 +233,7 @@ You can find the Figma design file [here.](https://www.figma.com/design/Zp7JCVYQ
 * Use them for feedback, personal projects, or contributions to Pockaw.
 * Please do not use the designs for commercial purposes without prior approval.
 
-Let us know your thoughts or submit your own suggestions through [GitHub Discussions](https://github.com/layground/pockaw/discussions) or on Discord!
+Let us know your thoughts or submit your own suggestions through [GitHub Discussions](https://github.com/layground/pockaw/discussions) or on Telegram Group!
 
 ***
 
