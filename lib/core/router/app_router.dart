@@ -21,7 +21,7 @@ final rootNavKey = GlobalKey<NavigatorState>();
 final router = GoRouter(
   navigatorKey: rootNavKey,
   initialLocation: Routes.splash,
-  observers: <NavigatorObserver>[MyApp.observer],
+  observers: <NavigatorObserver>[],
   routes: [
     GoRoute(
       path: Routes.splash,

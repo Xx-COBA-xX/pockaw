@@ -1,13 +1,12 @@
-import 'dart:io';
 import 'dart:convert';
+import 'dart:io';
 
-import 'package:archive/archive_io.dart';
 import 'package:archive/archive.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
-import 'package:pockaw/core/utils/logger.dart';
-import 'package:test/test.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   test(
     'zip contains data.json and images and extraction preserves files',
     () async {
@@ -48,16 +47,10 @@ void main() {
 
       final bytes = await File(zipPath).readAsBytes();
       final archive = ZipDecoder().decodeBytes(bytes);
-      Log.d('Archive length: ${archive.length}');
-      Log.d('Archive isEmpty: ${archive.isEmpty}');
 
       final names = archive.where((e) => e.isFile).map((e) => e.name).toList();
       // Normalize separators to / to make assertions platform independent
       final normalized = names.map((n) => n.replaceAll('\\', '/')).toList();
-      Log.d('ZIP entries:');
-      for (final n in normalized) {
-        Log.d(' - $n');
-      }
       expect(
         normalized.any((n) => n == 'data.json' || n.endsWith('/data.json')),
         isTrue,

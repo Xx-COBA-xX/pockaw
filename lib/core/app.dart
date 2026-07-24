@@ -14,10 +14,6 @@ class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   static GlobalKey<NavigatorState> rootKey = GlobalKey<NavigatorState>();
-  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
-  static FirebaseAnalyticsObserver observer = FirebaseAnalyticsObserver(
-    analytics: analytics,
-  );
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
