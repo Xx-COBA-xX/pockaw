@@ -13,6 +13,8 @@ import 'package:pockaw/features/transaction/presentation/components/transaction_
 import 'package:pockaw/features/transaction/presentation/riverpod/transaction_providers.dart';
 import 'package:pockaw/features/transaction/presentation/screens/transaction_filter_form_dialog.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class TransactionScreen extends ConsumerWidget {
   const TransactionScreen({super.key});
 
@@ -20,11 +22,12 @@ class TransactionScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final allTransactionsAsyncValue = ref.watch(transactionListProvider);
     final isFilterActive = ref.watch(transactionFilterProvider);
+    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
       showBackButton: false,
       showBalance: true,
-      title: 'My Transactions',
+      title: l10n.recentTransactions,
       actions: [
         CustomIconButton(
           context,
@@ -42,7 +45,7 @@ class TransactionScreen extends ConsumerWidget {
       body: allTransactionsAsyncValue.when(
         data: (allTransactions) {
           if (allTransactions.isEmpty) {
-            return const Center(child: Text('No transactions recorded yet.'));
+            return Center(child: Text(l10n.noTransactionsYet));
           }
 
           // 1. Extract unique months from transactions
@@ -57,8 +60,8 @@ class TransactionScreen extends ConsumerWidget {
           if (uniqueMonthYears.isEmpty) {
             // This case should ideally be covered by allTransactions.isEmpty,
             // but as a fallback.
-            return const Center(
-              child: Text('No transactions with valid dates found.'),
+            return Center(
+              child: Text(l10n.noTransactionsFound),
             );
           }
 

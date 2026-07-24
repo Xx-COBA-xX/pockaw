@@ -21,6 +21,7 @@ import 'package:pockaw/features/currency_picker/presentation/components/currency
 import 'package:pockaw/features/currency_picker/presentation/riverpod/currency_picker_provider.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:toastification/toastification.dart';
 
 class WalletFormBottomSheet extends HookConsumerWidget {
@@ -38,6 +39,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final currency = ref.read(currencyProvider);
     final isEditing = wallet != null;
+    final l10n = AppLocalizations.of(context);
 
     final nameController = useTextEditingController();
     final balanceController = useTextEditingController();
@@ -59,7 +61,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
     }, [wallet, isEditing]);
 
     return CustomBottomSheet(
-      title: '${isEditing ? 'Edit' : 'Add'} Wallet',
+      title: isEditing ? l10n.editAccount : l10n.createAccount,
       child: Form(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -68,7 +70,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
             CustomTextField(
               context: context,
               controller: nameController,
-              label: 'Wallet Name (max. 15)',
+              label: l10n.accountName,
               hint: 'e.g., Savings Account',
               isRequired: true,
               prefixIcon: HugeIcons.strokeRoundedWallet02,
@@ -79,7 +81,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
             CurrencyPickerField(defaultCurrency: currency),
             CustomNumericField(
               controller: balanceController,
-              label: 'Initial Balance',
+              label: l10n.initialBalance,
               hint: '1,000.00',
               icon: HugeIcons.strokeRoundedMoney01,
               isRequired: true,
@@ -88,7 +90,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
               // autofocus: !isEditing, // Optional: autofocus if adding new
             ),
             PrimaryButton(
-              label: 'Save Wallet',
+              label: l10n.saveAccount,
               state: ButtonState.active,
               onPressed: () async {
                 final newWallet = WalletModel(

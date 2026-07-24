@@ -3,6 +3,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:pockaw/core/components/form_fields/custom_text_field.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class TransactionNotesField extends HookConsumerWidget {
   final TextEditingController controller;
 
@@ -10,11 +12,12 @@ class TransactionNotesField extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     return CustomTextField(
       context: context,
       controller: controller,
-      label: 'Write a note (max. 500)',
-      hint: 'Write here...',
+      label: l10n.writeNoteHint,
+      hint: l10n.writeHere,
       prefixIcon: HugeIcons.strokeRoundedNote02,
       minLines: 1,
       maxLines: 3,

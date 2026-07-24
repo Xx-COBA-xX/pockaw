@@ -8,6 +8,8 @@ import 'package:pockaw/core/components/buttons/secondary_button.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class ImagePickerDialog extends ConsumerWidget {
   final Function? onTakePhoto;
   final Function? onPickImage;
@@ -15,13 +17,13 @@ class ImagePickerDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return Column(
       children: [
         HugeIcon(icon: HugeIcons.strokeRoundedInformationSquare),
         Gap(AppSpacing.spacing12),
         Text(
-          'Your selected image is used only to personalize your profile within this app. '
-          'It is never transmitted, uploaded, or shared outside your device.',
+          l10n.imagePickerPrivacyNote,
           style: AppTextStyles.body3,
           textAlign: TextAlign.center,
         ),
@@ -35,7 +37,7 @@ class ImagePickerDialog extends ConsumerWidget {
                   onPressed: () async {
                     onTakePhoto?.call();
                   },
-                  label: 'Camera',
+                  label: l10n.camera,
                   icon: HugeIcons.strokeRoundedCamera01,
                 ),
               ),
@@ -47,7 +49,7 @@ class ImagePickerDialog extends ConsumerWidget {
                 onPressed: () {
                   onPickImage?.call();
                 },
-                label: 'Gallery',
+                label: l10n.gallery,
                 icon: HugeIcons.strokeRoundedImage01,
               ),
             ),

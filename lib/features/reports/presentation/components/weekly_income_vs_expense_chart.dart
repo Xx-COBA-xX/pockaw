@@ -13,6 +13,8 @@ import 'package:pockaw/features/reports/data/models/weekly_financial_summary_mod
 import 'package:pockaw/features/reports/presentation/riverpod/financial_health_provider.dart';
 import 'package:pockaw/features/transaction/data/model/transaction_model.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class WeeklyIncomeExpenseChart extends ConsumerWidget {
   final List<TransactionModel> transactions;
   const WeeklyIncomeExpenseChart({super.key, required this.transactions});
@@ -22,23 +24,25 @@ class WeeklyIncomeExpenseChart extends ConsumerWidget {
     final weeklySummaryTransactions = ref
         .watch(financialHealthRepositoryProvider)
         .getCurrentMonthWeeklySummary(transactions);
+    final l10n = AppLocalizations.of(context);
 
     return ChartContainer(
-      title: 'Weekly Overview',
-      subtitle: 'Breakdown of your weekly expense and income',
+      title: l10n.weeklyCashFlow,
+      subtitle: l10n.comparisonIncomeExpenseMonth,
       height: 300,
       margin: const EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
-      chart: _buildChart(context, weeklySummaryTransactions),
+      chart: _buildChart(context, weeklySummaryTransactions, l10n),
     );
   }
 
   Widget _buildChart(
     BuildContext context,
     List<WeeklyFinancialSummary> data,
+    AppLocalizations l10n,
   ) {
     // Check if we have any data to show
     if (data.every((e) => e.income == 0 && e.expense == 0)) {
-      return ChartContainer.errorText('No transaction to display');
+      return ChartContainer.errorText(l10n.noTransactionDataAvailable);
     }
 
     // Calculate max Y to give some headroom
@@ -63,7 +67,7 @@ class WeeklyIncomeExpenseChart extends ConsumerWidget {
                 final flSpot = barSpot;
                 // final weekData = data[flSpot.x.toInt()];
 
-                String label = barSpot.barIndex == 0 ? 'Income' : 'Expense';
+                String label = barSpot.barIndex == 0 ? l10n.income : l10n.expense;
                 Color color = barSpot.barIndex == 0
                     ? Colors.greenAccent[700]!
                     : Colors.redAccent[400]!;

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/gestures.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
@@ -29,6 +29,7 @@ import 'package:pockaw/features/backup_and_restore/presentation/riverpod/backup_
 import 'package:pockaw/features/image_picker/presentation/screens/image_picker_dialog.dart';
 import 'package:pockaw/features/settings/presentation/components/report_log_file_dialog.dart';
 import 'package:pockaw/features/theme_switcher/presentation/components/theme_mode_switcher.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 part '../components/form.dart';
 part '../components/get_started_description.dart';
@@ -42,13 +43,14 @@ class LoginScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final nameField = useTextEditingController();
+    final l10n = AppLocalizations.of(context);
 
     void restoreData() {
       context.openBottomSheet(
         child: AlertBottomSheet(
-          title: 'Restore Data',
+          title: l10n.restoreData,
           context: context,
-          confirmText: 'Continue Restore',
+          confirmText: l10n.restoreData,
           showCancelButton: false,
           onConfirm: () async {
             final success = await ref
@@ -106,7 +108,7 @@ class LoginScreen extends HookConsumerWidget {
             child: Form(nameField: nameField),
           ),
           PrimaryButton(
-            label: 'Start Journey',
+            label: l10n.startJourney,
             isLoading: ref.watch(authStateProvider.notifier).isLoading,
             onPressed: () => ref
                 .read(authStateProvider.notifier)

@@ -21,6 +21,7 @@ import 'package:pockaw/features/transaction/presentation/components/form/transac
 import 'package:pockaw/features/transaction/presentation/riverpod/transaction_form_state.dart';
 import 'package:pockaw/features/transaction/presentation/riverpod/transaction_providers.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 
 class TransactionForm extends HookConsumerWidget {
@@ -37,6 +38,7 @@ class TransactionForm extends HookConsumerWidget {
         ?.currencyByIsoCode(ref)
         .symbol; // Determine if we are in "edit" mode
     final isEditing = transactionId != null;
+    final l10n = AppLocalizations.of(context);
 
     // Fetch transaction details if in edit mode
     final asyncTransaction = isEditing
@@ -53,7 +55,7 @@ class TransactionForm extends HookConsumerWidget {
     );
 
     return CustomScaffold(
-      title: !isEditing ? 'Add Transaction' : 'Edit Transaction',
+      title: !isEditing ? l10n.addTransaction : l10n.editTransaction,
       actions: [
         if (isEditing)
           CustomIconButton(
@@ -93,7 +95,7 @@ class TransactionForm extends HookConsumerWidget {
             ),
           ),
           PrimaryButton(
-            label: 'Save',
+            label: l10n.save,
             state: ButtonState.active,
             // Now formState is available in this scope
             onPressed: () => formState.saveTransaction(ref, context),

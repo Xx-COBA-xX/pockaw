@@ -22,6 +22,9 @@ import 'package:pockaw/features/settings/presentation/components/report_log_file
 import 'package:pockaw/features/settings/presentation/components/settings_group_holder.dart';
 import 'package:pockaw/features/theme_switcher/presentation/components/theme_mode_switcher.dart';
 import 'package:pockaw/features/user_activity/riverpod/user_activity_provider.dart';
+import 'package:pockaw/core/localization/locale_provider.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
+import 'package:pockaw/features/settings/presentation/components/language_selector_dialog.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/data/repositories/wallet_repo.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';

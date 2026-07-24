@@ -21,6 +21,7 @@ import 'package:pockaw/core/router/routes.dart';
 import 'package:pockaw/core/utils/logger.dart';
 import 'package:pockaw/features/budget/data/model/budget_model.dart';
 import 'package:pockaw/features/budget/presentation/components/budget_date_range_picker.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:pockaw/features/budget/presentation/riverpod/budget_providers.dart';
 import 'package:pockaw/features/budget/presentation/riverpod/date_picker_provider.dart'
     as budget_date_provider; // Alias to avoid conflict
@@ -204,8 +205,10 @@ class BudgetFormScreen extends HookConsumerWidget {
       }
     }
 
+    final l10n = AppLocalizations.of(context);
+
     return CustomScaffold(
-      title: isEditing ? 'Edit Budget' : 'Create Budget',
+      title: isEditing ? l10n.editBudget : l10n.createBudget,
       showBackButton: true,
       showBalance: false,
       actions: [
@@ -216,9 +219,9 @@ class BudgetFormScreen extends HookConsumerWidget {
               // Show confirmation dialog
               context.openBottomSheet(
                 child: AlertBottomSheet(
-                  title: 'Delete Budget',
+                  title: l10n.deleteBudget,
                   content: Text(
-                    'Are you sure you want to delete this budget?',
+                    l10n.confirmDelete,
                     style: AppTextStyles.body2,
                   ),
                   onConfirm: () async {
@@ -275,8 +278,8 @@ class BudgetFormScreen extends HookConsumerWidget {
                     CustomSelectField(
                       context: context,
                       controller: categoryController,
-                      label: 'Category',
-                      hint: 'Select Category',
+                      label: l10n.category,
+                      hint: l10n.category,
                       isRequired: true,
                       prefixIcon: HugeIcons.strokeRoundedStructure01,
                       onTap: () async {
@@ -300,8 +303,8 @@ class BudgetFormScreen extends HookConsumerWidget {
                     ),
                     const BudgetDateRangePicker(), // Manages its own state via provider
                     CustomConfirmCheckbox(
-                      title: 'Mark this budget as routine',
-                      subtitle: 'No need to create this budget every time.',
+                      title: l10n.markBudgetRoutine,
+                      subtitle: l10n.noNeedCreateEveryTime,
                       checked: isRoutine.value,
                       onChanged: () => isRoutine.value = !isRoutine.value,
                     ),
@@ -310,7 +313,7 @@ class BudgetFormScreen extends HookConsumerWidget {
               ),
             ),
           PrimaryButton(
-            label: 'Save Budget',
+            label: l10n.saveBudget,
             onPressed: saveBudget,
           ).floatingBottomContained,
         ],

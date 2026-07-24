@@ -6,15 +6,17 @@ import 'package:pockaw/core/constants/app_colors.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/services/url_launcher/url_launcher.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class PlaceholderScreen extends StatelessWidget {
   const PlaceholderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return CustomScaffold(
       showBalance: false,
-      title: 'Coming Soon',
+      title: l10n.comingSoon,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -26,7 +28,7 @@ class PlaceholderScreen extends StatelessWidget {
               width: 200,
             ),
           ),
-          Text('Coming Soon', style: AppTextStyles.heading3),
+          Text(l10n.comingSoon, style: AppTextStyles.heading3),
           Text.rich(
             TextSpan(
               text: 'Lottie animation by ',

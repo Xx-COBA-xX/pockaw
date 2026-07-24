@@ -9,6 +9,7 @@ class GoalDateRangePicker extends HookConsumerWidget {
     final selectedDate = ref.watch(datePickerProvider);
     final selectedDateNotifier = ref.read(datePickerProvider.notifier);
     final dateFieldController = useTextEditingController();
+    final l10n = AppLocalizations.of(context);
 
     void updateDate() {
       final startDate = initialDate!.first ?? DateTime.now();
@@ -29,7 +30,7 @@ class GoalDateRangePicker extends HookConsumerWidget {
     return CustomSelectField(
       context: context,
       controller: dateFieldController,
-      label: 'Date to achieve goal',
+      label: l10n.targetAchievedDate,
       hint: '12 Nov 2024 - 12 Nov 2026',
       prefixIcon: HugeIcons.strokeRoundedCalendar01,
       isRequired: true,

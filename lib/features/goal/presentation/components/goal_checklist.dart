@@ -6,8 +6,9 @@ class GoalChecklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     if (items.isEmpty) {
-      return const Center(child: Text('No checklist items.'));
+      return Center(child: Text(l10n.noChecklistItems));
     }
     return ListView.separated(
       itemCount: items.length,

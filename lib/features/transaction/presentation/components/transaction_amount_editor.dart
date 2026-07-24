@@ -9,6 +9,8 @@ import 'package:pockaw/core/constants/app_radius.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class TransactionAmountEditor extends StatelessWidget {
   TransactionAmountEditor({super.key});
 
@@ -16,6 +18,7 @@ class TransactionAmountEditor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.only(
         left: AppSpacing.spacing20,
@@ -24,10 +27,10 @@ class TransactionAmountEditor extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Column(
+          Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Transaction Amount', style: AppTextStyles.body3),
+              Text(l10n.amount, style: AppTextStyles.body3),
               HugeIcon(
                 icon: HugeIcons.strokeRoundedArrowDown01,
                 size: 20,

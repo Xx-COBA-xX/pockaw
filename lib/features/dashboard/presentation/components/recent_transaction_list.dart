@@ -8,6 +8,7 @@ class RecentTransactionList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // Added WidgetRef
     final asyncTransactions = ref.watch(transactionListProvider);
+    final l10n = AppLocalizations.of(context);
 
     return asyncTransactions.when(
       data: (allTransactions) {
@@ -17,8 +18,8 @@ class RecentTransactionList extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Recent Transactions',
+                Text(
+                  l10n.recentTransactions,
                   style: AppTextStyles.heading6,
                 ),
                 const Gap(AppSpacing.spacing16),
@@ -28,7 +29,7 @@ class RecentTransactionList extends ConsumerWidget {
                       vertical: AppSpacing.spacing20,
                     ),
                     child: Text(
-                      'No transactions yet.',
+                      l10n.noTransactionsYet,
                       style: AppTextStyles.body3,
                     ),
                   ),
@@ -50,7 +51,7 @@ class RecentTransactionList extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Recent Transactions', style: AppTextStyles.heading6),
+              Text(l10n.recentTransactions, style: AppTextStyles.heading6),
               const Gap(AppSpacing.spacing16),
               ListView.separated(
                 shrinkWrap: true,

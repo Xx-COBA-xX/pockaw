@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pockaw/core/components/scaffolds/custom_scaffold.dart';
 import 'package:pockaw/core/constants/app_colors.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 // Provider to load category icon asset paths from the AssetManifest
 final categoryIconsProvider = FutureProvider<List<String>>((ref) async {
@@ -29,15 +30,16 @@ class CategoryIconAssetPicker extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final iconsAsync = ref.watch(categoryIconsProvider);
+    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
-      title: 'Select Category Icon',
+      title: l10n.selectCategoryIcon,
       showBalance: false,
       body: iconsAsync.when(
         data: (iconPaths) {
           if (iconPaths.isEmpty) {
-            return const Center(
-              child: Text('No category icons found in assets/categories/'),
+            return Center(
+              child: Text(l10n.noCategoryIconsFound),
             );
           }
           return GridView.builder(

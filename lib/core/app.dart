@@ -9,6 +9,12 @@ import 'package:pockaw/features/theme_switcher/presentation/riverpod/theme_mode_
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:toastification/toastification.dart';
 
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pockaw/core/localization/locale_provider.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
+
+import 'package:pockaw/core/constants/app_font_families.dart';
+
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
@@ -17,14 +23,23 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
+    final locale = ref.watch(localeNotifierProvider);
 
     return ToastificationWrapper(
       child: MaterialApp.router(
         title: AppConstants.appName,
         debugShowCheckedModeBanner: false,
-        theme: _buildTheme(Brightness.light),
-        darkTheme: _buildTheme(Brightness.dark),
-        themeMode: themeMode, // Set the theme mode from the provider
+        theme: _buildTheme(Brightness.light, locale: locale),
+        darkTheme: _buildTheme(Brightness.dark, locale: locale),
+        themeMode: themeMode,
+        locale: locale,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, child) => ResponsiveBreakpoints.builder(
           child: MediaQuery(
             data: MediaQuery.of(context).copyWith(
@@ -58,14 +73,15 @@ class MyApp extends ConsumerWidget {
           ],
         ),
         routerConfig: router,
-        // Add the observer to the router's navigator observers
-        // Note: GoRouter automatically adds this to its navigator.
-        // We just need to pass it in the constructor.
       ),
     );
   }
 
-  ThemeData _buildTheme(Brightness brightness) {
+  ThemeData _buildTheme(Brightness brightness, {Locale? locale}) {
+    final isArabic = locale?.languageCode == 'ar';
+    final activeFontFamily =
+        isArabic ? AppFontFamilies.tajawal : AppConstants.fontFamilyPrimary;
+
     final colorScheme = brightness == Brightness.light
         ? const ColorScheme.light(
             primary: AppColors.primary,
@@ -93,21 +109,20 @@ class MyApp extends ConsumerWidget {
         ? FlexThemeData.light(
             colorScheme: colorScheme,
             useMaterial3: true,
-            fontFamily: AppConstants.fontFamilyPrimary,
+            fontFamily: activeFontFamily,
+            fontFamilyFallback: const [AppFontFamilies.tajawal],
           )
         : FlexThemeData.dark(
             colorScheme: colorScheme,
             useMaterial3: true,
-            fontFamily: AppConstants.fontFamilyPrimary,
+            fontFamily: activeFontFamily,
+            fontFamilyFallback: const [AppFontFamilies.tajawal],
           );
 
     return baseTheme.copyWith(
-      // Let FlexColorScheme handle the text theme colors.
-      // If you need to override font size or weight, do it like this,
-      // but avoid setting a specific color.
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
-        hintStyle: AppTextStyles.body3, // Let the theme handle hint color
+        hintStyle: AppTextStyles.body3,
       ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: colorScheme.surface,

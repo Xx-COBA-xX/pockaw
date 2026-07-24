@@ -21,6 +21,7 @@ import 'package:pockaw/features/goal/data/model/checklist_item_model.dart';
 import 'package:pockaw/features/goal/presentation/services/goal_form_service.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class GoalChecklistFormDialog extends HookConsumerWidget {
   final int goalId;
@@ -38,6 +39,7 @@ class GoalChecklistFormDialog extends HookConsumerWidget {
     final titleController = useTextEditingController();
     final amountController = useTextEditingController();
     final linkController = useTextEditingController();
+    final l10n = AppLocalizations.of(context);
     bool completed = false;
     bool isEditing = checklistItemModel != null;
 
@@ -53,7 +55,7 @@ class GoalChecklistFormDialog extends HookConsumerWidget {
     }, const []);
 
     return CustomBottomSheet(
-      title: '${isEditing ? 'Edit' : 'Add'} Checklist Item',
+      title: isEditing ? l10n.editChecklistItem : l10n.addChecklistItem,
       child: Form(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -62,8 +64,8 @@ class GoalChecklistFormDialog extends HookConsumerWidget {
             CustomTextField(
               context: context,
               controller: titleController,
-              label: 'Title (max. 25)',
-              hint: 'Buy something',
+              label: l10n.title,
+              hint: '...',
               isRequired: true,
               prefixIcon: HugeIcons.strokeRoundedShirt01,
               textInputAction: TextInputAction.next,
@@ -73,7 +75,7 @@ class GoalChecklistFormDialog extends HookConsumerWidget {
             ),
             CustomNumericField(
               controller: amountController,
-              label: 'Price amount',
+              label: l10n.amount,
               hint: '1,000.00',
               icon: HugeIcons.strokeRoundedMoney03,
               appendCurrencySymbolToHint: true,
@@ -82,8 +84,8 @@ class GoalChecklistFormDialog extends HookConsumerWidget {
             CustomTextField(
               context: context,
               controller: linkController,
-              label: 'Offline store or link to buy',
-              hint: 'Insert or paste link here...',
+              label: l10n.storeOrLink,
+              hint: '...',
               maxLength: 1000,
               customCounterText: '',
               prefixIcon: HugeIcons.strokeRoundedLink01,
@@ -92,7 +94,7 @@ class GoalChecklistFormDialog extends HookConsumerWidget {
                   KeyboardService.pasteFromClipboard(linkController),
             ),
             PrimaryButton(
-              label: 'Save',
+              label: l10n.save,
               state: ButtonState.active,
               onPressed: () async {
                 Log.d(titleController.text, label: 'title');
@@ -122,19 +124,19 @@ class GoalChecklistFormDialog extends HookConsumerWidget {
             if (isEditing)
               TextButton(
                 child: Text(
-                  'Delete',
+                  l10n.delete,
                   style: AppTextStyles.body2.copyWith(color: AppColors.red),
                 ),
                 onPressed: () {
                   context.openBottomSheet(
                     child: AlertBottomSheet(
                       context: context,
-                      title: 'Delete Checklist',
+                      title: l10n.delete,
                       content: Text(
-                        'Continue to delete this item?',
+                        l10n.actionCannotBeUndone,
                         style: AppTextStyles.body2,
                       ),
-                      confirmText: 'Delete',
+                      confirmText: l10n.delete,
                       onConfirm: () {
                         GoalFormService().deleteChecklist(
                           context,

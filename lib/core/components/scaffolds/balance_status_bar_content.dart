@@ -5,6 +5,7 @@ class BalanceStatusBarContent extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final activeWalletAsync = ref.watch(activeWalletProvider);
+    final l10n = AppLocalizations.of(context);
 
     return activeWalletAsync.when(
       data: (wallet) {
@@ -24,7 +25,7 @@ class BalanceStatusBarContent extends ConsumerWidget {
               borderRadius: BorderRadius.circular(AppRadius.radius8),
             ),
             child: Center(
-              child: Text('No Wallet Selected', style: AppTextStyles.body4),
+              child: Text(l10n.noWalletSelected, style: AppTextStyles.body4),
             ),
           );
         }

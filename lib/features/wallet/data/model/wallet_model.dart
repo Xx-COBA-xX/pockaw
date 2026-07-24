@@ -24,8 +24,8 @@ abstract class WalletModel with _$WalletModel {
     /// The current balance of the wallet.
     @Default(0.0) double balance,
 
-    /// The currency code for the wallet's balance (e.g., "USD", "EUR", "NGN").
-    @Default('IDR') String currency,
+    /// The currency code for the wallet's balance (e.g., "IQD", "USD").
+    @Default('IQD') String currency,
 
     /// Optional: The identifier or name of the icon associated with this wallet.
     String? iconName,
@@ -46,7 +46,7 @@ extension WalletModelUtils on WalletModel {
   }
 
   Currency currencyByIsoCode(WidgetRef ref) {
-    final currencies = ref.read(currenciesStaticProvider);
+    final currencies = ref.watch(currenciesStaticProvider);
     return currencies.fromIsoCode(currency) ?? CurrencyLocalDataSource.dummy;
   }
 }

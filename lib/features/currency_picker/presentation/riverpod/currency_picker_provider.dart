@@ -38,7 +38,7 @@ final currenciesStaticProvider =
       CurrenciesStaticNotifier.new,
     );
 
-final currenciesProvider = FutureProvider.autoDispose<List<Currency>>(
+final currenciesProvider = FutureProvider<List<Currency>>(
   (ref) async {
     final currenciesRepo = CurrencyRepositoryImpl();
     return currenciesRepo.fetchCurrencies();

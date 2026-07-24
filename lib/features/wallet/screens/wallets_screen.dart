@@ -14,15 +14,18 @@ import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 import 'package:pockaw/features/wallet/screens/wallet_form_bottom_sheet.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class WalletsScreen extends ConsumerWidget {
   const WalletsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final allWalletsAsync = ref.watch(allWalletsStreamProvider);
+    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
-      title: 'Manage Wallets',
+      title: l10n.accounts,
       showBalance: false,
       actions: [
         CustomIconButton(
@@ -37,8 +40,8 @@ class WalletsScreen extends ConsumerWidget {
       body: allWalletsAsync.when(
         data: (wallets) {
           if (wallets.isEmpty) {
-            return const Center(
-              child: Text('No wallets found. Add one to get started!'),
+            return Center(
+              child: Text(l10n.noWalletSelected),
             );
           }
           return ListView.separated(

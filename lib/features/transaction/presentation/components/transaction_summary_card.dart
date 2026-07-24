@@ -15,6 +15,8 @@ import 'package:pockaw/features/transaction/data/model/transaction_model.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class TransactionSummaryCard extends ConsumerWidget {
   final List<TransactionModel> transactions;
   const TransactionSummaryCard({super.key, required this.transactions});
@@ -26,6 +28,7 @@ class TransactionSummaryCard extends ConsumerWidget {
         .value
         ?.currencyByIsoCode(ref)
         .symbol;
+    final l10n = AppLocalizations.of(context);
 
     return Container(
       width: double.infinity,
@@ -42,7 +45,7 @@ class TransactionSummaryCard extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Earning', style: AppTextStyles.body3),
+              Text(l10n.income, style: AppTextStyles.body3),
               Expanded(
                 child: Text(
                   '$currency ${transactions.totalIncome.toPriceFormat()}',
@@ -58,7 +61,7 @@ class TransactionSummaryCard extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Spending', style: AppTextStyles.body3),
+              Text(l10n.expense, style: AppTextStyles.body3),
               Expanded(
                 child: Text(
                   '- $currency ${transactions.totalExpenses.toPriceFormat()}',
@@ -75,7 +78,7 @@ class TransactionSummaryCard extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Total',
+                l10n.totalBalance,
                 style: AppTextStyles.body3.copyWith(
                   fontWeight: FontWeight.w800,
                 ),
@@ -91,7 +94,7 @@ class TransactionSummaryCard extends ConsumerWidget {
           ),
           const Gap(AppSpacing.spacing4),
           SmallButton(
-            label: 'View full report',
+            label: l10n.monthlyReport,
             backgroundColor: context.purpleBackground,
             borderColor: context.purpleButtonBorder,
             foregroundColor: context.secondaryText,

@@ -14,15 +14,18 @@ import 'package:pockaw/features/budget/presentation/components/budget_summary_ca
 import 'package:pockaw/features/budget/presentation/components/budget_tab_bar.dart';
 import 'package:pockaw/features/budget/presentation/riverpod/budget_providers.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetScreen extends HookConsumerWidget {
   const BudgetScreen({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
     final allBudgetsAsyncValue = ref.watch(budgetListProvider);
+    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
-      title: 'My Budgets',
+      title: l10n.myBudgets,
       showBackButton: false,
       actions: [
         CustomIconButton(
@@ -37,7 +40,7 @@ class BudgetScreen extends HookConsumerWidget {
       body: allBudgetsAsyncValue.when(
         data: (allBudgets) {
           if (allBudgets.isEmpty) {
-            return const Center(child: Text('No budgets recorded yet.'));
+            return Center(child: Text(l10n.noBudgetsRecordedYet));
           }
 
           // 1. Extract unique months from transactions
@@ -52,8 +55,8 @@ class BudgetScreen extends HookConsumerWidget {
           if (uniqueMonthYears.isEmpty) {
             // This case should ideally be covered by allTransactions.isEmpty,
             // but as a fallback.
-            return const Center(
-              child: Text('No transactions with valid dates found.'),
+            return Center(
+              child: Text(l10n.noTransactionsValidDates),
             );
           }
 

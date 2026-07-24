@@ -6,6 +6,7 @@ class GreetingCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final auth = ref.watch(authStateProvider);
+    final l10n = AppLocalizations.of(context);
 
     return Row(
       children: [
@@ -15,7 +16,7 @@ class GreetingCard extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Good morning,', style: AppTextStyles.body4),
+            Text(l10n.goodMorning, style: AppTextStyles.body4),
             Text(auth.name, style: AppTextStyles.body2),
           ],
         ),

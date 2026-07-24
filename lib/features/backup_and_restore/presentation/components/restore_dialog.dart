@@ -5,6 +5,8 @@ import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/extensions/text_style_extensions.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class RestoreDialog extends StatelessWidget {
   final Function? onStart;
   final Function? onSuccess;
@@ -13,12 +15,13 @@ class RestoreDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Column(
       children: [
         HugeIcon(icon: HugeIcons.strokeRoundedInformationSquare),
         Gap(AppSpacing.spacing12),
         Text(
-          'Restoring will overwrite all existing data. Restore data will only access and import the folder containing your backup files with this format:',
+          l10n.restoreNoticeFormat,
           style: AppTextStyles.body3,
           textAlign: TextAlign.center,
         ),
@@ -30,7 +33,7 @@ class RestoreDialog extends StatelessWidget {
         ),
         Gap(AppSpacing.spacing8),
         Text(
-          'Nothing transmitted to the cloud. Your data remain secure during this process.',
+          l10n.backupSecurityNote,
           style: AppTextStyles.body3,
           textAlign: TextAlign.center,
         ),

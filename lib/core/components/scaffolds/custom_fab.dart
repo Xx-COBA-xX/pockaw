@@ -7,6 +7,8 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:pockaw/core/constants/app_colors.dart';
 import 'package:pockaw/core/router/routes.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class CustomFab extends StatelessWidget {
   CustomFab({super.key});
 
@@ -14,6 +16,8 @@ class CustomFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     void toggleFAB() {
       final state = _key.currentState;
       if (state != null) {
@@ -67,7 +71,7 @@ class CustomFab extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const Text('Income'),
+                  Text(l10n.income),
                   const Gap(10),
                   FloatingActionButton(
                     heroTag: null,
@@ -82,7 +86,7 @@ class CustomFab extends StatelessWidget {
               ),
               Column(
                 children: [
-                  const Text('Expense'),
+                  Text(l10n.expense),
                   const Gap(10),
                   FloatingActionButton(
                     heroTag: null,

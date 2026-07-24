@@ -6,6 +6,7 @@ class CashFlowCards extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final transactionsAsyncValue = ref.watch(transactionListProvider);
+    final l10n = AppLocalizations.of(context);
 
     return transactionsAsyncValue.when(
       data: (transactions) {
@@ -52,7 +53,7 @@ class CashFlowCards extends ConsumerWidget {
           children: [
             Expanded(
               child: TransactionCard(
-                title: 'Income • ${DateTime.now().toMonthName()}',
+                title: '${l10n.income} • ${DateTime.now().toMonthName()}',
                 amount: currentMonthIncome,
                 amountLastMonth: lastMonthIncome,
                 percentDifference: incomePercentDifference,
@@ -68,7 +69,7 @@ class CashFlowCards extends ConsumerWidget {
             const Gap(AppSpacing.spacing12),
             Expanded(
               child: TransactionCard(
-                title: 'Expense • ${DateTime.now().toMonthName()}',
+                title: '${l10n.expense} • ${DateTime.now().toMonthName()}',
                 amount: currentMonthExpense,
                 amountLastMonth: lastMonthExpense,
                 percentDifference: expensePercentDifference,

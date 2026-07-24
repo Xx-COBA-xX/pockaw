@@ -42,9 +42,10 @@ class CustomNumericField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     Currency currency = ref.watch(currencyProvider);
+    final activeWallet = ref.watch(activeWalletProvider).value;
     String defaultCurrency =
         this.defaultCurrency ??
-        ref.read(activeWalletProvider).value?.currencyByIsoCode(ref).symbol ??
+        activeWallet?.currencyByIsoCode(ref).symbol ??
         CurrencyLocalDataSource.dummy.symbol;
 
     if (useSelectedCurrency) {

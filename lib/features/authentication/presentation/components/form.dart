@@ -6,23 +6,24 @@ class Form extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return SingleChildScrollView(
       child: Column(
         children: [
           const Gap(AppSpacing.spacing56),
           const LoginImagePicker(),
           const Gap(AppSpacing.spacing20),
-          const Column(
+          Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Get Started',
+                l10n.getStarted,
                 style: AppTextStyles.heading5,
                 textAlign: TextAlign.center,
               ),
-              Gap(AppSpacing.spacing4),
-              GetStartedDescription(),
+              const Gap(AppSpacing.spacing4),
+              const GetStartedDescription(),
             ],
           ),
           const Gap(AppSpacing.spacing20),
@@ -32,7 +33,7 @@ class Form extends HookConsumerWidget {
               CustomTextField(
                 context: context,
                 controller: nameField,
-                label: 'Name',
+                label: l10n.accountName,
                 hint: 'John Doe',
                 prefixIcon: HugeIcons.strokeRoundedTextSmallcaps,
               ),

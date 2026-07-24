@@ -16,6 +16,7 @@ class SpendingPieChart extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final touchedIndex = ref.watch(pieChartTouchIndexProvider);
     final touchedIndexState = ref.read(pieChartTouchIndexProvider.notifier);
+    final l10n = AppLocalizations.of(context);
 
     if (isLoading) {
       return LoadingIndicator();
@@ -80,12 +81,12 @@ class SpendingPieChart extends ConsumerWidget {
     }
 
     return ChartContainer(
-      title: 'Spending by Category',
-      subtitle: 'Breakdown of your spending by category',
+      title: l10n.spendingByCategory,
+      subtitle: l10n.breakdownByCategory,
       height: 400,
       margin: const EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
       chart: expenseData.isEmpty
-          ? ChartContainer.errorText('No transaction to display')
+          ? ChartContainer.errorText(l10n.noTransactionToDisplay)
           : Column(
               children: [
                 Expanded(
@@ -120,7 +121,7 @@ class SpendingPieChart extends ConsumerWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Total Spent',
+                              l10n.totalSpent,
                               style: AppTextStyles.body3,
                             ),
                             const SizedBox(height: 4),

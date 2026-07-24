@@ -13,22 +13,25 @@ import 'package:pockaw/core/extensions/text_style_extensions.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class WalletSelectorBottomSheet extends ConsumerWidget {
   const WalletSelectorBottomSheet({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final allWalletsAsync = ref.watch(allWalletsStreamProvider);
     final activeWalletAsync = ref.watch(activeWalletProvider);
+    final l10n = AppLocalizations.of(context);
 
     return CustomBottomSheet(
-      title: 'Select Wallet',
+      title: l10n.selectWallet,
       child: allWalletsAsync.when(
         data: (wallets) {
           if (wallets.isEmpty) {
-            return const Center(
+            return Center(
               child: Padding(
-                padding: EdgeInsets.all(AppSpacing.spacing16),
-                child: Text('No wallets available.'),
+                padding: const EdgeInsets.all(AppSpacing.spacing16),
+                child: Text(l10n.noWalletSelected),
               ),
             );
           }

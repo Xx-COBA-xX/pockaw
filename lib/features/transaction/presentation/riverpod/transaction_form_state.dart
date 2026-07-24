@@ -293,10 +293,6 @@ TransactionFormState useTransactionFormState({
     isEditing ? transaction?.category : null,
   );
 
-  Future.microtask(
-    () => ref.read(imageProvider.notifier).clearImage(),
-  );
-
   final formState = useMemoized(
     () => TransactionFormState(
       titleController: titleController,
@@ -317,9 +313,6 @@ TransactionFormState useTransactionFormState({
     () {
       void initializeForm() {
         if (isEditing && transaction != null) {
-          // Controllers are initialized with text in their declaration if transaction is available.
-          // If transaction was initially null (e.g., during loading) and then becomes available,
-          // we need to update them here.
           if (titleController.text != transaction.title) {
             titleController.text = transaction.title;
           }
@@ -337,7 +330,6 @@ TransactionFormState useTransactionFormState({
           if (selectedCategory.value != transaction.category) {
             selectedCategory.value = transaction.category;
           }
-          // categoryController.text is handled by another useEffect based on selectedCategory
 
           dateFieldController.text = transaction.date.toRelativeDayFormatted(
             showTime: true,
@@ -345,28 +337,21 @@ TransactionFormState useTransactionFormState({
 
           final imagePath = transaction.imagePath;
           if (imagePath != null && imagePath.isNotEmpty) {
-            Future.microtask(
-              () => ref.read(imageProvider.notifier).loadImagePath(imagePath),
-            );
+            ref.read(imageProvider.notifier).loadImagePath(imagePath);
+          } else {
+            ref.read(imageProvider.notifier).clearImage();
           }
         } else if (!isEditing) {
-          // Only reset for new, not if transaction is just null during edit loading
           titleController.clear();
           amountController.clear();
           notesController.clear();
           selectedTransactionType.value = TransactionType.expense;
           selectedCategory.value = null;
-          // Clear image for new transaction form
-          Future.microtask(() => ref.read(imageProvider.notifier).clearImage());
+          ref.read(imageProvider.notifier).clearImage();
         }
-        // categoryController text is updated by the separate effect below
       }
 
       initializeForm();
-      // No need to return formState.dispose here if we want the hook's lifecycle
-      // to be tied to the widget using it. The controllers are disposed by useTextEditingController.
-      // ValueNotifiers from useState are also handled.
-      // If formState.dispose did more, we'd return it.
       return null;
     },
     [

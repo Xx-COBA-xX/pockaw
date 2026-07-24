@@ -15,6 +15,8 @@ import 'package:pockaw/core/extensions/text_style_extensions.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 part 'balance_status_bar.dart';
 part 'balance_status_bar_content.dart';
 

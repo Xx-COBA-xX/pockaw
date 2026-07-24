@@ -11,20 +11,23 @@ import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/features/currency_picker/presentation/riverpod/currency_picker_provider.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class CurrencyListTiles extends ConsumerWidget {
   const CurrencyListTiles({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final currenciesAsyncValue = ref.watch(currenciesProvider);
+    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
-      title: 'Choose Currency',
+      title: l10n.chooseCurrency,
       showBalance: false,
       body: currenciesAsyncValue.when(
         data: (currencies) {
           if (currencies.isEmpty) {
-            return const Center(child: Text('No currencies available.'));
+            return Center(child: Text(l10n.noCurrenciesAvailable));
           }
           return ListView.separated(
             padding: const EdgeInsets.symmetric(

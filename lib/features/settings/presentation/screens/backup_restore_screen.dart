@@ -25,6 +25,8 @@ import 'package:pockaw/features/user_activity/data/enum/user_activity_action.dar
 import 'package:pockaw/features/user_activity/riverpod/user_activity_provider.dart';
 import 'package:toastification/toastification.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 part '../../../backup_and_restore/presentation/components/local_backup_section.dart';
 part '../../../backup_and_restore/presentation/components/drive_backup_section.dart';
 part '../../../backup_and_restore/presentation/components/backup_info_cards.dart';
@@ -36,8 +38,9 @@ class BackupRestoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return CustomScaffold(
-      title: 'Backup & Restore',
+      title: l10n.backupAndRestore,
       showBalance: false,
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),

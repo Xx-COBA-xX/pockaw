@@ -13,12 +13,15 @@ import 'package:pockaw/core/services/keyboard_service/virtual_keyboard_service.d
 import 'package:pockaw/features/currency_picker/data/models/currency.dart';
 import 'package:pockaw/features/currency_picker/presentation/riverpod/currency_picker_provider.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class CurrencyPickerField extends HookConsumerWidget {
   final Currency? defaultCurrency;
   const CurrencyPickerField({super.key, this.defaultCurrency});
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     Currency currency = ref.watch(currencyProvider);
     final currencyController = useTextEditingController();
 
@@ -34,7 +37,7 @@ class CurrencyPickerField extends HookConsumerWidget {
         CustomTextField(
           context: context,
           controller: currencyController,
-          label: 'Currency',
+          label: l10n.currency,
           hint: 'USD',
           prefixIcon: HugeIcons.strokeRoundedFlag01,
           readOnly: true,
@@ -49,8 +52,9 @@ class CurrencyPickerField extends HookConsumerWidget {
             }
           },
         ),
-        Positioned(
-          right: 10,
+        Positioned.directional(
+          textDirection: Directionality.of(context),
+          end: 10,
           bottom: 16,
           top: 16,
           child: Container(

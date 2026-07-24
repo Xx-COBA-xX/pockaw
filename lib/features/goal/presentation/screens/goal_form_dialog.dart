@@ -20,6 +20,7 @@ import 'package:pockaw/features/goal/presentation/riverpod/date_picker_provider.
 import 'package:pockaw/features/goal/presentation/services/goal_form_service.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 part '../components/goal_date_range_picker.dart';
 
@@ -35,6 +36,7 @@ class GoalFormDialog extends HookConsumerWidget {
     final titleController = useTextEditingController();
     final noteController = useTextEditingController();
     final targetAmountController = useTextEditingController();
+    final l10n = AppLocalizations.of(context);
 
     bool isEditing = false;
 
@@ -51,7 +53,7 @@ class GoalFormDialog extends HookConsumerWidget {
     }, const []);
 
     return CustomBottomSheet(
-      title: '${isEditing ? 'Edit' : 'New'} Goal',
+      title: isEditing ? l10n.editGoal : l10n.createGoal,
       child: Form(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -60,8 +62,8 @@ class GoalFormDialog extends HookConsumerWidget {
             CustomTextField(
               context: context,
               controller: titleController,
-              label: 'Title (max. 25)',
-              hint: 'Buy something',
+              label: l10n.title,
+              hint: '...',
               isRequired: true,
               prefixIcon: HugeIcons.strokeRoundedArrangeByLettersAZ,
               textInputAction: TextInputAction.next,
@@ -73,8 +75,8 @@ class GoalFormDialog extends HookConsumerWidget {
             CustomTextField(
               context: context,
               controller: noteController,
-              label: 'Write a note',
-              hint: 'Write here...',
+              label: l10n.writeNoteHint,
+              hint: l10n.writeHere,
               prefixIcon: HugeIcons.strokeRoundedNote,
               minLines: 1,
               maxLines: 3,
@@ -89,7 +91,7 @@ class GoalFormDialog extends HookConsumerWidget {
               appendCurrencySymbolToHint: true,
             ), */
             PrimaryButton(
-              label: 'Save',
+              label: l10n.save,
               state: ButtonState.active,
               themeMode: context.themeMode,
               onPressed: () {

@@ -7,6 +7,7 @@ class GoalChecklistTitle extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final sort = ref.watch(goalChecklistSortProvider);
     final sortNotifier = ref.read(goalChecklistSortProvider.notifier);
+    final l10n = AppLocalizations.of(context);
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing2),
@@ -17,8 +18,8 @@ class GoalChecklistTitle extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Goal Checklist', style: AppTextStyles.body3),
-                Text('Hold item to show options', style: AppTextStyles.body5),
+                Text(l10n.goalChecklist, style: AppTextStyles.body3),
+                Text(l10n.holdItemToShowOptions, style: AppTextStyles.body5),
               ],
             ),
           ),
@@ -28,12 +29,12 @@ class GoalChecklistTitle extends ConsumerWidget {
             onPressed: () {
               context.openBottomSheet(
                 child: CustomBottomSheet(
-                  title: 'Filter Checklist',
+                  title: l10n.filterChecklist,
                   child: Column(
                     spacing: AppSpacing.spacing8,
                     children: [
                       MenuTileButton(
-                        label: 'Title (A-Z)',
+                        label: l10n.titleAsc,
                         icon: HugeIcons.strokeRoundedSortingAZ02,
                         suffixIcon: sort == GoalChecklistSort.titleAsc
                             ? HugeIcons.strokeRoundedCheckmarkCircle01
@@ -44,7 +45,7 @@ class GoalChecklistTitle extends ConsumerWidget {
                         },
                       ),
                       MenuTileButton(
-                        label: 'Title (Z-A)',
+                        label: l10n.titleDesc,
                         icon: HugeIcons.strokeRoundedSortingZA01,
                         suffixIcon: sort == GoalChecklistSort.titleDesc
                             ? HugeIcons.strokeRoundedCheckmarkCircle01
@@ -55,7 +56,7 @@ class GoalChecklistTitle extends ConsumerWidget {
                         },
                       ),
                       MenuTileButton(
-                        label: 'Cheapest',
+                        label: l10n.cheapest,
                         icon: HugeIcons.strokeRoundedSorting19,
                         suffixIcon: sort == GoalChecklistSort.priceAsc
                             ? HugeIcons.strokeRoundedCheckmarkCircle01
@@ -66,7 +67,7 @@ class GoalChecklistTitle extends ConsumerWidget {
                         },
                       ),
                       MenuTileButton(
-                        label: 'Most Expensive',
+                        label: l10n.mostExpensive,
                         icon: HugeIcons.strokeRoundedSorting91,
                         suffixIcon: sort == GoalChecklistSort.priceDesc
                             ? HugeIcons.strokeRoundedCheckmarkCircle01
@@ -77,7 +78,7 @@ class GoalChecklistTitle extends ConsumerWidget {
                         },
                       ),
                       MenuTileButton(
-                        label: 'Completed',
+                        label: l10n.completedChecklist,
                         icon: HugeIcons.strokeRoundedSortByDown02,
                         suffixIcon: sort == GoalChecklistSort.completed
                             ? HugeIcons.strokeRoundedCheckmarkCircle01

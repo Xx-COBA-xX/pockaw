@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:pockaw/core/constants/app_constants.dart';
 import 'package:pockaw/core/utils/logger.dart';
 import 'package:pockaw/features/currency_picker/data/models/currency.dart';
 
@@ -17,17 +16,17 @@ class CurrencyLocalDataSource {
   }
 
   static const Currency dummy = Currency(
-    symbol: AppConstants.defaultCurrencySymbol,
-    name: 'United States Dollar',
-    decimalDigits: 2,
+    symbol: 'د.ع',
+    name: 'Iraqi Dinar',
+    decimalDigits: 0,
     rounding: 0,
-    isoCode: 'USD',
-    namePlural: 'US Dollars',
-    country: 'United States',
-    countryCode: 'US',
+    isoCode: 'IQD',
+    namePlural: 'Iraqi Dinars',
+    country: 'Iraq',
+    countryCode: 'IQ',
   );
 
   List<String> getAvailableCurrencies() {
-    return ['ID', 'SG', 'MY', 'CN', 'JP', 'US', 'GB'];
+    return ['IQ', 'US'];
   }
 }

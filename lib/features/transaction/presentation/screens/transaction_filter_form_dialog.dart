@@ -16,6 +16,7 @@ import 'package:pockaw/features/transaction/presentation/components/filter_form/
 import 'package:pockaw/features/transaction/presentation/components/filter_form/transaction_filter_date_picker.dart';
 import 'package:pockaw/features/transaction/presentation/riverpod/transaction_filter_form_state.dart';
 import 'package:pockaw/features/transaction/presentation/riverpod/transaction_providers.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class TransactionFilterFormDialog extends HookConsumerWidget {
   final TransactionFilter? initialFilter;
@@ -27,9 +28,10 @@ class TransactionFilterFormDialog extends HookConsumerWidget {
       ref: ref,
       initialFilter: initialFilter ?? ref.watch(transactionFilterProvider),
     );
+    final l10n = AppLocalizations.of(context);
 
     return CustomBottomSheet(
-      title: 'Search & Filters',
+      title: l10n.filterTransactions,
       child: Form(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -42,8 +44,8 @@ class TransactionFilterFormDialog extends HookConsumerWidget {
             CustomTextField(
               context: context,
               controller: formState.keywordController,
-              hint: 'Dinner with ...',
-              label: 'Search with keyword',
+              hint: '...',
+              label: l10n.search,
             ),
             TransactionFilterCategorySelector(
               controller:
@@ -61,7 +63,7 @@ class TransactionFilterFormDialog extends HookConsumerWidget {
               children: [
                 Expanded(
                   child: CustomNumericField(
-                    label: 'Min. Amount',
+                    label: l10n.minAmount,
                     hint: '100,000',
                     appendCurrencySymbolToHint: true,
                     controller: formState.minAmountController,
@@ -69,7 +71,7 @@ class TransactionFilterFormDialog extends HookConsumerWidget {
                 ),
                 Expanded(
                   child: CustomNumericField(
-                    label: 'Max. Amount',
+                    label: l10n.maxAmount,
                     hint: '2,500,000',
                     appendCurrencySymbolToHint: true,
                     controller: formState.maxAmountController,
@@ -78,20 +80,20 @@ class TransactionFilterFormDialog extends HookConsumerWidget {
               ],
             ),
             PrimaryButton(
-              label: 'Apply Filters',
+              label: l10n.applyFilters,
               onPressed: () => formState.applyFilter(ref, context),
             ),
             TextButton(
               child: Text(
-                'Reset Filters',
+                l10n.resetFilters,
                 style: AppTextStyles.body2.copyWith(color: AppColors.red),
               ),
               onPressed: () {
                 context.openBottomSheet(
                   child: AlertBottomSheet(
-                    title: 'Reset Filters',
+                    title: l10n.resetFilters,
                     content: Text(
-                      'Continue to reset transaction filters?',
+                      l10n.actionCannotBeUndone,
                       style: AppTextStyles.body2,
                     ),
                     onConfirm: () {

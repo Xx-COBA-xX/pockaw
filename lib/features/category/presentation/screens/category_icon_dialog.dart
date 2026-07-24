@@ -14,8 +14,10 @@ class CategoryIconDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return CustomBottomSheet(
-      title: 'Icon Type',
+      title: l10n.iconType,
       child: AspectRatio(
         aspectRatio: 3 / 1,
         child: Row(
@@ -44,7 +46,7 @@ class CategoryIconDialog extends StatelessWidget {
                     spacing: AppSpacing.spacing4,
                     children: [
                       Text('😀', style: AppTextStyles.heading3),
-                      Text('Emoji'),
+                      Text(l10n.emoji),
                     ],
                   ),
                 ),
@@ -71,7 +73,7 @@ class CategoryIconDialog extends StatelessWidget {
                     spacing: AppSpacing.spacing4,
                     children: [
                       Text('🖼️', style: AppTextStyles.heading3),
-                      Text('Asset'),
+                      Text(l10n.asset),
                     ],
                   ),
                 ),
@@ -100,7 +102,7 @@ class CategoryIconDialog extends StatelessWidget {
                     spacing: AppSpacing.spacing4,
                     children: [
                       Text('🅰️', style: AppTextStyles.heading3),
-                      Text('Initial'),
+                      Text(l10n.initial),
                     ],
                   ),
                 ),

@@ -31,6 +31,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
   archive: ^4.0.7
   auto_size_text: ^3.0.0
   auto_size_text_field: ^2.2.4
@@ -116,9 +119,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+  generate: true
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -154,6 +155,23 @@ flutter:
           weight: 700
         - asset: fonts/Urbanist/Urbanist-Italic-VariableFont_wght.ttf
           style: italic
+
+    - family: Tajawal
+      fonts:
+        - asset: fonts/Tajawal/Tajawal-Regular.ttf
+          weight: 400
+        - asset: fonts/Tajawal/Tajawal-Medium.ttf
+          weight: 500
+        - asset: fonts/Tajawal/Tajawal-Bold.ttf
+          weight: 700
+        - asset: fonts/Tajawal/Tajawal-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/Tajawal/Tajawal-Black.ttf
+          weight: 900
+        - asset: fonts/Tajawal/Tajawal-Light.ttf
+          weight: 300
+        - asset: fonts/Tajawal/Tajawal-ExtraLight.ttf
+          weight: 200
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

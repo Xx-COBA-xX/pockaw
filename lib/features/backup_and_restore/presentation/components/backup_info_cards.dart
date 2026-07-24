@@ -104,6 +104,7 @@ class BackupInfoCards extends StatelessWidget {
               builder: (context, ref, _) {
                 final lastInfo = ref.watch(_lastActivityInfoProvider);
                 final lastBackup = (lastInfo.asData?.value)?['backup'];
+                final l10n = AppLocalizations.of(context);
 
                 // header / title
                 return Column(
@@ -117,7 +118,7 @@ class BackupInfoCards extends StatelessWidget {
                           size: 14,
                         ),
                         Text(
-                          'Backup History',
+                          l10n.backupHistory,
                           style: AppTextStyles.body3.bold,
                         ),
                       ],
@@ -126,15 +127,15 @@ class BackupInfoCards extends StatelessWidget {
                       color: context.breakLineColor,
                     ),
                     Text(
-                      'Backup folder: ${lastBackup?['folder'] ?? '—'}',
+                      '${l10n.backupFolder}: ${lastBackup?['folder'] ?? '—'}',
                       style: AppTextStyles.body3,
                     ),
                     Text(
-                      'Last action: ${lastBackup?['message'] ?? '—'}',
+                      '${l10n.lastAction}: ${lastBackup?['message'] ?? '—'}',
                       style: AppTextStyles.body3,
                     ),
                     Text(
-                      'Last backup: ${lastBackup?['timestamp'] ?? 'No backups yet'}',
+                      '${l10n.lastBackup}: ${lastBackup?['timestamp'] ?? l10n.noBackupsYet}',
                       style: AppTextStyles.body3,
                     ),
                   ],
@@ -157,6 +158,7 @@ class BackupInfoCards extends StatelessWidget {
               builder: (context, ref, _) {
                 final lastInfo = ref.watch(_lastActivityInfoProvider);
                 final lastRestore = (lastInfo.asData?.value)?['restore'];
+                final l10n = AppLocalizations.of(context);
 
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -169,7 +171,7 @@ class BackupInfoCards extends StatelessWidget {
                           size: 14,
                         ),
                         Text(
-                          'Restore History',
+                          l10n.restoreHistory,
                           style: AppTextStyles.body3.bold,
                         ),
                       ],
@@ -179,15 +181,15 @@ class BackupInfoCards extends StatelessWidget {
                       color: context.breakLineColor,
                     ),
                     Text(
-                      'Source folder: ${lastRestore?['folder'] ?? '—'}',
+                      '${l10n.sourceFolder}: ${lastRestore?['folder'] ?? '—'}',
                       style: AppTextStyles.body3,
                     ),
                     Text(
-                      'Last action: ${lastRestore?['message'] ?? '—'}',
+                      '${l10n.lastAction}: ${lastRestore?['message'] ?? '—'}',
                       style: AppTextStyles.body3,
                     ),
                     Text(
-                      'Last restored: ${lastRestore?['timestamp'] ?? 'No restores yet'}',
+                      '${l10n.lastRestored}: ${lastRestore?['timestamp'] ?? l10n.noRestoresYet}',
                       style: AppTextStyles.body3,
                     ),
                   ],

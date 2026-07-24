@@ -9,6 +9,8 @@ import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/router/routes.dart';
 import 'package:pockaw/features/main/presentation/riverpod/main_page_view_riverpod.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class DesktopSidebar extends ConsumerWidget {
   static const double desktopSidebarWidth = 220.0; // Increased width for text
   final PageController pageController;
@@ -16,6 +18,7 @@ class DesktopSidebar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       width: desktopSidebarWidth, // Uses the updated width
       padding: const EdgeInsets.symmetric(
@@ -31,7 +34,7 @@ class DesktopSidebar extends ConsumerWidget {
           _buildSidebarItem(
             context: context,
             ref: ref,
-            title: 'Home',
+            title: l10n.home,
             icon: HugeIcons.strokeRoundedHome01,
             pageIndex: 0,
             onTap: () => pageController.jumpToPage(0),
@@ -39,7 +42,7 @@ class DesktopSidebar extends ConsumerWidget {
           _buildSidebarItem(
             context: context,
             ref: ref,
-            title: 'Transactions',
+            title: l10n.recentTransactions,
             icon: HugeIcons.strokeRoundedReceiptDollar,
             pageIndex: 1,
             onTap: () => pageController.jumpToPage(1),
@@ -47,7 +50,7 @@ class DesktopSidebar extends ConsumerWidget {
           _buildSidebarItem(
             context: context,
             ref: ref,
-            title: 'Goals',
+            title: l10n.goals,
             icon: HugeIcons.strokeRoundedTarget01,
             pageIndex: 2,
             onTap: () => pageController.jumpToPage(2),
@@ -55,7 +58,7 @@ class DesktopSidebar extends ConsumerWidget {
           _buildSidebarItem(
             context: context,
             ref: ref,
-            title: 'Budgets',
+            title: l10n.budgets,
             icon: HugeIcons.strokeRoundedDatabase,
             pageIndex: 3,
             onTap: () => pageController.jumpToPage(3),
@@ -64,7 +67,7 @@ class DesktopSidebar extends ConsumerWidget {
           _buildSidebarItem(
             context: context,
             ref: ref,
-            title: 'New Transaction',
+            title: l10n.addTransaction,
             icon: HugeIcons.strokeRoundedAdd01,
             onTap: () {
               context.push(Routes.transactionForm);

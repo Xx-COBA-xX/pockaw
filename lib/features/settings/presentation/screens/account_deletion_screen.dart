@@ -16,6 +16,7 @@ import 'package:pockaw/core/extensions/text_style_extensions.dart';
 import 'package:pockaw/core/router/routes.dart';
 import 'package:pockaw/core/services/keyboard_service/virtual_keyboard_service.dart';
 import 'package:pockaw/core/utils/logger.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:pockaw/features/authentication/presentation/riverpod/auth_provider.dart';
 import 'package:toastification/toastification.dart';
 
@@ -38,14 +39,15 @@ class AccountDeletionScreen extends HookConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) async {
+    final l10n = AppLocalizations.of(context);
     KeyboardService.closeKeyboard();
     context.openBottomSheet(
       child: AlertBottomSheet(
         context: context,
-        title: 'Confirm Account Deletion',
-        confirmText: 'Delete',
+        title: l10n.confirmAccountDeletion,
+        confirmText: l10n.deleteAccount,
         content: Text(
-          'This action is irreversible. All your data, including goals, transactions, budgets, and personal settings, will be permanently erased from this device. The app will reset to its initial state.',
+          l10n.actionCannotBeUndone,
           textAlign: TextAlign.center,
           style: AppTextStyles.body2,
         ),

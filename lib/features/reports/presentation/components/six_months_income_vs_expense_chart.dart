@@ -12,6 +12,8 @@ import 'package:pockaw/core/extensions/text_style_extensions.dart';
 import 'package:pockaw/features/reports/data/models/monthly_financial_summary_model.dart';
 import 'package:pockaw/features/reports/presentation/riverpod/financial_health_provider.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class SixMonthsIncomeExpenseChart extends ConsumerWidget {
   const SixMonthsIncomeExpenseChart({super.key});
 
@@ -20,13 +22,14 @@ class SixMonthsIncomeExpenseChart extends ConsumerWidget {
     // final touchedIndex = ref.watch(barChartTouchIndexProvider);
     // final touchedIndexState = ref.read(barChartTouchIndexProvider.notifier);
     final summaryAsync = ref.watch(sixMonthSummaryProvider);
+    final l10n = AppLocalizations.of(context);
 
     return ChartContainer(
-      title: 'Income vs. Expense',
-      subtitle: 'Last 6 Months',
+      title: '${l10n.income} vs. ${l10n.expense}',
+      subtitle: l10n.monthlyReport,
       height: 300,
       chart: summaryAsync.when(
-        data: (data) => _buildChart(context, data, ref),
+        data: (data) => _buildChart(context, data, ref, l10n),
         loading: () => const Center(child: LoadingIndicator()),
         error: (err, stack) => Center(child: Text('Error loading data: $err')),
       ),
@@ -37,9 +40,10 @@ class SixMonthsIncomeExpenseChart extends ConsumerWidget {
     BuildContext context,
     List<MonthlyFinancialSummary> data,
     WidgetRef ref,
+    AppLocalizations l10n,
   ) {
     if (data.isEmpty || data.every((e) => e.income == 0 && e.expense == 0)) {
-      return const Center(child: Text('No transaction data available yet.'));
+      return Center(child: Text(l10n.noTransactionDataAvailable));
     }
 
     // Calculate max Y to give some headroom
@@ -67,7 +71,7 @@ class SixMonthsIncomeExpenseChart extends ConsumerWidget {
               return touchedBarSpots.map((barSpot) {
                 final flSpot = barSpot;
 
-                String label = barSpot.barIndex == 0 ? 'Income' : 'Expense';
+                String label = barSpot.barIndex == 0 ? l10n.income : l10n.expense;
                 Color color = barSpot.barIndex == 0
                     ? Colors.greenAccent[700]!
                     : Colors.redAccent[400]!;

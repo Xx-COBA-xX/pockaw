@@ -6,18 +6,21 @@ import 'package:pockaw/core/extensions/popup_extension.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 import 'package:pockaw/features/wallet_switcher/presentation/components/wallet_selector_bottom_sheet.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class WalletSwitcherDropdown extends ConsumerWidget {
   const WalletSwitcherDropdown({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
     final activeWalletAsync = ref.watch(activeWalletProvider);
+    final l10n = AppLocalizations.of(context);
 
     return activeWalletAsync.when(
       data: (wallet) {
         return SmallButton(
           prefixIcon: HugeIcons.strokeRoundedWallet01,
-          label: wallet?.name ?? 'No Wallet', // Handle null case
+          label: wallet?.name ?? l10n.noWalletSelected, // Handle null case
           suffixIcon: HugeIcons.strokeRoundedArrowDown01,
           onTap: () {
             context.openBottomSheet(

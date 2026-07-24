@@ -5,6 +5,7 @@ import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/features/goal/presentation/components/goal_card.dart';
 import 'package:pockaw/features/goal/presentation/riverpod/goals_list_provider.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class GoalPinnedHolder extends ConsumerWidget {
   const GoalPinnedHolder({super.key});
@@ -14,6 +15,7 @@ class GoalPinnedHolder extends ConsumerWidget {
     final asyncGoals = ref.watch(
       pinnedGoalsProvider,
     ); // <-- Use pinnedGoalsProvider
+    final l10n = AppLocalizations.of(context);
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: AppSpacing.spacing16),
@@ -24,14 +26,14 @@ class GoalPinnedHolder extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: AppSpacing.spacing16,
             ),
-            child: const Text('Pinned Goals', style: AppTextStyles.heading6),
+            child: Text(l10n.pinnedGoals, style: AppTextStyles.heading6),
           ),
           const Gap(AppSpacing.spacing16),
           asyncGoals.when(
             data: (data) {
               if (data.isEmpty) {
-                return const Center(
-                  child: Text('No goals pinned.', style: AppTextStyles.body3),
+                return Center(
+                  child: Text(l10n.noPinnedGoals, style: AppTextStyles.body3),
                 );
               }
 

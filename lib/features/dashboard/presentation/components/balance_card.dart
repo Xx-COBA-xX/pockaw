@@ -6,6 +6,7 @@ class BalanceCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final activeWalletAsync = ref.watch(activeWalletProvider);
+    final l10n = AppLocalizations.of(context);
 
     return activeWalletAsync.when(
       data: (wallet) {
@@ -19,14 +20,14 @@ class BalanceCard extends ConsumerWidget {
               borderRadius: BorderRadius.circular(AppRadius.radius16),
               border: Border.all(color: context.secondaryBorderLighter),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('My Balance', style: AppTextStyles.body4),
-                Gap(AppSpacing.spacing8),
-                WalletSwitcherDropdown(), // Still show dropdown to select/create
-                Gap(AppSpacing.spacing8),
-                Text('No wallet selected.', style: AppTextStyles.body2),
+                Text(l10n.myBalance, style: AppTextStyles.body4),
+                const Gap(AppSpacing.spacing8),
+                const WalletSwitcherDropdown(), // Still show dropdown to select/create
+                const Gap(AppSpacing.spacing8),
+                Text(l10n.noWalletSelected, style: AppTextStyles.body2),
               ],
             ),
           );
@@ -46,7 +47,7 @@ class BalanceCard extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: AppSpacing.spacing8,
                 children: [
-                  Text('My Balance', style: AppTextStyles.body4.bold),
+                  Text(l10n.myBalance, style: AppTextStyles.body4.bold),
                   const WalletSwitcherDropdown(),
                   Consumer(
                     builder: (context, ref, child) {
@@ -80,8 +81,9 @@ class BalanceCard extends ConsumerWidget {
                 ],
               ),
             ),
-            Positioned(
-              right: AppSpacing.spacing12,
+            Positioned.directional(
+              textDirection: Directionality.of(context),
+              end: AppSpacing.spacing12,
               top: AppSpacing.spacing12,
               child: Row(
                 spacing: AppSpacing.spacing8,
@@ -103,14 +105,14 @@ class BalanceCard extends ConsumerWidget {
           borderRadius: BorderRadius.circular(AppRadius.radius16),
           border: Border.all(color: context.secondaryBorderLighter),
         ),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('My Balance', style: AppTextStyles.body3),
-            Gap(AppSpacing.spacing8),
-            WalletSwitcherDropdown(), // Show dropdown even when loading
-            Gap(AppSpacing.spacing8),
-            CircularProgressIndicator.adaptive(),
+            Text(l10n.myBalance, style: AppTextStyles.body3),
+            const Gap(AppSpacing.spacing8),
+            const WalletSwitcherDropdown(), // Show dropdown even when loading
+            const Gap(AppSpacing.spacing8),
+            const CircularProgressIndicator.adaptive(),
           ],
         ),
       ),
@@ -126,7 +128,7 @@ class BalanceCard extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('My Balance', style: AppTextStyles.body3),
+            Text(l10n.myBalance, style: AppTextStyles.body3),
             const Gap(AppSpacing.spacing8),
             const WalletSwitcherDropdown(),
             const Gap(AppSpacing.spacing8),

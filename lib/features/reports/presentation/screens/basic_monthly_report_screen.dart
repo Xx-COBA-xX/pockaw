@@ -18,6 +18,7 @@ import 'package:pockaw/features/reports/presentation/components/weekly_income_vs
 import 'package:pockaw/features/reports/presentation/riverpod/filtered_transactions_provider.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/features/reports/presentation/riverpod/pie_chart_touch_index.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:pockaw/features/transaction/data/model/transaction_model.dart';
 
 part '../components/spending_pie_chart.dart';

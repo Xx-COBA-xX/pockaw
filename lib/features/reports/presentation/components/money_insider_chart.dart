@@ -13,29 +13,32 @@ import 'package:pockaw/features/reports/data/models/daily_net_flow_model.dart';
 import 'package:pockaw/features/reports/presentation/riverpod/financial_health_provider.dart';
 import 'dart:math';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class MoneyInsiderChart extends ConsumerWidget {
   const MoneyInsiderChart({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final netFlowAsync = ref.watch(dailyNetFlowProvider);
+    final l10n = AppLocalizations.of(context);
 
     return ChartContainer(
-      title: 'Money Insider',
+      title: l10n.cashFlow,
       subtitle:
-          'Daily Net Flow vs. Zero Line (${DateTime.now().toMonthName()})',
+          '${l10n.monthlyReport} (${DateTime.now().toMonthName()})',
       height: 350, // Taller chart for better visualization
       chart: netFlowAsync.when(
-        data: (data) => _buildChart(context, data),
+        data: (data) => _buildChart(context, data, l10n),
         loading: () => const Center(child: LoadingIndicator()),
         error: (err, stack) => Center(child: Text('Error: $err')),
       ),
     );
   }
 
-  Widget _buildChart(BuildContext context, List<DailyNetFlowSummary> data) {
+  Widget _buildChart(BuildContext context, List<DailyNetFlowSummary> data, AppLocalizations l10n) {
     if (data.isEmpty) {
-      return const Center(child: Text('No transactions recorded this month.'));
+      return Center(child: Text(l10n.noTransactionsYet));
     }
 
     // 1. Calculate Min/Max Y values across all data points

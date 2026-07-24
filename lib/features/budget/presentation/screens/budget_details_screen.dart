@@ -15,6 +15,8 @@ import 'package:pockaw/features/budget/presentation/components/budget_top_transa
 import 'package:pockaw/features/budget/presentation/riverpod/budget_providers.dart';
 import 'package:pockaw/features/budget/presentation/riverpod/date_picker_provider.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetDetailsScreen extends ConsumerWidget {
   final int budgetId;
   const BudgetDetailsScreen({super.key, required this.budgetId});
@@ -22,20 +24,21 @@ class BudgetDetailsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final budgetAsync = ref.watch(budgetDetailsProvider(budgetId));
+    final l10n = AppLocalizations.of(context);
 
     return budgetAsync.when(
       data: (budget) {
         if (budget == null) {
           return CustomScaffold(
-            title: 'Budget Not Found',
+            title: l10n.budgetDetails,
             showBackButton: true,
-            body: const Center(
-              child: Text('Budget details could not be loaded.'),
+            body: Center(
+              child: Text(l10n.noBudgetFound),
             ),
           );
         }
         return CustomScaffold(
-          title: 'Budget Report',
+          title: l10n.budgetDetails,
           showBackButton: true,
           actions: [
             CustomIconButton(

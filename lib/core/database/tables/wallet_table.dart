@@ -8,7 +8,7 @@ class Wallets extends Table {
   IntColumn get userId => integer().nullable()();
   TextColumn get name => text().withDefault(const Constant('My Wallet'))();
   RealColumn get balance => real().withDefault(const Constant(0.0))();
-  TextColumn get currency => text().withDefault(const Constant('IDR'))();
+  TextColumn get currency => text().withDefault(const Constant('IQD'))();
   TextColumn get iconName => text().nullable()();
   TextColumn get colorHex => text().nullable()();
 

@@ -6,13 +6,14 @@ class LocalBackupSection extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(backupControllerProvider);
+    final l10n = AppLocalizations.of(context);
 
     return Column(
       spacing: AppSpacing.spacing8,
       children: [
         MenuTileButton(
-          label: 'Backup Manually',
-          subtitle: const Text('Create a backup of your data locally'),
+          label: l10n.backupData,
+          subtitle: Text(l10n.creatingLocalBackup),
           icon: HugeIcons.strokeRoundedDatabaseExport,
           suffixIcon: null,
           onTap: () {
@@ -20,11 +21,11 @@ class LocalBackupSection extends HookConsumerWidget {
               isScrollControlled: false,
               child: AlertBottomSheet(
                 context: context,
-                title: 'Backup Data',
-                confirmText: 'Continue Backup',
+                title: l10n.backupData,
+                confirmText: l10n.save,
                 onConfirm: () async {
                   Toast.show(
-                    'Starting backup...',
+                    l10n.creatingLocalBackup,
                     type: ToastificationType.info,
                   );
 
@@ -39,16 +40,16 @@ class LocalBackupSection extends HookConsumerWidget {
           },
         ),
         MenuTileButton(
-          label: 'Restore Data',
-          subtitle: const Text('Restore your data from a local backup'),
+          label: l10n.restoreData,
+          subtitle: Text(l10n.restoringFromZip),
           icon: HugeIcons.strokeRoundedDatabaseImport,
           onTap: () {
             context.openBottomSheet(
               isScrollControlled: false,
               child: AlertBottomSheet(
-                title: 'Restore Data',
+                title: l10n.restoreData,
                 context: context,
-                confirmText: 'Select Backup Folder',
+                confirmText: l10n.restoreData,
                 onConfirm: () async {
                   final success = await ref
                       .read(backupControllerProvider.notifier)

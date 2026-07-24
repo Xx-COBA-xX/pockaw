@@ -37,6 +37,7 @@ import 'package:pockaw/features/goal/presentation/screens/goal_form_dialog.dart'
 import 'package:pockaw/features/goal/presentation/services/goal_form_service.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:toastification/toastification.dart';
 
 part '../components/goal_checklist_holder.dart';
@@ -50,13 +51,14 @@ class GoalDetailsScreen extends ConsumerWidget {
   const GoalDetailsScreen({super.key, required this.goalId});
 
   @override
-  Widget build(BuildContext context, ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final wallet = ref.watch(activeWalletProvider);
     final goalAsync = ref.watch(goalDetailsProvider(goalId));
     final checklistItemsAsync = ref.watch(checklistItemsProvider(goalId));
+    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
-      title: 'My Goals',
+      title: l10n.goals,
       showBalance: false,
       actions: [
         if (goalAsync.value != null)
@@ -110,12 +112,12 @@ class GoalDetailsScreen extends ConsumerWidget {
               context.openBottomSheet(
                 child: AlertBottomSheet(
                   context: context,
-                  title: 'Delete Goal',
+                  title: l10n.delete,
                   content: Text(
-                    'Are you sure want to delete this goal?',
+                    l10n.actionCannotBeUndone,
                     style: AppTextStyles.body2,
                   ),
-                  confirmText: 'Delete',
+                  confirmText: l10n.delete,
                   onConfirm: () {
                     final db = ref.read(databaseProvider);
                     db.goalDao.deleteGoal(goalId);
@@ -158,7 +160,7 @@ class GoalDetailsScreen extends ConsumerWidget {
             ),
           ),
           PrimaryButton(
-            label: 'Add Checklist Item',
+            label: l10n.addChecklistItem,
             state: ButtonState.outlinedActive,
             themeMode: context.themeMode,
             onPressed: () {
@@ -175,7 +177,7 @@ class GoalDetailsScreen extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Total', style: AppTextStyles.body2),
+                  Text(l10n.total, style: AppTextStyles.body2),
                   checklistItemsAsync.when(
                     data: (items) {
                       final total = items.fold<double>(

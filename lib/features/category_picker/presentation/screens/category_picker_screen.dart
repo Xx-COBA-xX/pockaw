@@ -10,6 +10,8 @@ import 'package:pockaw/features/category/presentation/riverpod/category_provider
 import 'package:pockaw/features/category/presentation/screens/category_form_screen.dart';
 import 'package:pockaw/features/category_picker/presentation/components/category_dropdown.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class CategoryPickerScreen extends ConsumerWidget {
   final bool isManageCategories;
   final bool isPickingParent;
@@ -21,8 +23,9 @@ class CategoryPickerScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     return CustomScaffold(
-      title: isManageCategories ? 'Manage Categories' : 'Picking Category',
+      title: isManageCategories ? l10n.manageCategories : l10n.categories,
       showBalance: false,
       body: Column(
         children: [
@@ -49,10 +52,10 @@ class CategoryPickerScreen extends ConsumerWidget {
                 .when(
                   data: (categories) {
                     if (categories.isEmpty) {
-                      return const Center(
+                      return Center(
                         child: Padding(
-                          padding: EdgeInsets.all(AppSpacing.spacing20),
-                          child: Text('No categories found. Add one!'),
+                          padding: const EdgeInsets.all(AppSpacing.spacing20),
+                          child: Text(l10n.noCategoriesFound),
                         ),
                       );
                     }

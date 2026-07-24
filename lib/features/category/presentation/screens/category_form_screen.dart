@@ -30,6 +30,7 @@ import 'package:pockaw/features/category/presentation/riverpod/category_provider
 import 'package:pockaw/features/category/presentation/screens/category_icon_emoji_picker.dart';
 import 'package:pockaw/features/category/presentation/screens/category_icon_initial_picker.dart';
 import 'package:pockaw/features/category_picker/presentation/components/category_icon.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 part 'category_icon_dialog.dart';
 part '../components/form/category_title_field.dart';

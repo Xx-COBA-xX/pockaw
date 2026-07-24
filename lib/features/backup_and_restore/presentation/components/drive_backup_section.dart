@@ -8,13 +8,14 @@ class DriveBackupSection extends ConsumerWidget {
     final state = ref.watch(backupControllerProvider);
     final notifier = ref.read(backupControllerProvider.notifier);
     final connectionStatus = ref.watch(connectionStatusProvider);
+    final l10n = AppLocalizations.of(context);
 
     return Column(
       spacing: AppSpacing.spacing8,
       children: [
         MenuTileButton(
-          label: 'Backup to Google Drive',
-          subtitle: const Text('Save your data securely in the cloud'),
+          label: l10n.backupData,
+          subtitle: Text(l10n.backupData),
           icon: HugeIcons.strokeRoundedCloudUpload,
           disabled: connectionStatus.value == ConnectionStatus.offline,
           onTap: () {
@@ -26,18 +27,14 @@ class DriveBackupSection extends ConsumerWidget {
             context.openBottomSheet(
               isScrollControlled: false,
               child: AlertBottomSheet(
-                title: 'Backup Data',
+                title: l10n.backupData,
                 context: context,
-                confirmText: 'Start Backup',
+                confirmText: l10n.save,
                 showCancelButton: false,
                 content: SizedBox(
                   width: context.screenSize.width * 0.7,
                   child: Text(
-                    'This will backup your data to Google Drive:\n\n'
-                    '• All transactions and categories\n'
-                    '• Goals and budgets\n'
-                    '• Settings and preferences\n'
-                    '• Images and attachments',
+                    l10n.backupNoticeFormat,
                     style: AppTextStyles.body3,
                   ),
                 ),
@@ -50,9 +47,9 @@ class DriveBackupSection extends ConsumerWidget {
           },
         ),
         MenuTileButton(
-          label: 'Restore from Google Drive',
+          label: l10n.restoreData,
           icon: HugeIcons.strokeRoundedCloudDownload,
-          subtitle: const Text('Restore your data from a cloud backup'),
+          subtitle: Text(l10n.restoreData),
           disabled: connectionStatus.value == ConnectionStatus.offline,
           onTap: () {
             if (state.status == BackupStatus.loading ||
@@ -63,17 +60,14 @@ class DriveBackupSection extends ConsumerWidget {
             context.openBottomSheet(
               isScrollControlled: false,
               child: AlertBottomSheet(
-                title: 'Restore Data',
+                title: l10n.restoreData,
                 context: context,
-                confirmText: 'Start Restore',
+                confirmText: l10n.restoreData,
                 showCancelButton: false,
                 content: SizedBox(
                   width: context.screenSize.width * 0.7,
                   child: Text(
-                    'This will restore your data from the most recent Google Drive backup:\n\n'
-                    '• All existing data will be replaced\n'
-                    '• This cannot be undone\n'
-                    '• Make sure you have a recent backup',
+                    l10n.restoreNoticeFormat,
                     style: AppTextStyles.body3,
                   ),
                 ),
@@ -84,9 +78,9 @@ class DriveBackupSection extends ConsumerWidget {
                     context.openBottomSheet(
                       isScrollControlled: false,
                       child: AlertBottomSheet(
-                        title: 'Restore Data',
+                        title: l10n.restoreData,
                         context: context,
-                        confirmText: 'Start Restore',
+                        confirmText: l10n.restoreData,
                         showCancelButton: false,
                         content: SizedBox(
                           width: context.screenSize.height * 0.7,
