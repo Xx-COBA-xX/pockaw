@@ -1,4 +1,4 @@
-# Welcome to Pockaw
+<!-- # Welcome to Pockaw
 
 <img src="https://pockaw.com/assets/images/pockaw-cover-github_readme.webp" alt="Pockaw Cover">
 
@@ -258,4 +258,4 @@ This project is licensed under the **LGPL v3 License**. For more details, please
 
 ## 💝 Credits
 
-* Platfrom icons are from [www.svgrepo.com](https://www.svgrepo.com/)
+* Platfrom icons are from [www.svgrepo.com](https://www.svgrepo.com/) -->

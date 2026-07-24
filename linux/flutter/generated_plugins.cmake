@@ -3,8 +3,10 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  device_region
   emoji_picker_flutter
   file_selector_linux
+  flutter_timezone
   sqlite3_flutter_libs
   url_launcher_linux
 )

@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:hugeicons/styles/stroke_rounded.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:pockaw/core/components/buttons/custom_icon_button.dart';
 import 'package:pockaw/core/components/charts/chart_container.dart';
 import 'package:pockaw/core/components/loading_indicators/loading_indicator.dart';
@@ -43,7 +43,7 @@ class BasicMonthlyReportScreen extends HookConsumerWidget {
               const Duration(days: 30),
             );
           },
-          icon: HugeIconsStrokeRounded.arrowLeft02,
+          icon: HugeIcons.strokeRoundedArrowLeft02,
         ),
         Gap(AppSpacing.spacing4),
         CustomIconButton(
@@ -53,7 +53,7 @@ class BasicMonthlyReportScreen extends HookConsumerWidget {
               const Duration(days: 30),
             );
           },
-          icon: HugeIconsStrokeRounded.arrowRight02,
+          icon: HugeIcons.strokeRoundedArrowRight02,
         ),
       ],
       body: ListView(

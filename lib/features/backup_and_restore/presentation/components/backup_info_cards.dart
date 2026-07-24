@@ -113,7 +113,7 @@ class BackupInfoCards extends StatelessWidget {
                       spacing: AppSpacing.spacing4,
                       children: [
                         HugeIcon(
-                          icon: HugeIconsStrokeRounded.squareArrowUp03,
+                          icon: HugeIcons.strokeRoundedSquareArrowUp03,
                           size: 14,
                         ),
                         Text(
@@ -165,7 +165,7 @@ class BackupInfoCards extends StatelessWidget {
                       spacing: AppSpacing.spacing4,
                       children: [
                         HugeIcon(
-                          icon: HugeIconsStrokeRounded.squareArrowDown03,
+                          icon: HugeIcons.strokeRoundedSquareArrowDown03,
                           size: 14,
                         ),
                         Text(

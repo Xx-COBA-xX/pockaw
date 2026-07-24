@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pockaw/core/app.dart';
 import 'package:pockaw/core/components/placeholders/placeholder_screen.dart';
 
 import 'package:pockaw/core/router/authentication_router.dart';

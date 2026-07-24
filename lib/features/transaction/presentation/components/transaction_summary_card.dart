@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hugeicons/styles/stroke_rounded.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:pockaw/core/components/buttons/small_button.dart';
 import 'package:pockaw/core/constants/app_colors.dart';
 import 'package:pockaw/core/constants/app_radius.dart';
@@ -96,7 +96,7 @@ class TransactionSummaryCard extends ConsumerWidget {
             borderColor: context.purpleButtonBorder,
             foregroundColor: context.secondaryText,
             labelTextStyle: AppTextStyles.body5,
-            suffixIcon: HugeIconsStrokeRounded.arrowRight01,
+            suffixIcon: HugeIcons.strokeRoundedArrowRight01,
             onTap: () => context.push(
               Routes.basicMonthlyReports,
               extra: transactions.first.date,

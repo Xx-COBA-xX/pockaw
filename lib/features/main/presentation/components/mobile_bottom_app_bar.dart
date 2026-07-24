@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:hugeicons/styles/stroke_rounded.dart';
 import 'package:pockaw/core/components/buttons/circle_button.dart';
 import 'package:pockaw/core/constants/app_colors.dart';
 import 'package:pockaw/core/constants/app_radius.dart';
@@ -52,7 +51,7 @@ class MobileBottomAppBar extends ConsumerWidget {
             children: [
               CircleIconButton(
                 radius: 25,
-                icon: HugeIconsStrokeRounded.home01,
+                icon: HugeIcons.strokeRoundedHome01,
                 backgroundColor: Colors.transparent,
                 foregroundColor: ref
                     .read(pageControllerProvider.notifier)
