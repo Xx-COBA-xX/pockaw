@@ -684,4 +684,83 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirm => 'Confirm';
+
+  @override
+  String get markAsComplete => 'Mark as Complete';
+
+  @override
+  String get markAsIncomplete => 'Mark as Incomplete';
+
+  @override
+  String get confirmMarkComplete =>
+      'Are you sure you want to mark this item as complete?';
+
+  @override
+  String get confirmMarkIncomplete =>
+      'Are you sure you want to mark this item as incomplete?';
+
+  @override
+  String get thisMonth => 'This Month';
+
+  @override
+  String get lastMonth => 'Last Month';
+
+  @override
+  String get totalRemainingBudgets => 'Total Remaining Budgets';
+
+  @override
+  String get totalBudget => 'Total Budget';
+
+  @override
+  String get left => 'left';
+
+  @override
+  String get ofTotal => 'of';
+
+  @override
+  String get budgetPeriod => 'Budget Period';
+
+  @override
+  String get fundsSource => 'Funds Source';
+
+  @override
+  String get noBudgetsFoundCreateOne => 'No budgets found. Create one!';
+
+  @override
+  String get noTransactionsToDisplay => 'No transactions to display.';
+
+  @override
+  String noTransactionsForPeriod(Object period) {
+    return 'No transactions for $period.';
+  }
+
+  @override
+  String amountAvailable(Object amount) {
+    return 'Amount (Available: $amount)';
+  }
+
+  @override
+  String get pleaseSelectCategory => 'Please select a category.';
+
+  @override
+  String get pleaseSelectFundSource => 'Please select a fund source (wallet).';
+
+  @override
+  String get pleaseSelectValidDateRange => 'Please select a valid date range.';
+
+  @override
+  String get budgetAmountExceedsBalance =>
+      'Total budget amount cannot exceed wallet balance.';
+
+  @override
+  String get budgetCreated => 'Budget created!';
+
+  @override
+  String get budgetUpdated => 'Budget updated!';
+
+  @override
+  String get budgetDeleted => 'Budget deleted!';
+
+  @override
+  String get failedToSaveBudget => 'Failed to save budget';
 }

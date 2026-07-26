@@ -83,14 +83,14 @@ class BudgetDetailsScreen extends ConsumerWidget {
         );
       },
       loading: () => CustomScaffold(
-        title: 'Loading Budget...',
+        title: l10n.loadingBudget,
         showBackButton: true,
         body: const Center(child: CircularProgressIndicator()),
       ),
       error: (err, stack) => CustomScaffold(
-        title: 'Error',
+        title: l10n.budgetDetails,
         showBackButton: true,
-        body: Center(child: Text('Error loading budget: $err')),
+        body: Center(child: Text(l10n.budgetDetailsCouldNotBeLoaded)),
       ),
     );
   }

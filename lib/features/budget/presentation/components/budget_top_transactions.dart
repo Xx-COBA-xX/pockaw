@@ -8,12 +8,15 @@ import 'package:pockaw/features/budget/presentation/riverpod/budget_providers.da
 import 'package:pockaw/features/transaction/data/model/transaction_model.dart';
 import 'package:pockaw/features/transaction/presentation/components/transaction_tile.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetTopTransactions extends ConsumerWidget {
   final BudgetModel budget;
   const BudgetTopTransactions({super.key, required this.budget});
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     final asyncTransactions = ref.watch(transactionsForBudgetProvider(budget));
 
     return asyncTransactions.when(
@@ -23,7 +26,7 @@ class BudgetTopTransactions extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(vertical: AppSpacing.spacing20),
             child: Center(
               child: Text(
-                'No transactions to display.',
+                l10n.noTransactionsToDisplay,
                 style: AppTextStyles.body3,
               ),
             ),
@@ -50,7 +53,7 @@ class BudgetTopTransactions extends ConsumerWidget {
       },
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (error, stackTrace) =>
-          Center(child: Text('Error: $error\n$stackTrace')),
+          Center(child: Text(l10n.budgetDetailsCouldNotBeLoaded)),
     );
   }
 }

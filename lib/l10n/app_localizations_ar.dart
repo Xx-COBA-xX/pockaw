@@ -210,7 +210,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get breakdownByCategory => 'تفصيل مصروفاتك حسب الفئة';
 
   @override
-  String get totalSpent => 'إجمالي المصروفات';
+  String get totalSpent => 'إجمالي المصروف';
 
   @override
   String get noTransactionToDisplay => 'لا توجد معاملات لعرضها';
@@ -682,4 +682,83 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get confirm => 'تأكيد';
+
+  @override
+  String get markAsComplete => 'تعيين كـ مكتمل';
+
+  @override
+  String get markAsIncomplete => 'تعيين كـ غير مكتمل';
+
+  @override
+  String get confirmMarkComplete =>
+      'هل أنت تأكد من رغبتك في تعيين هذا العنصر كـ مكتمل؟';
+
+  @override
+  String get confirmMarkIncomplete =>
+      'هل أنت تأكد من رغبتك في تعيين هذا العنصر كـ غير مكتمل؟';
+
+  @override
+  String get thisMonth => 'هذا الشهر';
+
+  @override
+  String get lastMonth => 'الشهر الماضي';
+
+  @override
+  String get totalRemainingBudgets => 'إجمالي الميزانيات المتبقية';
+
+  @override
+  String get totalBudget => 'إجمالي الميزانية';
+
+  @override
+  String get left => 'متبقٍ';
+
+  @override
+  String get ofTotal => 'من';
+
+  @override
+  String get budgetPeriod => 'فترة الميزانية';
+
+  @override
+  String get fundsSource => 'مصدر التمويل';
+
+  @override
+  String get noBudgetsFoundCreateOne => 'لا توجد ميزانيات. قم بإنشاء واحدة!';
+
+  @override
+  String get noTransactionsToDisplay => 'لا توجد معاملات لعرضها.';
+
+  @override
+  String noTransactionsForPeriod(Object period) {
+    return 'لا توجد معاملات لشهر $period.';
+  }
+
+  @override
+  String amountAvailable(Object amount) {
+    return 'المبلغ (المتاح: $amount)';
+  }
+
+  @override
+  String get pleaseSelectCategory => 'يرجى اختيار فئة.';
+
+  @override
+  String get pleaseSelectFundSource => 'يرجى اختيار مصدر التمويل (المحفظة).';
+
+  @override
+  String get pleaseSelectValidDateRange => 'يرجى اختيار نطاق تاريخ صحيح.';
+
+  @override
+  String get budgetAmountExceedsBalance =>
+      'لا يمكن أن يتجاوز إجمالي الميزانية رصيد المحفظة.';
+
+  @override
+  String get budgetCreated => 'تم إنشاء الميزانية!';
+
+  @override
+  String get budgetUpdated => 'تم تحديث الميزانية!';
+
+  @override
+  String get budgetDeleted => 'تم حذف الميزانية!';
+
+  @override
+  String get failedToSaveBudget => 'فشل في حفظ الميزانية';
 }

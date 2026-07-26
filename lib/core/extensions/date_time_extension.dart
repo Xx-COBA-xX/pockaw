@@ -105,20 +105,20 @@ extension DateTimeExtension on DateTime {
 
   /// Returns "This Month", "Last Month", or "Oct 2024" for tab labels.
   /// Compares `this` month to the `currentDate` month.
-  String toMonthTabLabel(DateTime currentDate) {
+  String toMonthTabLabel(DateTime currentDate, [AppLocalizations? l10n, String? locale]) {
     final thisMonthStart = DateTime(year, month, 1);
     final currentMonthStart = DateTime(currentDate.year, currentDate.month, 1);
     final lastMonthStart = DateTime(currentDate.year, currentDate.month - 1, 1);
 
     if (thisMonthStart.year == currentMonthStart.year &&
         thisMonthStart.month == currentMonthStart.month) {
-      return 'This Month';
+      return l10n?.thisMonth ?? 'This Month';
     }
     if (thisMonthStart.year == lastMonthStart.year &&
         thisMonthStart.month == lastMonthStart.month) {
-      return 'Last Month';
+      return l10n?.lastMonth ?? 'Last Month';
     }
-    return DateFormat('MMM yyyy').format(this); // e.g., "Oct 2024"
+    return DateFormat('MMM yyyy', locale).format(this); // e.g., "Oct 2024" / "أكتوبر ٢٠٢٤"
   }
 
   /// Format: 13 March 2025 05.44 am / 13 March 2025 05.44 pm

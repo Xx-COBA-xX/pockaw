@@ -109,22 +109,24 @@ class BudgetFormScreen extends HookConsumerWidget {
       return availableAmount;
     }, [selectedWallet, allBudgetsAsync, budgetDetails]);
 
+    final l10n = AppLocalizations.of(context);
+
     final amountLabel = remainingBudgetForEntry != null
-        ? 'Amount (Available: ${remainingBudgetForEntry.toPriceFormat()})'
-        : 'Amount';
+        ? l10n.amountAvailable(remainingBudgetForEntry.toPriceFormat())
+        : l10n.amount;
 
     void saveBudget() async {
       if (!(formKey.currentState?.validate() ?? false)) return;
       if (selectedCategory.value == null) {
         Toast.show(
-          'Please select a category.',
+          l10n.pleaseSelectCategory,
           type: ToastificationType.warning,
         );
         return;
       }
       if (selectedWallet.value == null) {
         Toast.show(
-          'Please select a fund source (wallet).',
+          l10n.pleaseSelectFundSource,
           type: ToastificationType.warning,
         );
         return;
@@ -135,7 +137,7 @@ class BudgetFormScreen extends HookConsumerWidget {
           dateRange[0] == null ||
           dateRange[1] == null) {
         Toast.show(
-          'Please select a valid date range.',
+          l10n.pleaseSelectValidDateRange,
           type: ToastificationType.warning,
         );
         return;
@@ -163,7 +165,7 @@ class BudgetFormScreen extends HookConsumerWidget {
 
       if (totalExistingBudgetsAmount + newAmount > activeWalletBalance) {
         Toast.show(
-          'Total budget amount cannot exceed wallet balance.',
+          l10n.budgetAmountExceedsBalance,
           type: ToastificationType.warning,
         );
         return;
@@ -183,10 +185,10 @@ class BudgetFormScreen extends HookConsumerWidget {
       try {
         if (isEditing) {
           await budgetDao.updateBudget(budgetToSave);
-          Toast.show('Budget updated!', type: ToastificationType.success);
+          Toast.show(l10n.budgetUpdated, type: ToastificationType.success);
         } else {
           await budgetDao.addBudget(budgetToSave);
-          Toast.show('Budget created!', type: ToastificationType.success);
+          Toast.show(l10n.budgetCreated, type: ToastificationType.success);
         }
 
         ref
@@ -201,11 +203,9 @@ class BudgetFormScreen extends HookConsumerWidget {
         if (context.mounted) context.pop();
       } catch (e) {
         Log.e('Failed to save budget: $e');
-        Toast.show('Failed to save budget: $e', type: ToastificationType.error);
+        Toast.show('${l10n.failedToSaveBudget}: $e', type: ToastificationType.error);
       }
     }
-
-    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
       title: isEditing ? l10n.editBudget : l10n.createBudget,
@@ -238,7 +238,7 @@ class BudgetFormScreen extends HookConsumerWidget {
                           subjectId: budgetId,
                         );
 
-                    Toast.show('Budget deleted!');
+                    Toast.show(l10n.budgetDeleted);
                   },
                 ),
               );

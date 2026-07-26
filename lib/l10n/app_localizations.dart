@@ -1423,6 +1423,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Confirm'**
   String get confirm;
+
+  /// No description provided for @markAsComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Complete'**
+  String get markAsComplete;
+
+  /// No description provided for @markAsIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Incomplete'**
+  String get markAsIncomplete;
+
+  /// No description provided for @confirmMarkComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to mark this item as complete?'**
+  String get confirmMarkComplete;
+
+  /// No description provided for @confirmMarkIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to mark this item as incomplete?'**
+  String get confirmMarkIncomplete;
+
+  /// No description provided for @thisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'This Month'**
+  String get thisMonth;
+
+  /// No description provided for @lastMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Month'**
+  String get lastMonth;
+
+  /// No description provided for @totalRemainingBudgets.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Remaining Budgets'**
+  String get totalRemainingBudgets;
+
+  /// No description provided for @totalBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Budget'**
+  String get totalBudget;
+
+  /// No description provided for @left.
+  ///
+  /// In en, this message translates to:
+  /// **'left'**
+  String get left;
+
+  /// No description provided for @ofTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'of'**
+  String get ofTotal;
+
+  /// No description provided for @budgetPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget Period'**
+  String get budgetPeriod;
+
+  /// No description provided for @fundsSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Funds Source'**
+  String get fundsSource;
+
+  /// No description provided for @noBudgetsFoundCreateOne.
+  ///
+  /// In en, this message translates to:
+  /// **'No budgets found. Create one!'**
+  String get noBudgetsFoundCreateOne;
+
+  /// No description provided for @noTransactionsToDisplay.
+  ///
+  /// In en, this message translates to:
+  /// **'No transactions to display.'**
+  String get noTransactionsToDisplay;
+
+  /// No description provided for @noTransactionsForPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'No transactions for {period}.'**
+  String noTransactionsForPeriod(Object period);
+
+  /// No description provided for @amountAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount (Available: {amount})'**
+  String amountAvailable(Object amount);
+
+  /// No description provided for @pleaseSelectCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a category.'**
+  String get pleaseSelectCategory;
+
+  /// No description provided for @pleaseSelectFundSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a fund source (wallet).'**
+  String get pleaseSelectFundSource;
+
+  /// No description provided for @pleaseSelectValidDateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a valid date range.'**
+  String get pleaseSelectValidDateRange;
+
+  /// No description provided for @budgetAmountExceedsBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Total budget amount cannot exceed wallet balance.'**
+  String get budgetAmountExceedsBalance;
+
+  /// No description provided for @budgetCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget created!'**
+  String get budgetCreated;
+
+  /// No description provided for @budgetUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget updated!'**
+  String get budgetUpdated;
+
+  /// No description provided for @budgetDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget deleted!'**
+  String get budgetDeleted;
+
+  /// No description provided for @failedToSaveBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to save budget'**
+  String get failedToSaveBudget;
 }
 
 class _AppLocalizationsDelegate
