@@ -119,10 +119,18 @@ class CustomTextField extends TextField {
                      padding: const EdgeInsets.symmetric(
                        horizontal: AppSpacing.spacing12,
                      ),
-                     child: HugeIcon(
-                       icon: suffixIcon,
-                       color: context?.purpleIcon,
-                       size: 24,
+                     child: Transform.scale(
+                       scaleX: (context != null &&
+                               Directionality.of(context) == TextDirection.rtl &&
+                               (suffixIcon == HugeIcons.strokeRoundedArrowRight01 ||
+                                   suffixIcon == HugeIcons.strokeRoundedArrowRight02))
+                           ? -1
+                           : 1,
+                       child: HugeIcon(
+                         icon: suffixIcon,
+                         color: context?.purpleIcon,
+                         size: 24,
+                       ),
                      ),
                    ),
                  ),

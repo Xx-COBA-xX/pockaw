@@ -58,12 +58,15 @@ class MenuTileButton extends StatelessWidget {
         color: disabled ? context.disabledTileForeground : context.purpleIcon,
       ), // Leading icon uses primary color
       trailing: HugeIcon(
-        icon: suffixIcon ?? HugeIcons.strokeRoundedArrowRight01,
+        icon: suffixIcon ??
+            (Directionality.of(context) == TextDirection.rtl
+                ? HugeIcons.strokeRoundedArrowLeft01
+                : HugeIcons.strokeRoundedArrowRight01),
         color: disabled
             ? context.disabledTileForeground
             : context.isDarkMode
-            ? context.colors.onSurfaceVariant
-            : AppColors.purpleAlpha50,
+                ? context.colors.onSurfaceVariant
+                : AppColors.purpleAlpha50,
         size: 20,
       ),
       contentPadding: const EdgeInsets.fromLTRB(

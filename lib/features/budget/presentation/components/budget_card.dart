@@ -63,7 +63,9 @@ class BudgetCard extends ConsumerWidget {
                 category: budget.category,
                 suffixIcon: editing
                     ? null
-                    : HugeIcons.strokeRoundedArrowRight01,
+                    : (Directionality.of(context) == TextDirection.rtl
+                        ? HugeIcons.strokeRoundedArrowLeft01
+                        : HugeIcons.strokeRoundedArrowRight01),
               ),
             ),
             const Gap(AppSpacing.spacing8),

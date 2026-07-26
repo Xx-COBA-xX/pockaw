@@ -202,5 +202,10 @@
   "getStartedDescPart6": "عملتك",
   "getStartedDescPart7": " لتخصيص حسابك.",
   "welcomeTo": "أهلاً بك في",
-  "onboardingDescription": "رفيقك المالي البسيط والذكي. تتبع مصروفاتك، حدد أهدافك، ونظم أموالك ومحفظتك بكل سهولة ويسر. 🚀"
+  "lunchWithMyFriends": "عزمت صديقي",
+  "onboardingDescription": "رفيقك المالي البسيط والذكي. تتبع مصروفاتك، حدد أهدافك، ونظم أموالك ومحفظتك بكل سهولة ويسر. 🚀",
+  "titleMax50": "العنوان (الحد الأقصى 50)",
+  "transactionDateTime": "تاريخ ووقت المعاملة",
+  "deleteImage": "حذف الصورة",
+  "confirmDeleteImage": "هل أنت تأكد من رغبتك في حذف هذه الصورة؟"
 }

@@ -615,4 +615,20 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get onboardingDescription =>
       'Simple and intuitive finance buddy. Track your expenses, set goals, organize your pocket and wallet sized finance — everything effortlessly. 🚀';
+
+  @override
+  String get lunchWithMyFriends => 'Lunch with my friends';
+
+  @override
+  String get titleMax50 => 'Title (max. 50)';
+
+  @override
+  String get transactionDateTime => 'Transaction Date & Time';
+
+  @override
+  String get deleteImage => 'Delete Image';
+
+  @override
+  String get confirmDeleteImage =>
+      'Are you sure you want to delete this image?';
 }

@@ -614,4 +614,19 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get onboardingDescription =>
       'رفيقك المالي البسيط والذكي. تتبع مصروفاتك، حدد أهدافك، ونظم أموالك ومحفظتك بكل سهولة ويسر. 🚀';
+
+  @override
+  String get lunchWithMyFriends => 'عزمت صديقي';
+
+  @override
+  String get titleMax50 => 'العنوان (الحد الأقصى 50)';
+
+  @override
+  String get transactionDateTime => 'تاريخ ووقت المعاملة';
+
+  @override
+  String get deleteImage => 'حذف الصورة';
+
+  @override
+  String get confirmDeleteImage => 'هل أنت تأكد من رغبتك في حذف هذه الصورة؟';
 }

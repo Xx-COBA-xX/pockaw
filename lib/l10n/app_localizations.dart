@@ -1291,6 +1291,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Simple and intuitive finance buddy. Track your expenses, set goals, organize your pocket and wallet sized finance — everything effortlessly. 🚀'**
   String get onboardingDescription;
+
+  /// No description provided for @lunchWithMyFriends.
+  ///
+  /// In en, this message translates to:
+  /// **'Lunch with my friends'**
+  String get lunchWithMyFriends;
+
+  /// No description provided for @titleMax50.
+  ///
+  /// In en, this message translates to:
+  /// **'Title (max. 50)'**
+  String get titleMax50;
+
+  /// No description provided for @transactionDateTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction Date & Time'**
+  String get transactionDateTime;
+
+  /// No description provided for @deleteImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Image'**
+  String get deleteImage;
+
+  /// No description provided for @confirmDeleteImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this image?'**
+  String get confirmDeleteImage;
 }
 
 class _AppLocalizationsDelegate

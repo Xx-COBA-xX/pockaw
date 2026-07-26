@@ -202,5 +202,10 @@
   "getStartedDescPart6": "currency",
   "getStartedDescPart7": " to personalize your account.",
   "welcomeTo": "Welcome to",
-  "onboardingDescription": "Simple and intuitive finance buddy. Track your expenses, set goals, organize your pocket and wallet sized finance — everything effortlessly. 🚀"
+  "onboardingDescription": "Simple and intuitive finance buddy. Track your expenses, set goals, organize your pocket and wallet sized finance — everything effortlessly. 🚀",
+  "lunchWithMyFriends": "Lunch with my friends",
+  "titleMax50": "Title (max. 50)",
+  "transactionDateTime": "Transaction Date & Time",
+  "deleteImage": "Delete Image",
+  "confirmDeleteImage": "Are you sure you want to delete this image?"
 }
