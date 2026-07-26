@@ -631,4 +631,45 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get confirmDeleteImage =>
       'Are you sure you want to delete this image?';
+
+  @override
+  String get titleMax25 => 'Title (max. 25)';
+
+  @override
+  String get newCategoryTitle => 'New Category Title';
+
+  @override
+  String get parentCategory => 'Parent Category';
+
+  @override
+  String get leaveEmptyForParent => 'Leave empty for parent';
+
+  @override
+  String get descriptionMax50 => 'Description (max. 50)';
+
+  @override
+  String get writeSimpleDescription => 'Write simple description...';
+
+  @override
+  String get makeAsParent => 'Make as parent';
+
+  @override
+  String get makeAsParentSubtitle =>
+      'Parent category selection will be ignored on save.';
+
+  @override
+  String get editCategory => 'Edit Category';
+
+  @override
+  String get addCategory => 'Add Category';
+
+  @override
+  String get deleteCategory => 'Delete Category';
+
+  @override
+  String get deleteCategoryContent =>
+      'Deleting this category will also remove all sub-categories as well as transactions related to it. Continue?\n\nThis action cannot be undone.';
+
+  @override
+  String get addAnewCategory => '+ Add New Category';
 }

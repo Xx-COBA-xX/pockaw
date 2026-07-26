@@ -1321,6 +1321,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Are you sure you want to delete this image?'**
   String get confirmDeleteImage;
+
+  /// No description provided for @titleMax25.
+  ///
+  /// In en, this message translates to:
+  /// **'Title (max. 25)'**
+  String get titleMax25;
+
+  /// No description provided for @newCategoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New Category Title'**
+  String get newCategoryTitle;
+
+  /// No description provided for @parentCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent Category'**
+  String get parentCategory;
+
+  /// No description provided for @leaveEmptyForParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave empty for parent'**
+  String get leaveEmptyForParent;
+
+  /// No description provided for @descriptionMax50.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (max. 50)'**
+  String get descriptionMax50;
+
+  /// No description provided for @writeSimpleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Write simple description...'**
+  String get writeSimpleDescription;
+
+  /// No description provided for @makeAsParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Make as parent'**
+  String get makeAsParent;
+
+  /// No description provided for @makeAsParentSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent category selection will be ignored on save.'**
+  String get makeAsParentSubtitle;
+
+  /// No description provided for @editCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Category'**
+  String get editCategory;
+
+  /// No description provided for @addCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Category'**
+  String get addCategory;
+
+  /// No description provided for @deleteCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Category'**
+  String get deleteCategory;
+
+  /// No description provided for @deleteCategoryContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting this category will also remove all sub-categories as well as transactions related to it. Continue?\n\nThis action cannot be undone.'**
+  String get deleteCategoryContent;
+
+  /// No description provided for @addAnewCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'+ Add New Category'**
+  String get addAnewCategory;
 }
 
 class _AppLocalizationsDelegate

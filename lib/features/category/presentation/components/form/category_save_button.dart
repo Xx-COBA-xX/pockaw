@@ -26,8 +26,9 @@ class CategorySaveButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return PrimaryButton(
-      label: 'Save',
+      label: l10n.save,
       state: ButtonState.active,
       onPressed: () async {
         final newCategory = CategoryModel(

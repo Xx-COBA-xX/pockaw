@@ -207,5 +207,18 @@
   "titleMax50": "العنوان (الحد الأقصى 50)",
   "transactionDateTime": "تاريخ ووقت المعاملة",
   "deleteImage": "حذف الصورة",
-  "confirmDeleteImage": "هل أنت تأكد من رغبتك في حذف هذه الصورة؟"
+  "confirmDeleteImage": "هل أنت تأكد من رغبتك في حذف هذه الصورة؟",
+  "titleMax25": "العنوان (الحد الأقصى 25)",
+  "newCategoryTitle": "عنوان الفئة الجديدة",
+  "parentCategory": "الفئة الرئيسية",
+  "leaveEmptyForParent": "اتركه فارغاً لتعيينها كفئة رئيسية",
+  "descriptionMax50": "الوصف (الحد الأقصى 50)",
+  "writeSimpleDescription": "اكتب وصفاً بسيطاً...",
+  "makeAsParent": "تعيين كفئة رئيسية",
+  "makeAsParentSubtitle": "سيتم تجاهل اختيار الفئة الرئيسية عند الحفظ.",
+  "editCategory": "تعديل الفئة",
+  "addCategory": "إضافة فئة",
+  "deleteCategory": "حذف الفئة",
+  "deleteCategoryContent": "حذف هذه الفئة سيؤدي أيضاً إلى حذف جميع الفئات الفرعية والمعاملات المرتبطة بها. هل تريد الاستمرار؟\n\nلا يمكن التراجع عن هذا الإجراء.",
+  "addAnewCategory": "+ إضافة فئة جديد"
 }

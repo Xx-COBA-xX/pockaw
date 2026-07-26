@@ -629,4 +629,45 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get confirmDeleteImage => 'هل أنت تأكد من رغبتك في حذف هذه الصورة؟';
+
+  @override
+  String get titleMax25 => 'العنوان (الحد الأقصى 25)';
+
+  @override
+  String get newCategoryTitle => 'عنوان الفئة الجديدة';
+
+  @override
+  String get parentCategory => 'الفئة الرئيسية';
+
+  @override
+  String get leaveEmptyForParent => 'اتركه فارغاً لتعيينها كفئة رئيسية';
+
+  @override
+  String get descriptionMax50 => 'الوصف (الحد الأقصى 50)';
+
+  @override
+  String get writeSimpleDescription => 'اكتب وصفاً بسيطاً...';
+
+  @override
+  String get makeAsParent => 'تعيين كفئة رئيسية';
+
+  @override
+  String get makeAsParentSubtitle =>
+      'سيتم تجاهل اختيار الفئة الرئيسية عند الحفظ.';
+
+  @override
+  String get editCategory => 'تعديل الفئة';
+
+  @override
+  String get addCategory => 'إضافة فئة';
+
+  @override
+  String get deleteCategory => 'حذف الفئة';
+
+  @override
+  String get deleteCategoryContent =>
+      'حذف هذه الفئة سيؤدي أيضاً إلى حذف جميع الفئات الفرعية والمعاملات المرتبطة بها. هل تريد الاستمرار؟\n\nلا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get addAnewCategory => '+ إضافة فئة جديد';
 }

@@ -50,6 +50,7 @@ class CategoryFormScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final titleController = useTextEditingController();
     final parentCategoryController = useTextEditingController();
     final descriptionController = useTextEditingController();
@@ -92,7 +93,7 @@ class CategoryFormScreen extends HookConsumerWidget {
     }
 
     return CustomBottomSheet(
-      title: '${isEditing ? 'Edit' : 'Add'} Category',
+      title: isEditing ? l10n.editCategory : l10n.addCategory,
       child: Form(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -113,8 +114,8 @@ class CategoryFormScreen extends HookConsumerWidget {
 
             if (selectedParentCategory?.id != null)
               CustomConfirmCheckbox(
-                title: 'Make as parent',
-                subtitle: 'Parent category selection will be ignored on save.',
+                title: l10n.makeAsParent,
+                subtitle: l10n.makeAsParentSubtitle,
                 checked: makeAsParent.value,
                 onChanged: () => makeAsParent.value = !makeAsParent.value,
               ),

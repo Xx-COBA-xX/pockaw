@@ -40,7 +40,9 @@ class CategoryDropdown extends HookConsumerWidget {
         category: category,
         suffixIcon: expanded.value
             ? HugeIcons.strokeRoundedArrowDown01
-            : HugeIcons.strokeRoundedArrowRight01,
+            : (Directionality.of(context) == TextDirection.rtl
+                ? HugeIcons.strokeRoundedArrowLeft01
+                : HugeIcons.strokeRoundedArrowRight01),
         onSelectCategory: (selectedCategory) async {
           Log.d(selectedCategory.toJson(), label: 'category');
           // if picking category, then return to previous screen with selected category
