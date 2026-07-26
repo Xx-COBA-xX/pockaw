@@ -11,7 +11,7 @@ final goalsListProvider = StreamProvider.autoDispose<List<GoalModel>>((ref) {
   );
 });
 
-final pinnedGoalsProvider = StreamProvider.autoDispose((ref) {
+final pinnedGoalsProvider = StreamProvider<List<GoalModel>>((ref) {
   final db = ref.watch(databaseProvider);
   return db.goalDao.watchPinnedGoals().map(
     (list) => list.map((e) => e.toModel()).toList(),
