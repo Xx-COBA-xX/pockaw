@@ -67,9 +67,11 @@ class WalletsScreen extends ConsumerWidget {
                     orElse: () => defaultCurrencies.first,
                   );
 
-                  ref
-                      .read(currencyProvider.notifier)
-                      .setCurrency(selectedCurrency);
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    ref
+                        .read(currencyProvider.notifier)
+                        .setCurrency(selectedCurrency);
+                  });
 
                   context.openBottomSheet(
                     child: WalletFormBottomSheet(

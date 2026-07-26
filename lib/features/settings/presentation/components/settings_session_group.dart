@@ -5,21 +5,22 @@ class SettingsSessionGroup extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return SettingsGroupHolder(
-      title: 'Session',
+      title: l10n.session,
       settingTiles: [
         MenuTileButton(
-          label: 'Logout',
+          label: l10n.logout,
           icon: HugeIcons.strokeRoundedLogout01,
           onTap: () {
             // show confirm dialog then perform logout
             context.openBottomSheet(
               child: AlertBottomSheet(
                 context: context,
-                title: 'Logout',
-                confirmText: 'Logout',
+                title: l10n.logout,
+                confirmText: l10n.logout,
                 content: Text(
-                  'Continue logging out from this device?',
+                  l10n.continueLogoutDevice,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.body2,
                 ),

@@ -1105,6 +1105,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Edit Checklist Item'**
   String get editChecklistItem;
+
+  /// No description provided for @dataManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Management'**
+  String get dataManagement;
+
+  /// No description provided for @appInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'App Info'**
+  String get appInfo;
+
+  /// No description provided for @session.
+  ///
+  /// In en, this message translates to:
+  /// **'Session'**
+  String get session;
+
+  /// No description provided for @personalDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Details'**
+  String get personalDetails;
+
+  /// No description provided for @deleteMyData.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete My Data'**
+  String get deleteMyData;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @termsAndConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions'**
+  String get termsAndConditions;
+
+  /// No description provided for @reportLogFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Log File'**
+  String get reportLogFile;
+
+  /// No description provided for @continueLogoutDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue logging out from this device?'**
+  String get continueLogoutDevice;
+
+  /// No description provided for @mainCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Main Currency'**
+  String get mainCurrency;
+
+  /// No description provided for @selectMainCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Main Currency'**
+  String get selectMainCurrency;
 }
 
 class _AppLocalizationsDelegate

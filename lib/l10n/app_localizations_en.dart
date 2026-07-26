@@ -519,4 +519,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editChecklistItem => 'Edit Checklist Item';
+
+  @override
+  String get dataManagement => 'Data Management';
+
+  @override
+  String get appInfo => 'App Info';
+
+  @override
+  String get session => 'Session';
+
+  @override
+  String get personalDetails => 'Personal Details';
+
+  @override
+  String get deleteMyData => 'Delete My Data';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get termsAndConditions => 'Terms and Conditions';
+
+  @override
+  String get reportLogFile => 'Report Log File';
+
+  @override
+  String get continueLogoutDevice => 'Continue logging out from this device?';
+
+  @override
+  String get mainCurrency => 'Main Currency';
+
+  @override
+  String get selectMainCurrency => 'Select Main Currency';
 }

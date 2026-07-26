@@ -5,11 +5,12 @@ class SettingsProfileGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return SettingsGroupHolder(
-      title: 'Profile',
+      title: l10n.profile,
       settingTiles: [
         MenuTileButton(
-          label: 'Personal Details',
+          label: l10n.personalDetails,
           icon: HugeIcons.strokeRoundedUser,
           onTap: () => context.push(Routes.personalDetails),
         ),

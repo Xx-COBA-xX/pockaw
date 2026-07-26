@@ -171,5 +171,16 @@
   "resetFilters": "Reset Filters",
   "targetAchievedDate": "Date to achieve goal",
   "title": "Title",
-  "editChecklistItem": "Edit Checklist Item"
+  "editChecklistItem": "Edit Checklist Item",
+  "dataManagement": "Data Management",
+  "appInfo": "App Info",
+  "session": "Session",
+  "personalDetails": "Personal Details",
+  "deleteMyData": "Delete My Data",
+  "privacyPolicy": "Privacy Policy",
+  "termsAndConditions": "Terms and Conditions",
+  "reportLogFile": "Report Log File",
+  "continueLogoutDevice": "Continue logging out from this device?",
+  "mainCurrency": "Main Currency",
+  "selectMainCurrency": "Select Main Currency"
 }

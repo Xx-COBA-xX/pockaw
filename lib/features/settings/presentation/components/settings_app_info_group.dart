@@ -7,11 +7,12 @@ class SettingsAppInfoGroup extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return SettingsGroupHolder(
-      title: 'App Info',
+      title: l10n.appInfo,
       settingTiles: [
         MenuTileButton(
-          label: 'Privacy Policy',
+          label: l10n.privacyPolicy,
           icon: HugeIcons.strokeRoundedLegalHammer,
           suffixIcon: HugeIcons.strokeRoundedSquareArrowUpRight,
           onTap: () {
@@ -19,7 +20,7 @@ class SettingsAppInfoGroup extends ConsumerWidget {
           },
         ),
         MenuTileButton(
-          label: 'Terms and Conditions',
+          label: l10n.termsAndConditions,
           icon: HugeIcons.strokeRoundedFileExport,
           suffixIcon: HugeIcons.strokeRoundedSquareArrowUpRight,
           onTap: () {
@@ -27,7 +28,7 @@ class SettingsAppInfoGroup extends ConsumerWidget {
           },
         ),
         MenuTileButton(
-          label: 'Report Log File',
+          label: l10n.reportLogFile,
           icon: HugeIcons.strokeRoundedFileCorrupt,
           onTap: () => context.openBottomSheet(child: ReportLogFileDialog()),
           onLongPress: () {
@@ -36,7 +37,7 @@ class SettingsAppInfoGroup extends ConsumerWidget {
         ),
         if (kDebugMode)
           MenuTileButton(
-            label: 'Developer Portal',
+            label: l10n.developerPortal,
             icon: HugeIcons.strokeRoundedCode,
             onTap: () => context.push(Routes.developerPortal),
           ),

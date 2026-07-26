@@ -517,4 +517,38 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get editChecklistItem => 'تعديل عنصر القائمة';
+
+  @override
+  String get dataManagement => 'إدارة البيانات';
+
+  @override
+  String get appInfo => 'معلومات التطبيق';
+
+  @override
+  String get session => 'الجلسة';
+
+  @override
+  String get personalDetails => 'البيانات الشخصية';
+
+  @override
+  String get deleteMyData => 'حذف بياناتي';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get termsAndConditions => 'الشروط والأحكام';
+
+  @override
+  String get reportLogFile => 'تقرير ملف السجل';
+
+  @override
+  String get continueLogoutDevice =>
+      'هل تريد الاستمرار في تسجيل الخروج من هذا الجهاز؟';
+
+  @override
+  String get mainCurrency => 'العملة الرئيسية';
+
+  @override
+  String get selectMainCurrency => 'اختر العملة الرئيسية';
 }

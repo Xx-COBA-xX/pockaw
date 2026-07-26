@@ -5,18 +5,19 @@ class SettingsDataGroup extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     return SettingsGroupHolder(
-      title: 'Data Management',
+      title: l10n.dataManagement,
       settingTiles: [
         MenuTileButton(
-          label: 'Backup & Restore',
+          label: l10n.backupAndRestore,
           icon: HugeIcons.strokeRoundedDatabaseSync01,
           onTap: () {
             context.push(Routes.backupAndRestore);
           },
         ),
         MenuTileButton(
-          label: 'Delete My Data',
+          label: l10n.deleteMyData,
           icon: HugeIcons.strokeRoundedDelete01,
           onTap: () => context.push(Routes.accountDeletion),
         ),

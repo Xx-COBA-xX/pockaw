@@ -171,5 +171,16 @@
   "resetFilters": "إعادة ضبط التصفية",
   "targetAchievedDate": "تاريخ تحقيق الهدف",
   "title": "العنوان",
-  "editChecklistItem": "تعديل عنصر القائمة"
+  "editChecklistItem": "تعديل عنصر القائمة",
+  "dataManagement": "إدارة البيانات",
+  "appInfo": "معلومات التطبيق",
+  "session": "الجلسة",
+  "personalDetails": "البيانات الشخصية",
+  "deleteMyData": "حذف بياناتي",
+  "privacyPolicy": "سياسة الخصوصية",
+  "termsAndConditions": "الشروط والأحكام",
+  "reportLogFile": "تقرير ملف السجل",
+  "continueLogoutDevice": "هل تريد الاستمرار في تسجيل الخروج من هذا الجهاز؟",
+  "mainCurrency": "العملة الرئيسية",
+  "selectMainCurrency": "اختر العملة الرئيسية"
 }

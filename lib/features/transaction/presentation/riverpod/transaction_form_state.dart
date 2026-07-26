@@ -335,19 +335,23 @@ TransactionFormState useTransactionFormState({
             showTime: true,
           );
 
-          final imagePath = transaction.imagePath;
-          if (imagePath != null && imagePath.isNotEmpty) {
-            ref.read(imageProvider.notifier).loadImagePath(imagePath);
-          } else {
-            ref.read(imageProvider.notifier).clearImage();
-          }
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            final imagePath = transaction.imagePath;
+            if (imagePath != null && imagePath.isNotEmpty) {
+              ref.read(imageProvider.notifier).loadImagePath(imagePath);
+            } else {
+              ref.read(imageProvider.notifier).clearImage();
+            }
+          });
         } else if (!isEditing) {
           titleController.clear();
           amountController.clear();
           notesController.clear();
           selectedTransactionType.value = TransactionType.expense;
           selectedCategory.value = null;
-          ref.read(imageProvider.notifier).clearImage();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            ref.read(imageProvider.notifier).clearImage();
+          });
         }
       }
 
