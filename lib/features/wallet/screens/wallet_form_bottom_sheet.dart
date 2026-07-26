@@ -37,7 +37,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currency = ref.read(currencyProvider);
+    final currency = ref.watch(currencyProvider);
     final isEditing = wallet != null;
     final l10n = AppLocalizations.of(context);
 
@@ -48,13 +48,13 @@ class WalletFormBottomSheet extends HookConsumerWidget {
     // final iconController = useTextEditingController(text: wallet?.iconName ?? '');
     // final colorController = useTextEditingController(text: wallet?.colorHex ?? '');
 
-    // Initialize form fields if in edit mode (already handled by controller initial text)
+    // Initialize form fields if in edit mode
     useEffect(() {
       if (isEditing && wallet != null) {
         nameController.text = wallet!.name;
         balanceController.text = wallet!.balance == 0
             ? ''
-            : '${wallet?.currencyByIsoCode(ref).symbol} ${wallet?.balance.toPriceFormat()}';
+            : wallet!.balance.toPriceFormat();
         currencyController.text = wallet!.currency;
       }
       return null;
@@ -71,7 +71,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
               context: context,
               controller: nameController,
               label: l10n.accountName,
-              hint: 'e.g., Savings Account',
+              hint: l10n.savingsAccountHint,
               isRequired: true,
               prefixIcon: HugeIcons.strokeRoundedWallet02,
               textInputAction: TextInputAction.next,
@@ -137,19 +137,19 @@ class WalletFormBottomSheet extends HookConsumerWidget {
             if (isEditing && showDeleteButton)
               TextButton(
                 child: Text(
-                  'Delete',
+                  l10n.delete,
                   style: AppTextStyles.body2.copyWith(color: AppColors.red),
                 ),
                 onPressed: () {
                   context.openBottomSheet(
                     child: AlertBottomSheet(
                       context: context,
-                      title: 'Delete Wallet',
+                      title: l10n.deleteTransaction,
                       content: Text(
-                        'All transactions, budgets, and goals will also be deleted. This action cannot be undone.',
+                        l10n.deleteWalletWarning,
                         style: AppTextStyles.body2,
                       ),
-                      confirmText: 'Delete',
+                      confirmText: l10n.delete,
                       onConfirm: () {
                         // final db = ref.read(databaseProvider);
                         // db.walletDao.deleteWallet(wallet!.id!);
@@ -159,7 +159,7 @@ class WalletFormBottomSheet extends HookConsumerWidget {
                           autoCloseDuration: Duration(seconds: 3),
                           showProgressBar: true,
                           description: Text(
-                            'Delete a wallet is coming soon...',
+                            l10n.deleteWalletComingSoon,
                             style: AppTextStyles.body2,
                           ),
                         );

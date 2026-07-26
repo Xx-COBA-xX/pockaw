@@ -5,11 +5,13 @@ import 'package:pockaw/core/constants/app_font_weights.dart';
 
 class AppTextStyles {
   static const String _fontFamily = AppConstants.fontFamilyPrimary;
+  static const List<String> _fontFamilyFallback = [AppFontFamilies.tajawal];
 
   static const headLine1 = TextStyle(
     fontSize: 68.0,
     fontVariations: [AppFontWeights.black],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     letterSpacing: 0.5,
     height: 1.5, // Line height
   );
@@ -18,6 +20,7 @@ class AppTextStyles {
     fontSize: 56.0,
     fontVariations: [AppFontWeights.black],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     letterSpacing: 0.4,
     height: 1.5,
   );
@@ -26,6 +29,7 @@ class AppTextStyles {
     fontSize: 46.0,
     fontVariations: [AppFontWeights.black],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     letterSpacing: 0.3,
     height: 1.4,
   );
@@ -34,12 +38,14 @@ class AppTextStyles {
     fontSize: 38.0,
     fontVariations: [AppFontWeights.black],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
   );
 
   static const heading3 = TextStyle(
     fontSize: 32.0,
     fontVariations: [AppFontWeights.black],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     letterSpacing: 0.15,
     height: 1.3,
   );
@@ -48,6 +54,7 @@ class AppTextStyles {
     fontSize: 26.0,
     fontVariations: [AppFontWeights.black],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     letterSpacing: 0.1,
     height: 1.3,
   );
@@ -56,6 +63,7 @@ class AppTextStyles {
     fontSize: 22.0,
     fontVariations: [AppFontWeights.extraBold],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     letterSpacing: 0.05,
     height: 1.3,
   );
@@ -64,6 +72,7 @@ class AppTextStyles {
     fontSize: 20.0,
     fontVariations: [AppFontWeights.bold],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     letterSpacing: 0.0,
     height: 1.2,
   );
@@ -72,24 +81,28 @@ class AppTextStyles {
     fontSize: 18.0,
     fontVariations: [AppFontWeights.bold],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
   );
 
   static const body2 = TextStyle(
     fontSize: 16.0,
     fontVariations: [AppFontWeights.medium],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
   );
 
   static const body3 = TextStyle(
     fontSize: 14.0,
     fontVariations: [AppFontWeights.medium],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
   );
 
   static const body4 = TextStyle(
     fontSize: 12.0,
     fontVariations: [AppFontWeights.medium],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
     height: 1.4,
   );
 
@@ -97,6 +110,7 @@ class AppTextStyles {
     fontSize: 10.0,
     fontVariations: [AppFontWeights.regular],
     fontFamily: _fontFamily,
+    fontFamilyFallback: _fontFamilyFallback,
   );
 
   static const numericHeading = TextStyle(

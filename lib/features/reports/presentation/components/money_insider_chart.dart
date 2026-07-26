@@ -23,10 +23,12 @@ class MoneyInsiderChart extends ConsumerWidget {
     final netFlowAsync = ref.watch(dailyNetFlowProvider);
     final l10n = AppLocalizations.of(context);
 
+    final currentLocale = Localizations.localeOf(context).toLanguageTag();
+
     return ChartContainer(
       title: l10n.cashFlow,
       subtitle:
-          '${l10n.monthlyReport} (${DateTime.now().toMonthName()})',
+          '${l10n.monthlyReport} (${DateTime.now().toMonthName(currentLocale)})',
       height: 350, // Taller chart for better visualization
       chart: netFlowAsync.when(
         data: (data) => _buildChart(context, data, l10n),

@@ -1171,6 +1171,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select Main Currency'**
   String get selectMainCurrency;
+
+  /// No description provided for @signInWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google'**
+  String get signInWithGoogle;
+
+  /// No description provided for @setupWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Setup Wallet'**
+  String get setupWallet;
+
+  /// No description provided for @tapToSetupFirstWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to setup your first wallet'**
+  String get tapToSetupFirstWallet;
+
+  /// No description provided for @savingsAccountHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., Savings Account'**
+  String get savingsAccountHint;
+
+  /// No description provided for @mySpendingThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'My spending this month'**
+  String get mySpendingThisMonth;
+
+  /// No description provided for @viewReport.
+  ///
+  /// In en, this message translates to:
+  /// **'View report'**
+  String get viewReport;
+
+  /// No description provided for @deleteWalletWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'All transactions, budgets, and goals will also be deleted. This action cannot be undone.'**
+  String get deleteWalletWarning;
+
+  /// No description provided for @deleteWalletComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete a wallet is coming soon...'**
+  String get deleteWalletComingSoon;
+
+  /// No description provided for @readMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Read more'**
+  String get readMore;
+
+  /// No description provided for @toFindOut.
+  ///
+  /// In en, this message translates to:
+  /// **' to find out.'**
+  String get toFindOut;
+
+  /// No description provided for @localDataStorageNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'You can add more wallets later. We only store your data into local database on this device. So you are in charge! '**
+  String get localDataStorageNotice;
+
+  /// No description provided for @getStartedDescPart1.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your '**
+  String get getStartedDescPart1;
+
+  /// No description provided for @getStartedDescPart2.
+  ///
+  /// In en, this message translates to:
+  /// **'name or brand name'**
+  String get getStartedDescPart2;
+
+  /// No description provided for @getStartedDescPart3.
+  ///
+  /// In en, this message translates to:
+  /// **', pick your best '**
+  String get getStartedDescPart3;
+
+  /// No description provided for @getStartedDescPart4.
+  ///
+  /// In en, this message translates to:
+  /// **'picture'**
+  String get getStartedDescPart4;
+
+  /// No description provided for @getStartedDescPart5.
+  ///
+  /// In en, this message translates to:
+  /// **' and choose your '**
+  String get getStartedDescPart5;
+
+  /// No description provided for @getStartedDescPart6.
+  ///
+  /// In en, this message translates to:
+  /// **'currency'**
+  String get getStartedDescPart6;
+
+  /// No description provided for @getStartedDescPart7.
+  ///
+  /// In en, this message translates to:
+  /// **' to personalize your account.'**
+  String get getStartedDescPart7;
+
+  /// No description provided for @welcomeTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to'**
+  String get welcomeTo;
+
+  /// No description provided for @onboardingDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple and intuitive finance buddy. Track your expenses, set goals, organize your pocket and wallet sized finance — everything effortlessly. 🚀'**
+  String get onboardingDescription;
 }
 
 class _AppLocalizationsDelegate

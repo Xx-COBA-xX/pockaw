@@ -5,27 +5,28 @@ class GetStartedDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text.rich(
+    final l10n = AppLocalizations.of(context);
+    return Text.rich(
       style: AppTextStyles.body3,
       textAlign: TextAlign.center,
       TextSpan(
-        text: 'Please enter your ',
+        text: l10n.getStartedDescPart1,
         children: [
           TextSpan(
-            text: 'name or brand name',
-            style: TextStyle(fontVariations: [FontVariation.weight(700)]),
+            text: l10n.getStartedDescPart2,
+            style: const TextStyle(fontVariations: [FontVariation.weight(700)]),
           ),
-          TextSpan(text: ', pick your best '),
+          TextSpan(text: l10n.getStartedDescPart3),
           TextSpan(
-            text: 'picture',
-            style: TextStyle(fontVariations: [FontVariation.weight(700)]),
+            text: l10n.getStartedDescPart4,
+            style: const TextStyle(fontVariations: [FontVariation.weight(700)]),
           ),
-          TextSpan(text: ' and choose your '),
+          TextSpan(text: l10n.getStartedDescPart5),
           TextSpan(
-            text: 'currency',
-            style: TextStyle(fontVariations: [FontVariation.weight(700)]),
+            text: l10n.getStartedDescPart6,
+            style: const TextStyle(fontVariations: [FontVariation.weight(700)]),
           ),
-          TextSpan(text: ' to personalize your account.'),
+          TextSpan(text: l10n.getStartedDescPart7),
         ],
       ),
     );

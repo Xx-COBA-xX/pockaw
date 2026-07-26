@@ -5,6 +5,7 @@ class GetStartedButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return Positioned(
       bottom: 0,
       left: 0,
@@ -12,7 +13,7 @@ class GetStartedButton extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         child: PrimaryButton(
-          label: 'Get Started',
+          label: l10n.getStarted,
           onPressed: () {
             if (context.mounted) context.push(Routes.getStarted); // route '/'
           },

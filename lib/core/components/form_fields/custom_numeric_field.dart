@@ -40,7 +40,7 @@ class CustomNumericField extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context, ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     Currency currency = ref.watch(currencyProvider);
     final activeWallet = ref.watch(activeWalletProvider).value;
     String defaultCurrency =
@@ -52,61 +52,53 @@ class CustomNumericField extends ConsumerWidget {
       defaultCurrency = currency.symbol;
     }
 
-    String hint =
-        '${appendCurrencySymbolToHint ? defaultCurrency : ''} ${this.hint ?? ''}'
-            .trim();
+    String hint = this.hint ?? '1,000.00';
 
-    var lastFormattedValue = '';
+    String convertArabicDigitsToEnglish(String input) {
+      const arabicDigits = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+      const easternArabicDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+      String result = input;
+      for (int i = 0; i < 10; i++) {
+        result = result.replaceAll(arabicDigits[i], '$i');
+        result = result.replaceAll(easternArabicDigits[i], '$i');
+      }
+      return result;
+    }
 
     void onChanged(String value) {
-      if (value == lastFormattedValue) return;
+      // Convert any Arabic/Persian digits to English digits
+      String normalizedInput = convertArabicDigitsToEnglish(value);
 
-      // Remove the currency prefix and sanitize input
-      String sanitizedValue = value
-          .replaceAll(defaultCurrency, '')
-          .replaceAll(' ', '')
-          .trim();
+      // Extract numbers and single decimal dot
+      String digitsAndDotOnly = normalizedInput.replaceAll(RegExp(r'[^\d.]'), '');
 
-      // Replace commas (thousand separator) with empty for parsing
-      sanitizedValue = sanitizedValue.replaceAll(',', '');
-
-      // Split into integer and decimal parts
-      List<String> parts = sanitizedValue.split('.');
+      List<String> parts = digitsAndDotOnly.split('.');
       String integerPart = parts[0];
-      String decimalPart = parts.length == 2 ? parts[1] : '';
+      String decimalPart = parts.length >= 2 ? parts.sublist(1).join('') : '';
 
-      // Ensure the decimal part is no more than 2 digits
       if (decimalPart.length > 2) {
         decimalPart = decimalPart.substring(0, 2);
       }
 
-      // Format the integer part with thousand separator
       final formatter = NumberFormat('#,##0', 'en_US');
-      String formattedInteger = integerPart.isNotEmpty
-          ? formatter.format(int.parse(integerPart))
-          : '';
-
-      // Combine integer and decimal parts
-      String formattedValue = (decimalPart.isNotEmpty || parts.length == 2)
-          ? '$defaultCurrency $formattedInteger.$decimalPart'
-          : '$defaultCurrency $formattedInteger';
-
-      if (formattedInteger.isEmpty) {
-        formattedValue = '';
+      String formattedInteger = '';
+      if (integerPart.isNotEmpty) {
+        try {
+          formattedInteger = formatter.format(BigInt.parse(integerPart));
+        } catch (_) {
+          formattedInteger = integerPart;
+        }
       }
 
-      // Avoid infinite loop
-      if (formattedValue != lastFormattedValue) {
-        lastFormattedValue = formattedValue;
+      String formattedValue = (decimalPart.isNotEmpty || parts.length >= 2)
+          ? '$formattedInteger.$decimalPart'
+          : formattedInteger;
 
-        // Update the controller with the formatted value
-        controller?.value = TextEditingValue(
+      if (formattedValue != value && controller != null) {
+        controller!.value = TextEditingValue(
           text: formattedValue,
           selection: TextSelection.collapsed(offset: formattedValue.length),
         );
-
-        // Notify parent widget with the raw numeric value
-        onChanged(sanitizedValue);
       }
     }
 
@@ -119,12 +111,8 @@ class CustomNumericField extends ConsumerWidget {
       textInputAction: TextInputAction.done,
       suffixIcon: suffixIcon,
       keyboardType: const TextInputType.numberWithOptions(decimal: true),
-      inputFormatters: [
-        FilteringTextInputFormatter.allow(RegExp(r'[\d.]')),
-        SingleDotInputFormatter(),
-        DecimalInputFormatter(),
-        LengthLimitingTextInputFormatter(12),
-      ],
+      maxLength: 20,
+      customCounterText: '',
       onChanged: onChanged,
       isRequired: isRequired,
       autofocus: autofocus,

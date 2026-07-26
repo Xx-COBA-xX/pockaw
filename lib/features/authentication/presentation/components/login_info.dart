@@ -5,16 +5,15 @@ class LoginInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Text.rich(
       textAlign: TextAlign.center,
       TextSpan(
-        text:
-            'You can add more wallets later.\nWe only store your data into local database '
-            'on this device.\nSo you are in charge! ',
+        text: l10n.localDataStorageNotice,
         style: AppTextStyles.body4,
         children: [
           TextSpan(
-            text: 'Read more',
+            text: l10n.readMore,
             style: AppTextStyles.body4.copyWith(
               decoration: TextDecoration.underline,
               decorationColor: context.secondaryText,
@@ -25,7 +24,7 @@ class LoginInfo extends StatelessWidget {
                 LinkLauncher.launch(AppConstants.privacyPolicyUrl);
               },
           ),
-          TextSpan(text: ' to find out.'),
+          TextSpan(text: l10n.toFindOut),
         ],
       ),
     );

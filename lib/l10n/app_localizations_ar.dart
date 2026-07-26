@@ -9,7 +9,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appName => 'بوكاو';
+  String get appName => 'Pockaw';
 
   @override
   String get dashboard => 'الرئيسية';
@@ -551,4 +551,67 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get selectMainCurrency => 'اختر العملة الرئيسية';
+
+  @override
+  String get signInWithGoogle => 'تسجيل الدخول باستخدام Google';
+
+  @override
+  String get setupWallet => 'إعداد المحفظة';
+
+  @override
+  String get tapToSetupFirstWallet => 'اضغط لإعداد محفظتك الأولى';
+
+  @override
+  String get savingsAccountHint => 'مثال: حساب الادخار';
+
+  @override
+  String get mySpendingThisMonth => 'مصروفاتي هذا الشهر';
+
+  @override
+  String get viewReport => 'عرض التقرير';
+
+  @override
+  String get deleteWalletWarning =>
+      'سيتم حذف جميع المعاملات والميزانيات والأهداف المقترنة بها أيضاً. لا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get deleteWalletComingSoon => 'حذف المحفظة سيتوفر قريباً...';
+
+  @override
+  String get readMore => 'اقرأ المزيد';
+
+  @override
+  String get toFindOut => ' لمعرفة التفاصيل.';
+
+  @override
+  String get localDataStorageNotice =>
+      'يمكنك إضافة المزيد من المحافظ لاحقاً. نطلب تخزين بياناتك فقط في قاعدة البيانات المحلية على هذا الجهاز. أنت المسؤول دائماً! ';
+
+  @override
+  String get getStartedDescPart1 => 'يرجى إدخال ';
+
+  @override
+  String get getStartedDescPart2 => 'اسمك أو اسم المحفظة';
+
+  @override
+  String get getStartedDescPart3 => '، واختيار أفضل ';
+
+  @override
+  String get getStartedDescPart4 => 'صورة لك';
+
+  @override
+  String get getStartedDescPart5 => ' وتحديد ';
+
+  @override
+  String get getStartedDescPart6 => 'عملتك';
+
+  @override
+  String get getStartedDescPart7 => ' لتخصيص حسابك.';
+
+  @override
+  String get welcomeTo => 'أهلاً بك في';
+
+  @override
+  String get onboardingDescription =>
+      'رفيقك المالي البسيط والذكي. تتبع مصروفاتك، حدد أهدافك، ونظم أموالك ومحفظتك بكل سهولة ويسر. 🚀';
 }

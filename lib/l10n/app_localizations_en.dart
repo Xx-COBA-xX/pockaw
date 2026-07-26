@@ -552,4 +552,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get selectMainCurrency => 'Select Main Currency';
+
+  @override
+  String get signInWithGoogle => 'Sign in with Google';
+
+  @override
+  String get setupWallet => 'Setup Wallet';
+
+  @override
+  String get tapToSetupFirstWallet => 'Tap to setup your first wallet';
+
+  @override
+  String get savingsAccountHint => 'e.g., Savings Account';
+
+  @override
+  String get mySpendingThisMonth => 'My spending this month';
+
+  @override
+  String get viewReport => 'View report';
+
+  @override
+  String get deleteWalletWarning =>
+      'All transactions, budgets, and goals will also be deleted. This action cannot be undone.';
+
+  @override
+  String get deleteWalletComingSoon => 'Delete a wallet is coming soon...';
+
+  @override
+  String get readMore => 'Read more';
+
+  @override
+  String get toFindOut => ' to find out.';
+
+  @override
+  String get localDataStorageNotice =>
+      'You can add more wallets later. We only store your data into local database on this device. So you are in charge! ';
+
+  @override
+  String get getStartedDescPart1 => 'Please enter your ';
+
+  @override
+  String get getStartedDescPart2 => 'name or brand name';
+
+  @override
+  String get getStartedDescPart3 => ', pick your best ';
+
+  @override
+  String get getStartedDescPart4 => 'picture';
+
+  @override
+  String get getStartedDescPart5 => ' and choose your ';
+
+  @override
+  String get getStartedDescPart6 => 'currency';
+
+  @override
+  String get getStartedDescPart7 => ' to personalize your account.';
+
+  @override
+  String get welcomeTo => 'Welcome to';
+
+  @override
+  String get onboardingDescription =>
+      'Simple and intuitive finance buddy. Track your expenses, set goals, organize your pocket and wallet sized finance — everything effortlessly. 🚀';
 }

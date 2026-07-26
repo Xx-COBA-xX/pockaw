@@ -32,10 +32,8 @@ class PrimaryButton extends FilledButton {
                themeMode: themeMode,
                isLoading: isLoading,
              ).copyWith(
-               textStyle: WidgetStatePropertyAll<TextStyle>(
-                 AppTextStyles.body1.copyWith(
-                   fontFamily: AppFontFamilies.montserrat,
-                 ),
+               textStyle: const WidgetStatePropertyAll<TextStyle>(
+                 AppTextStyles.body1,
                ),
                padding: padding == null
                    ? null
@@ -52,7 +50,7 @@ class PrimaryButton extends FilledButton {
              if (isLoading) const Gap(AppSpacing.spacing12),
              if (icon != null) Icon(icon),
              if (icon != null) const Gap(AppSpacing.spacing8),
-             Text(isLoading ? loadingText : label),
+             Text(isLoading ? loadingText : label, ),
            ],
          ),
        );
