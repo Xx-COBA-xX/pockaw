@@ -26,4 +26,9 @@ class Routes {
 
   /// Basic monthly reports
   static const String basicMonthlyReports = '/basic-monthly-reports';
+
+  /// Debts
+  static const String debtList = '/debt-list';
+  static const String debtDetails = '/debt-details';
+  static const String debtForm = '/debt-form';
 }

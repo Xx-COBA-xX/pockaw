@@ -761,4 +761,93 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get failedToSaveBudget => 'فشل في حفظ الميزانية';
+
+  @override
+  String get debts => 'الديون والذمم';
+
+  @override
+  String get iOwe => 'ديون عليّ';
+
+  @override
+  String get iAmOwed => 'ديون لي';
+
+  @override
+  String get allDebts => 'جميع الديون';
+
+  @override
+  String get completedDebts => 'المسددة';
+
+  @override
+  String get totalIOwe => 'إجمالي ديون عليّ';
+
+  @override
+  String get totalIAmOwed => 'إجمالي ديون لي';
+
+  @override
+  String get netDebtBalance => 'الرصيد الصافي للديون';
+
+  @override
+  String get createDebt => 'إضافة دين جديد';
+
+  @override
+  String get editDebt => 'تعديل الدين';
+
+  @override
+  String get deleteDebt => 'حذف الدين';
+
+  @override
+  String get addPayment => 'تسديد دفعة';
+
+  @override
+  String get paymentHistory => 'سجل الدفعات';
+
+  @override
+  String get personName => 'اسم الشخص / الجهة';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
+
+  @override
+  String get debtType => 'نوع الدين';
+
+  @override
+  String get dueDate => 'تاريخ الاستحقاق';
+
+  @override
+  String get overdue => 'متأخر';
+
+  @override
+  String get noDebtsYet => 'لا توجد ديون مسجلة بعد.';
+
+  @override
+  String get noPaymentsYet => 'لا توجد دفعات سداد مسجلة.';
+
+  @override
+  String get debtCreated => 'تم إضافة الدين بنجاح!';
+
+  @override
+  String get debtUpdated => 'تم تحديث بيانات الدين!';
+
+  @override
+  String get debtDeleted => 'تم حذف الدين!';
+
+  @override
+  String get paymentAdded => 'تم تسديد الدفعة بنجاح!';
+
+  @override
+  String get paymentDeleted => 'تم حذف الدفعة!';
+
+  @override
+  String get recordTransactionInWallet => 'تسجيل المعاملة في الحساب';
+
+  @override
+  String get confirmDeleteDebt =>
+      'هل أنت تأكد من رغبتك في حذف هذا الدين؟ سيتم حذف جميع الدفعات المرتبطة به.';
+
+  @override
+  String get viewAll => 'عرض الكل';
+
+  @override
+  String get noDebtsFoundCreateOne =>
+      'لا توجد ديون حالياً. انقر لإضافة دين جديد.';
 }

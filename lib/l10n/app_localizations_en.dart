@@ -763,4 +763,92 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get failedToSaveBudget => 'Failed to save budget';
+
+  @override
+  String get debts => 'Debts';
+
+  @override
+  String get iOwe => 'I Owe';
+
+  @override
+  String get iAmOwed => 'I Am Owed';
+
+  @override
+  String get allDebts => 'All Debts';
+
+  @override
+  String get completedDebts => 'Completed';
+
+  @override
+  String get totalIOwe => 'Total I Owe';
+
+  @override
+  String get totalIAmOwed => 'Total I Am Owed';
+
+  @override
+  String get netDebtBalance => 'Net Debt Balance';
+
+  @override
+  String get createDebt => 'Add Debt';
+
+  @override
+  String get editDebt => 'Edit Debt';
+
+  @override
+  String get deleteDebt => 'Delete Debt';
+
+  @override
+  String get addPayment => 'Add Payment';
+
+  @override
+  String get paymentHistory => 'Payment History';
+
+  @override
+  String get personName => 'Person Name';
+
+  @override
+  String get phoneNumber => 'Phone Number';
+
+  @override
+  String get debtType => 'Debt Type';
+
+  @override
+  String get dueDate => 'Due Date';
+
+  @override
+  String get overdue => 'Overdue';
+
+  @override
+  String get noDebtsYet => 'No debts recorded yet.';
+
+  @override
+  String get noPaymentsYet => 'No payments recorded yet.';
+
+  @override
+  String get debtCreated => 'Debt created!';
+
+  @override
+  String get debtUpdated => 'Debt updated!';
+
+  @override
+  String get debtDeleted => 'Debt deleted!';
+
+  @override
+  String get paymentAdded => 'Payment added successfully!';
+
+  @override
+  String get paymentDeleted => 'Payment deleted!';
+
+  @override
+  String get recordTransactionInWallet => 'Record transaction in wallet';
+
+  @override
+  String get confirmDeleteDebt =>
+      'Are you sure you want to delete this debt? All associated payments will be deleted.';
+
+  @override
+  String get viewAll => 'View All';
+
+  @override
+  String get noDebtsFoundCreateOne => 'No debts found. Tap to add one.';
 }

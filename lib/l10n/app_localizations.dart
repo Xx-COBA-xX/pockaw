@@ -1567,6 +1567,180 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Failed to save budget'**
   String get failedToSaveBudget;
+
+  /// No description provided for @debts.
+  ///
+  /// In en, this message translates to:
+  /// **'Debts'**
+  String get debts;
+
+  /// No description provided for @iOwe.
+  ///
+  /// In en, this message translates to:
+  /// **'I Owe'**
+  String get iOwe;
+
+  /// No description provided for @iAmOwed.
+  ///
+  /// In en, this message translates to:
+  /// **'I Am Owed'**
+  String get iAmOwed;
+
+  /// No description provided for @allDebts.
+  ///
+  /// In en, this message translates to:
+  /// **'All Debts'**
+  String get allDebts;
+
+  /// No description provided for @completedDebts.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get completedDebts;
+
+  /// No description provided for @totalIOwe.
+  ///
+  /// In en, this message translates to:
+  /// **'Total I Owe'**
+  String get totalIOwe;
+
+  /// No description provided for @totalIAmOwed.
+  ///
+  /// In en, this message translates to:
+  /// **'Total I Am Owed'**
+  String get totalIAmOwed;
+
+  /// No description provided for @netDebtBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Net Debt Balance'**
+  String get netDebtBalance;
+
+  /// No description provided for @createDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Debt'**
+  String get createDebt;
+
+  /// No description provided for @editDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Debt'**
+  String get editDebt;
+
+  /// No description provided for @deleteDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Debt'**
+  String get deleteDebt;
+
+  /// No description provided for @addPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Payment'**
+  String get addPayment;
+
+  /// No description provided for @paymentHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment History'**
+  String get paymentHistory;
+
+  /// No description provided for @personName.
+  ///
+  /// In en, this message translates to:
+  /// **'Person Name'**
+  String get personName;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneNumber;
+
+  /// No description provided for @debtType.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt Type'**
+  String get debtType;
+
+  /// No description provided for @dueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Due Date'**
+  String get dueDate;
+
+  /// No description provided for @overdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get overdue;
+
+  /// No description provided for @noDebtsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No debts recorded yet.'**
+  String get noDebtsYet;
+
+  /// No description provided for @noPaymentsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No payments recorded yet.'**
+  String get noPaymentsYet;
+
+  /// No description provided for @debtCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt created!'**
+  String get debtCreated;
+
+  /// No description provided for @debtUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt updated!'**
+  String get debtUpdated;
+
+  /// No description provided for @debtDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt deleted!'**
+  String get debtDeleted;
+
+  /// No description provided for @paymentAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment added successfully!'**
+  String get paymentAdded;
+
+  /// No description provided for @paymentDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment deleted!'**
+  String get paymentDeleted;
+
+  /// No description provided for @recordTransactionInWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Record transaction in wallet'**
+  String get recordTransactionInWallet;
+
+  /// No description provided for @confirmDeleteDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this debt? All associated payments will be deleted.'**
+  String get confirmDeleteDebt;
+
+  /// No description provided for @viewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get viewAll;
+
+  /// No description provided for @noDebtsFoundCreateOne.
+  ///
+  /// In en, this message translates to:
+  /// **'No debts found. Tap to add one.'**
+  String get noDebtsFoundCreateOne;
 }
 
 class _AppLocalizationsDelegate
