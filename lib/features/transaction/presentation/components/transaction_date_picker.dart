@@ -21,14 +21,17 @@ class TransactionDatePicker extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final l10n = AppLocalizations.of(context);
     final selectedDateNotifier = ref.read(datePickerProvider.notifier);
-    dateFieldController.text = (initialDate ?? DateTime.now())
-        .toRelativeDayFormatted(showTime: true, use24Hours: false);
+    if (dateFieldController.text.isEmpty) {
+      dateFieldController.text = (initialDate ?? DateTime.now())
+          .toRelativeDayFormatted(context: context, showTime: true, use24Hours: false);
+    }
 
     return CustomSelectField(
       context: context,
       controller: dateFieldController,
       label: l10n.date,
       hint: DateTime.now().toRelativeDayFormatted(
+        context: context,
         showTime: true,
         use24Hours: false,
       ),
@@ -45,6 +48,7 @@ class TransactionDatePicker extends ConsumerWidget {
             selectedDateNotifier.setDate(date);
             Log.d(date, label: 'selected date');
             dateFieldController.text = date.toRelativeDayFormatted(
+              context: context,
               showTime: true,
               use24Hours: false,
             );

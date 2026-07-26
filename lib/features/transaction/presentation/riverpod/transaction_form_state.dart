@@ -16,6 +16,7 @@ import 'package:pockaw/core/services/image_service/riverpod/image_notifier.dart'
 import 'package:pockaw/core/utils/logger.dart';
 import 'package:pockaw/features/category/data/model/category_model.dart';
 import 'package:pockaw/features/transaction/data/model/transaction_model.dart';
+import 'package:pockaw/features/transaction/presentation/riverpod/date_picker_provider.dart';
 import 'package:pockaw/features/user_activity/data/enum/user_activity_action.dart';
 import 'package:pockaw/features/user_activity/riverpod/user_activity_provider.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
@@ -87,12 +88,8 @@ class TransactionFormState {
       imagePath = imagePickerState.savedPath ?? '';
     }
 
-    // --- FIX: Use the correct date ---
-    DateTime dateToSave = DateTime.now();
-    if (dateFieldController.text.isNotEmpty) {
-      dateToSave = dateFieldController.text
-          .toDateTimeFromDayMonthYearTime12Hour();
-    }
+    // --- FIX: Use datePickerProvider instead of parsing human-readable localized text ---
+    final dateToSave = ref.read(datePickerProvider);
 
     final transactionToSave = TransactionModel(
       id: isEditing ? initialTransaction?.id : null,
@@ -147,7 +144,11 @@ class TransactionFormState {
           );
 
       if (context.mounted) {
-        context.pop();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (context.mounted) {
+            context.pop();
+          }
+        });
       }
     } catch (e) {
       Log.e('Error saving transaction: $e');
@@ -175,7 +176,6 @@ class TransactionFormState {
         onConfirm: () async {
           if (context.mounted) {
             context.pop(); // close dialog
-            context.pop(); // close form
           }
 
           await _adjustWalletBalance(
@@ -197,6 +197,14 @@ class TransactionFormState {
               );
 
           Log.d(id, label: 'deleted transaction id');
+
+          if (context.mounted) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (context.mounted) {
+                context.pop(); // close form
+              }
+            });
+          }
         },
       ),
     );
@@ -336,6 +344,7 @@ TransactionFormState useTransactionFormState({
           );
 
           WidgetsBinding.instance.addPostFrameCallback((_) {
+            ref.read(datePickerProvider.notifier).setDate(transaction.date);
             final imagePath = transaction.imagePath;
             if (imagePath != null && imagePath.isNotEmpty) {
               ref.read(imageProvider.notifier).loadImagePath(imagePath);
@@ -350,6 +359,7 @@ TransactionFormState useTransactionFormState({
           selectedTransactionType.value = TransactionType.expense;
           selectedCategory.value = null;
           WidgetsBinding.instance.addPostFrameCallback((_) {
+            ref.read(datePickerProvider.notifier).setDate(DateTime.now());
             ref.read(imageProvider.notifier).clearImage();
           });
         }

@@ -672,4 +672,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addAnewCategory => '+ Add New Category';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get time => 'Time';
+
+  @override
+  String get confirm => 'Confirm';
 }

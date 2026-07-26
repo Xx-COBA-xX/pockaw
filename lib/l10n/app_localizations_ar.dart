@@ -670,4 +670,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addAnewCategory => '+ إضافة فئة جديد';
+
+  @override
+  String get today => 'اليوم';
+
+  @override
+  String get yesterday => 'أمس';
+
+  @override
+  String get time => 'الوقت';
+
+  @override
+  String get confirm => 'تأكيد';
 }
