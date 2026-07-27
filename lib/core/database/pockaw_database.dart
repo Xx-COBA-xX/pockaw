@@ -55,7 +55,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 12; // Increment schema version to 12 for debts tables migration
+  int get schemaVersion => 13; // Increment schema version to 13 for default categories update
 
   @override
   MigrationStrategy get migration {
@@ -107,6 +107,12 @@ class AppDatabase extends _$AppDatabase {
           } catch (e) {
             Log.d('Table debtPayments creation check: $e', label: 'database');
           }
+        }
+
+        // Populate/upsert new default categories in version 13 (Debts category)
+        if (from < 13) {
+          Log.i('Updating default categories for schema v13...', label: 'database');
+          await CategoryPopulationService.populate(this);
         }
       },
     );

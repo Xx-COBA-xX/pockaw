@@ -278,5 +278,13 @@
   "recordTransactionInWallet": "تسجيل المعاملة في الحساب",
   "confirmDeleteDebt": "هل أنت تأكد من رغبتك في حذف هذا الدين؟ سيتم حذف جميع الدفعات المرتبطة به.",
   "viewAll": "عرض الكل",
-  "noDebtsFoundCreateOne": "لا توجد ديون حالياً. انقر لإضافة دين جديد."
+  "noDebtsFoundCreateOne": "لا توجد ديون حالياً. انقر لإضافة دين جديد.",
+  "deductFromAccount": "تخصيم من الحساب",
+  "whichAccountDeductLoanFrom": "أي حساب يجب تخصيم هذا المبلغ منه؟",
+  "whichAccountReceiveBorrowedAmount": "أي حساب يجب أن يستلم هذا المبلغ؟",
+  "depositIntoAccountOption": "إيداع المبلغ في أحد حساباتي الحالية",
+  "recordDebtOnlyOption": "تسجيل كدين فقط (دون إيداع في أي حساب)",
+  "whichAccountDeductRepaymentFrom": "أي حساب يجب تخصيم دفعة السداد منه؟",
+  "whichAccountReceiveRepayment": "أي حساب يجب إرجاع المبلغ السديد إليه؟",
+  "selectAccount": "اختر الحساب"
 }

@@ -13,9 +13,11 @@ import 'package:pockaw/core/components/form_fields/custom_select_field.dart';
 import 'package:pockaw/core/components/form_fields/custom_text_field.dart';
 import 'package:pockaw/core/components/scaffolds/custom_scaffold.dart';
 import 'package:pockaw/core/constants/app_colors.dart';
+import 'package:pockaw/core/constants/app_radius.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/database/database_provider.dart';
+import 'package:pockaw/core/database/tables/category_table.dart';
 import 'package:pockaw/core/database/tables/wallet_table.dart';
 import 'package:pockaw/core/extensions/date_time_extension.dart';
 import 'package:pockaw/core/extensions/double_extension.dart';
@@ -25,12 +27,15 @@ import 'package:pockaw/core/extensions/text_style_extensions.dart';
 import 'package:pockaw/features/debt/data/enum/debt_type.dart';
 import 'package:pockaw/features/debt/data/model/debt_model.dart';
 import 'package:pockaw/features/debt/presentation/riverpod/debt_providers.dart';
+import 'package:pockaw/features/transaction/data/model/transaction_model.dart';
+import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
+import 'package:pockaw/features/wallet_switcher/presentation/components/wallet_picker_bottom_sheet.dart';
 import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:toastification/toastification.dart';
 
 class DebtFormScreen extends HookConsumerWidget {
-  final int? debtId; // Null for new, non-null for editing
+  final int? debtId;
 
   const DebtFormScreen({super.key, this.debtId});
 
@@ -49,23 +54,42 @@ class DebtFormScreen extends HookConsumerWidget {
     final amountController = useTextEditingController();
     final notesController = useTextEditingController();
     final dueDateController = useTextEditingController();
+    final walletController = useTextEditingController();
 
     final debtType = useState(DebtType.iOwe);
     final dueDate = useState<DateTime?>(null);
+    final selectedWallet = useState<WalletModel?>(null);
+    final depositIntoAccount = useState<bool>(true);
+
+    useEffect(() {
+      if (selectedWallet.value == null && activeWallet != null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (selectedWallet.value == null) {
+            selectedWallet.value = activeWallet;
+            walletController.text = activeWallet.name;
+          }
+        });
+      }
+      return null;
+    }, [activeWallet]);
 
     useEffect(() {
       if (isEditing && debtAsync is AsyncData<DebtModel?>) {
         final debt = debtAsync.value;
         if (debt != null) {
-          nameController.text = debt.personName;
-          phoneController.text = debt.phoneNumber ?? '';
-          amountController.text = debt.totalAmount.toPriceFormat();
-          notesController.text = debt.notes ?? '';
-          debtType.value = debt.debtType;
-          dueDate.value = debt.dueDate;
-          if (debt.dueDate != null) {
-            dueDateController.text = debt.dueDate!.toDayShortMonthYear(locale);
-          }
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            nameController.text = debt.personName;
+            phoneController.text = debt.phoneNumber ?? '';
+            amountController.text = debt.totalAmount.toPriceFormat();
+            notesController.text = debt.notes ?? '';
+            debtType.value = debt.debtType;
+            dueDate.value = debt.dueDate;
+            selectedWallet.value = debt.wallet;
+            walletController.text = debt.wallet.name;
+            if (debt.dueDate != null) {
+              dueDateController.text = debt.dueDate!.toDayShortMonthYear(locale);
+            }
+          });
         }
       }
       return null;
@@ -74,9 +98,10 @@ class DebtFormScreen extends HookConsumerWidget {
     void saveDebt() async {
       if (!(formKey.currentState?.validate() ?? false)) return;
 
-      var walletToUse = activeWallet;
+      final db = ref.read(databaseProvider);
+      var walletToUse = selectedWallet.value ?? activeWallet;
+
       if (walletToUse == null) {
-        final db = ref.read(databaseProvider);
         final wallets = await db.walletDao.getAllWallets();
         if (wallets.isNotEmpty) {
           walletToUse = wallets.first.toModel();
@@ -84,7 +109,13 @@ class DebtFormScreen extends HookConsumerWidget {
       }
 
       if (walletToUse == null) {
-        Toast.show(l10n.accounts, type: ToastificationType.warning);
+        Toast.show(l10n.selectAccount, type: ToastificationType.warning);
+        return;
+      }
+
+      final totalAmount = amountController.text.takeNumericAsDouble();
+      if (totalAmount <= 0) {
+        Toast.show(l10n.amount, type: ToastificationType.warning);
         return;
       }
 
@@ -95,7 +126,7 @@ class DebtFormScreen extends HookConsumerWidget {
             ? null
             : phoneController.text.trim(),
         debtType: debtType.value,
-        totalAmount: amountController.text.takeNumericAsDouble(),
+        totalAmount: totalAmount,
         paidAmount: isEditing && debtAsync?.value != null
             ? debtAsync!.value!.paidAmount
             : 0.0,
@@ -116,6 +147,70 @@ class DebtFormScreen extends HookConsumerWidget {
           Toast.show(l10n.debtUpdated, type: ToastificationType.success);
         } else {
           await debtDao.addDebt(debtToSave);
+
+          // Accounting Rules Processing for NEW debts:
+          final categories = await db.categoryDao.getAllCategories();
+          final targetCategory = categories.firstWhere(
+            (c) {
+              final title = c.title.toLowerCase();
+              return title == 'debts' ||
+                  title.contains('debt') ||
+                  c.title.contains('ديون') ||
+                  c.title.contains('قرض');
+            },
+            orElse: () => categories.firstWhere(
+              (c) => c.title.toLowerCase().contains('finance'),
+              orElse: () => categories.first,
+            ),
+          );
+
+          if (debtType.value == DebtType.iAmOwed) {
+            // Rule 1: Giving a Loan -> Deduct loan amount from selected account
+            final newBalance = walletToUse.balance - totalAmount;
+            final updatedWallet = walletToUse.copyWith(balance: newBalance);
+            await db.walletDao.updateWallet(updatedWallet);
+
+            if (activeWallet?.id == walletToUse.id) {
+              ref.read(activeWalletProvider.notifier).setActiveWallet(updatedWallet);
+            }
+
+            // Create Expense Transaction
+            await db.transactionDao.addTransaction(
+              TransactionModel(
+                transactionType: TransactionType.expense,
+                amount: totalAmount,
+                date: DateTime.now(),
+                title: '${l10n.iAmOwed} - ${debtToSave.personName}',
+                category: targetCategory.toModel(),
+                wallet: updatedWallet,
+                notes: debtToSave.notes,
+              ),
+            );
+          } else if (debtType.value == DebtType.iOwe && depositIntoAccount.value) {
+            // Rule 2 (Option A): Receiving a Loan -> Deposit amount into selected account
+            final newBalance = walletToUse.balance + totalAmount;
+            final updatedWallet = walletToUse.copyWith(balance: newBalance);
+            await db.walletDao.updateWallet(updatedWallet);
+
+            if (activeWallet?.id == walletToUse.id) {
+              ref.read(activeWalletProvider.notifier).setActiveWallet(updatedWallet);
+            }
+
+            // Create Income Transaction
+            await db.transactionDao.addTransaction(
+              TransactionModel(
+                transactionType: TransactionType.income,
+                amount: totalAmount,
+                date: DateTime.now(),
+                title: '${l10n.iOwe} - ${debtToSave.personName}',
+                category: targetCategory.toModel(),
+                wallet: updatedWallet,
+                notes: debtToSave.notes,
+              ),
+            );
+          }
+          // Rule 2 (Option B): Record debt only -> No balance change, no transaction created
+
           Toast.show(l10n.debtCreated, type: ToastificationType.success);
         }
 
@@ -142,9 +237,9 @@ class DebtFormScreen extends HookConsumerWidget {
                     style: AppTextStyles.body2,
                   ),
                   onConfirm: () async {
-                    context.pop(); // close sheet
-                    context.pop(); // close form
-                    context.pop(); // close details
+                    context.pop();
+                    context.pop();
+                    context.pop();
                     await ref.read(debtDaoProvider).deleteDebt(debtId!);
                     Toast.show(l10n.debtDeleted);
                   },
@@ -168,6 +263,7 @@ class DebtFormScreen extends HookConsumerWidget {
                 100,
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: AppSpacing.spacing16,
                 children: [
                   // Debt Type Selector Segment
@@ -232,6 +328,8 @@ class DebtFormScreen extends HookConsumerWidget {
                       ],
                     ),
                   ),
+
+                  // Person Name & Amount Fields
                   CustomTextField(
                     controller: nameController,
                     label: l10n.personName,
@@ -247,6 +345,98 @@ class DebtFormScreen extends HookConsumerWidget {
                     appendCurrencySymbolToHint: true,
                     isRequired: true,
                   ),
+
+                  // Accounting Prompt & Options based on DebtType
+                  if (debtType.value == DebtType.iAmOwed) ...[
+                    // Rule 1: Giving a loan prompt
+                    Text(
+                      l10n.whichAccountDeductLoanFrom,
+                      style: AppTextStyles.body3.bold,
+                    ),
+                    CustomSelectField(
+                      context: context,
+                      controller: walletController,
+                      label: l10n.deductFromAccount,
+                      hint: l10n.selectAccount,
+                      prefixIcon: HugeIcons.strokeRoundedWallet01,
+                      onTap: () async {
+                        final picked = await context.openBottomSheet<WalletModel?>(
+                          child: WalletPickerBottomSheet(
+                            selectedWallet: selectedWallet.value,
+                            title: l10n.whichAccountDeductLoanFrom,
+                          ),
+                        );
+                        if (picked != null) {
+                          selectedWallet.value = picked;
+                          walletController.text = picked.name;
+                        }
+                      },
+                    ),
+                  ] else ...[
+                    // Rule 2: Receiving a loan prompt & options
+                    Text(
+                      l10n.whichAccountReceiveBorrowedAmount,
+                      style: AppTextStyles.body3.bold,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: context.secondaryBackground,
+                        borderRadius: BorderRadius.circular(AppRadius.radius12),
+                        border: Border.all(color: context.secondaryBorderLighter),
+                      ),
+                      child: Column(
+                        children: [
+                          RadioListTile<bool>(
+                            title: Text(
+                              l10n.depositIntoAccountOption,
+                              style: AppTextStyles.body4.bold,
+                            ),
+                            value: true,
+                            groupValue: depositIntoAccount.value,
+                            onChanged: (val) {
+                              if (val != null) depositIntoAccount.value = val;
+                            },
+                          ),
+                          const Divider(height: 1),
+                          RadioListTile<bool>(
+                            title: Text(
+                              l10n.recordDebtOnlyOption,
+                              style: AppTextStyles.body4.copyWith(
+                                color: context.secondaryText,
+                              ),
+                            ),
+                            value: false,
+                            groupValue: depositIntoAccount.value,
+                            onChanged: (val) {
+                              if (val != null) depositIntoAccount.value = val;
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    if (depositIntoAccount.value)
+                      CustomSelectField(
+                        context: context,
+                        controller: walletController,
+                        label: l10n.selectAccount,
+                        hint: l10n.selectAccount,
+                        prefixIcon: HugeIcons.strokeRoundedWallet01,
+                        onTap: () async {
+                          final picked = await context.openBottomSheet<WalletModel?>(
+                            child: WalletPickerBottomSheet(
+                              selectedWallet: selectedWallet.value,
+                              title: l10n.whichAccountReceiveBorrowedAmount,
+                            ),
+                          );
+                          if (picked != null) {
+                            selectedWallet.value = picked;
+                            walletController.text = picked.name;
+                          }
+                        },
+                      ),
+                  ],
+
+                  // Additional Details (Due Date, Phone, Notes)
                   CustomSelectField(
                     context: context,
                     controller: dueDateController,

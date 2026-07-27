@@ -278,5 +278,13 @@
   "recordTransactionInWallet": "Record transaction in wallet",
   "confirmDeleteDebt": "Are you sure you want to delete this debt? All associated payments will be deleted.",
   "viewAll": "View All",
-  "noDebtsFoundCreateOne": "No debts found. Tap to add one."
+  "noDebtsFoundCreateOne": "No debts found. Tap to add one.",
+  "deductFromAccount": "Deduct from Account",
+  "whichAccountDeductLoanFrom": "Which account should this amount be deducted from?",
+  "whichAccountReceiveBorrowedAmount": "Which account should receive this amount?",
+  "depositIntoAccountOption": "Deposit amount into an existing account",
+  "recordDebtOnlyOption": "Record as debt only (without affecting any account balance)",
+  "whichAccountDeductRepaymentFrom": "Which account should this repayment be deducted from?",
+  "whichAccountReceiveRepayment": "Which account should receive this repayment?",
+  "selectAccount": "Select Account"
 }

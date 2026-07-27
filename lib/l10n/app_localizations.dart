@@ -1741,6 +1741,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No debts found. Tap to add one.'**
   String get noDebtsFoundCreateOne;
+
+  /// No description provided for @deductFromAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Deduct from Account'**
+  String get deductFromAccount;
+
+  /// No description provided for @whichAccountDeductLoanFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should this amount be deducted from?'**
+  String get whichAccountDeductLoanFrom;
+
+  /// No description provided for @whichAccountReceiveBorrowedAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should receive this amount?'**
+  String get whichAccountReceiveBorrowedAmount;
+
+  /// No description provided for @depositIntoAccountOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit amount into an existing account'**
+  String get depositIntoAccountOption;
+
+  /// No description provided for @recordDebtOnlyOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Record as debt only (without affecting any account balance)'**
+  String get recordDebtOnlyOption;
+
+  /// No description provided for @whichAccountDeductRepaymentFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should this repayment be deducted from?'**
+  String get whichAccountDeductRepaymentFrom;
+
+  /// No description provided for @whichAccountReceiveRepayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should receive this repayment?'**
+  String get whichAccountReceiveRepayment;
+
+  /// No description provided for @selectAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Account'**
+  String get selectAccount;
 }
 
 class _AppLocalizationsDelegate

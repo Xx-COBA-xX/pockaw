@@ -851,4 +851,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noDebtsFoundCreateOne => 'No debts found. Tap to add one.';
+
+  @override
+  String get deductFromAccount => 'Deduct from Account';
+
+  @override
+  String get whichAccountDeductLoanFrom =>
+      'Which account should this amount be deducted from?';
+
+  @override
+  String get whichAccountReceiveBorrowedAmount =>
+      'Which account should receive this amount?';
+
+  @override
+  String get depositIntoAccountOption =>
+      'Deposit amount into an existing account';
+
+  @override
+  String get recordDebtOnlyOption =>
+      'Record as debt only (without affecting any account balance)';
+
+  @override
+  String get whichAccountDeductRepaymentFrom =>
+      'Which account should this repayment be deducted from?';
+
+  @override
+  String get whichAccountReceiveRepayment =>
+      'Which account should receive this repayment?';
+
+  @override
+  String get selectAccount => 'Select Account';
 }

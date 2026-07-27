@@ -541,7 +541,7 @@ final List<CategoryModel> categories = [
         iconTypeValue: 'asset',
       ),
       CategoryModel(
-        id: 1005,
+        id: 1006,
         parentId: 10,
         title: 'Phone',
         description: 'Mobile/cellphone plans.',
@@ -550,6 +550,14 @@ final List<CategoryModel> categories = [
         iconTypeValue: 'asset',
       ),
     ],
+  ),
+  CategoryModel(
+    id: 11,
+    title: 'Debts',
+    description: 'Debts, loans, and repayments.',
+    icon: 'category-finance-2',
+    iconBackground: '',
+    iconTypeValue: 'asset',
   ),
 ];
 

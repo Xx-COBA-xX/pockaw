@@ -63,15 +63,25 @@ class DebtScreen extends HookConsumerWidget {
   }
 }
 
-class ListViewHolder extends StatelessWidget {
+class ListViewHolder extends StatefulWidget {
   final int tabIndex;
   const ListViewHolder({super.key, required this.tabIndex});
 
   @override
+  State<ListViewHolder> createState() => _ListViewHolderState();
+}
+
+class _ListViewHolderState extends State<ListViewHolder>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return ListView(
       children: [
-        DebtCardHolder(tabIndex: tabIndex),
+        DebtCardHolder(tabIndex: widget.tabIndex),
         const Gap(100),
       ],
     );

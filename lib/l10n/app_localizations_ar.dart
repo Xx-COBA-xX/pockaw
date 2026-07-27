@@ -850,4 +850,31 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get noDebtsFoundCreateOne =>
       'لا توجد ديون حالياً. انقر لإضافة دين جديد.';
+
+  @override
+  String get deductFromAccount => 'تخصيم من الحساب';
+
+  @override
+  String get whichAccountDeductLoanFrom => 'أي حساب يجب تخصيم هذا المبلغ منه؟';
+
+  @override
+  String get whichAccountReceiveBorrowedAmount =>
+      'أي حساب يجب أن يستلم هذا المبلغ؟';
+
+  @override
+  String get depositIntoAccountOption => 'إيداع المبلغ في أحد حساباتي الحالية';
+
+  @override
+  String get recordDebtOnlyOption => 'تسجيل كدين فقط (دون إيداع في أي حساب)';
+
+  @override
+  String get whichAccountDeductRepaymentFrom =>
+      'أي حساب يجب تخصيم دفعة السداد منه؟';
+
+  @override
+  String get whichAccountReceiveRepayment =>
+      'أي حساب يجب إرجاع المبلغ السديد إليه؟';
+
+  @override
+  String get selectAccount => 'اختر الحساب';
 }
