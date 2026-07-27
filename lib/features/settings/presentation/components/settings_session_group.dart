@@ -10,13 +10,6 @@ class SettingsSessionGroup extends ConsumerWidget {
       title: l10n.session,
       settingTiles: [
         MenuTileButton(
-          label: 'الذهاب لشاشة البداية (مؤقت)',
-          icon: HugeIcons.strokeRoundedPlay,
-          onTap: () {
-            context.go(Routes.getStarted);
-          },
-        ),
-        MenuTileButton(
           label: l10n.logout,
           icon: HugeIcons.strokeRoundedLogout01,
           onTap: () {
