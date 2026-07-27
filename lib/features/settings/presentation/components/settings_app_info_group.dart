@@ -14,17 +14,15 @@ class SettingsAppInfoGroup extends ConsumerWidget {
         MenuTileButton(
           label: l10n.privacyPolicy,
           icon: HugeIcons.strokeRoundedLegalHammer,
-          suffixIcon: HugeIcons.strokeRoundedSquareArrowUpRight,
           onTap: () {
-            LinkLauncher.launch(AppConstants.privacyPolicyUrl);
+            context.push(Routes.privacyPolicy);
           },
         ),
         MenuTileButton(
           label: l10n.termsAndConditions,
           icon: HugeIcons.strokeRoundedFileExport,
-          suffixIcon: HugeIcons.strokeRoundedSquareArrowUpRight,
           onTap: () {
-            LinkLauncher.launch(AppConstants.termsAndConditionsUrl);
+            context.push(Routes.termsAndConditions);
           },
         ),
         MenuTileButton(

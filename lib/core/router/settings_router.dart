@@ -7,6 +7,9 @@ import 'package:pockaw/features/settings/presentation/screens/backup_restore_scr
 import 'package:pockaw/features/settings/presentation/screens/personal_details_screen.dart';
 import 'package:pockaw/features/settings/presentation/screens/settings_screen.dart';
 
+import 'package:pockaw/features/settings/presentation/screens/privacy_policy_screen.dart';
+import 'package:pockaw/features/settings/presentation/screens/terms_and_conditions_screen.dart';
+
 class SettingsRouter {
   static final routes = <GoRoute>[
     GoRoute(
@@ -24,6 +27,14 @@ class SettingsRouter {
     GoRoute(
       path: Routes.accountDeletion,
       builder: (context, state) => const AccountDeletionScreen(),
+    ),
+    GoRoute(
+      path: Routes.privacyPolicy,
+      builder: (context, state) => const PrivacyPolicyScreen(),
+    ),
+    GoRoute(
+      path: Routes.termsAndConditions,
+      builder: (context, state) => const TermsAndConditionsScreen(),
     ),
     if (kDebugMode)
       GoRoute(

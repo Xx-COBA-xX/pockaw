@@ -21,7 +21,7 @@ class LoginInfo extends StatelessWidget {
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                LinkLauncher.launch(AppConstants.privacyPolicyUrl);
+                context.push(Routes.privacyPolicy);
               },
           ),
           TextSpan(text: l10n.toFindOut),

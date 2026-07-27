@@ -11,15 +11,17 @@ import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/database/database_provider.dart';
 import 'package:pockaw/core/extensions/popup_extension.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class DeveloperPortalScreen extends HookConsumerWidget {
   const DeveloperPortalScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isLoading = useState(false);
+    final l10n = AppLocalizations.of(context);
 
     return CustomScaffold(
-      title: 'Developer Portal',
+      title: l10n.developerPortal,
       body: isLoading.value
           ? const Center(child: LoadingIndicator())
           : SingleChildScrollView(
@@ -31,19 +33,19 @@ class DeveloperPortalScreen extends HookConsumerWidget {
                 spacing: AppSpacing.spacing16,
                 children: [
                   Text(
-                    'Warning! Make sure you are know what you are doing. Use with caution.',
+                    l10n.developerPortalWarning,
                     style: AppTextStyles.body2.copyWith(color: Colors.orange),
                   ),
                   MenuTileButton(
-                    label: 'Reset Categories',
+                    label: l10n.resetCategories,
                     icon: HugeIcons.strokeRoundedStructure01,
                     onTap: () async {
                       context.openBottomSheet(
                         isScrollControlled: false,
                         child: AlertBottomSheet(
-                          title: 'Reset Categories',
+                          title: l10n.resetCategories,
                           content: Text(
-                            'Are you sure you want to reset the categories?',
+                            l10n.confirmResetCategories,
                             style: AppTextStyles.body2,
                           ),
                           onConfirm: () async {
@@ -58,15 +60,15 @@ class DeveloperPortalScreen extends HookConsumerWidget {
                     },
                   ),
                   MenuTileButton(
-                    label: 'Reset Wallets',
+                    label: l10n.resetWallets,
                     icon: HugeIcons.strokeRoundedWallet02,
                     onTap: () async {
                       context.openBottomSheet(
                         isScrollControlled: false,
                         child: AlertBottomSheet(
-                          title: 'Reset Wallets',
+                          title: l10n.resetWallets,
                           content: Text(
-                            'Are you sure you want to reset the wallets?',
+                            l10n.confirmResetWallets,
                             style: AppTextStyles.body2,
                           ),
                           onConfirm: () async {
@@ -81,15 +83,15 @@ class DeveloperPortalScreen extends HookConsumerWidget {
                     },
                   ),
                   MenuTileButton(
-                    label: 'Reset Database',
+                    label: l10n.resetDatabase,
                     icon: HugeIcons.strokeRoundedDeletePutBack,
                     onTap: () {
                       context.openBottomSheet(
                         isScrollControlled: false,
                         child: AlertBottomSheet(
-                          title: 'Reset Database',
+                          title: l10n.resetDatabase,
                           content: Text(
-                            'Are you sure you want to reset the database?',
+                            l10n.confirmResetDatabase,
                             style: AppTextStyles.body2,
                           ),
                           onConfirm: () async {

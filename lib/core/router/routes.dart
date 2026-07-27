@@ -22,6 +22,8 @@ class Routes {
   static const String personalDetails = '/personal-details';
   static const String backupAndRestore = '/backup-restore';
   static const String accountDeletion = '/account-deletion';
+  static const String privacyPolicy = '/privacy-policy';
+  static const String termsAndConditions = '/terms-and-conditions';
   static const String developerPortal = '/developer-portal';
 
   /// Basic monthly reports
