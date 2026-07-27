@@ -73,14 +73,10 @@ android {
     productFlavors {
         create("staging") {
             dimension = "default"
-            // FIX APPLIED: Using Groovy map syntax for resValue to avoid 'type' keyword issue.
-            resValue "string", "app_name", "Pockaw (Staging)"
             applicationIdSuffix = ".staging"
         }
         create("production") {
             dimension = "default"
-            // FIX APPLIED: Using Groovy map syntax for resValue to avoid 'type' keyword issue.
-            resValue "string", "app_name", "Pockaw"
         }
     }
 }
