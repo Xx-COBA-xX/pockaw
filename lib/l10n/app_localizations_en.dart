@@ -881,4 +881,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get selectAccount => 'Select Account';
+
+  @override
+  String get localBackupInfo => 'Local Backup Info';
+
+  @override
+  String get googleDriveBackupInfo => 'Google Drive Backup Info';
+
+  @override
+  String backupDirectoryLabel(Object directory) {
+    return 'Backup Directory: $directory';
+  }
+
+  @override
+  String backupFileLabel(Object file) {
+    return 'Backup File: $file';
+  }
+
+  @override
+  String lastBackupTimeLabel(Object time) {
+    return 'Last Backup Time: $time';
+  }
+
+  @override
+  String lastRestoreTimeLabel(Object time) {
+    return 'Last Restore Time: $time';
+  }
+
+  @override
+  String get notSet => 'Not set';
+
+  @override
+  String backupFromDate(Object date) {
+    return 'Backup from $date';
+  }
+
+  @override
+  String backupSizeLabel(Object size) {
+    return 'Size: $size';
+  }
+
+  @override
+  String get unknownDate => 'Unknown Date';
+
+  @override
+  String get unknownSize => 'Unknown Size';
+
+  @override
+  String get accountDeletionWarning =>
+      'Warning: Account Deletion is PERMANENT!';
+
+  @override
+  String get accountDeletionDescription =>
+      'If you decided to proceed, all your application data, including financial records, goals, and settings, will be permanently erased from this device. This action cannot be undone or reversed. The application will be reset to its initial state, and you will be logged out.\n\nThis will not delete any backup files you may have stored on local storage or Google Drive. If you are not sure, please back up to local or Google Drive first.\n\nYou may restore your backup file later.';
+
+  @override
+  String typeYourNameToContinue(Object userName) {
+    return 'Type your name \'$userName\' to continue:';
+  }
+
+  @override
+  String get enterYourUsername => 'Enter your username';
+
+  @override
+  String get challengeConfirmation => 'Challenge Confirmation';
 }

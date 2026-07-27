@@ -286,5 +286,21 @@
   "recordDebtOnlyOption": "تسجيل كدين فقط (دون إيداع في أي حساب)",
   "whichAccountDeductRepaymentFrom": "أي حساب يجب تخصيم دفعة السداد منه؟",
   "whichAccountReceiveRepayment": "أي حساب يجب إرجاع المبلغ السديد إليه؟",
-  "selectAccount": "اختر الحساب"
+  "selectAccount": "اختر الحساب",
+  "localBackupInfo": "معلومات النسخ الاحتياطي المحلي",
+  "googleDriveBackupInfo": "معلومات النسخ الاحتياطي في Google Drive",
+  "backupDirectoryLabel": "مجلد النسخ الاحتياطي: {directory}",
+  "backupFileLabel": "ملف النسخ الاحتياطي: {file}",
+  "lastBackupTimeLabel": "وقت آخر نسخة احتياطية: {time}",
+  "lastRestoreTimeLabel": "وقت آخر استعادة: {time}",
+  "notSet": "غير محدد",
+  "backupFromDate": "نسخة احتياطية بتاريخ {date}",
+  "backupSizeLabel": "الحجم: {size}",
+  "unknownDate": "تاريخ غير معروف",
+  "unknownSize": "حجم غير معروف",
+  "accountDeletionWarning": "تحذير: حذف الحساب نهائي ولا يمكن التراجع عنه!",
+  "accountDeletionDescription": "إذا قررت المتابعة، فسيتم حذف جميع بيانات تطبيقك بشكل نهائي من هذا الجهاز، بما في ذلك السجلات المالية، الأهداف، والإعدادات. هذا الإجراء لا يمكن التراجع عنه.\n\nسيتم إعادة ضبط التطبيق إلى حالته الأولية وتسجيل الخروج.\n\nلن يؤدي هذا إلى حذف أي ملفات نسخ احتياطي قمت بحفظها محلياً أو على Google Drive. إذا لم تكن متأكداً، يرجى إجراء نسخة احتياطية أولاً.\n\nيمكنك استعادة بياناتك من ملف النسخ الاحتياطي لاحقاً.",
+  "typeYourNameToContinue": "اكتب اسمك '{userName}' للمتابعة:",
+  "enterYourUsername": "أدخل اسم المستخدم",
+  "challengeConfirmation": "تأكيد الحذف"
 }

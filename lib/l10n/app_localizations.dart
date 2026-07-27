@@ -1789,6 +1789,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select Account'**
   String get selectAccount;
+
+  /// No description provided for @localBackupInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Local Backup Info'**
+  String get localBackupInfo;
+
+  /// No description provided for @googleDriveBackupInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Drive Backup Info'**
+  String get googleDriveBackupInfo;
+
+  /// No description provided for @backupDirectoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup Directory: {directory}'**
+  String backupDirectoryLabel(Object directory);
+
+  /// No description provided for @backupFileLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup File: {file}'**
+  String backupFileLabel(Object file);
+
+  /// No description provided for @lastBackupTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Backup Time: {time}'**
+  String lastBackupTimeLabel(Object time);
+
+  /// No description provided for @lastRestoreTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Restore Time: {time}'**
+  String lastRestoreTimeLabel(Object time);
+
+  /// No description provided for @notSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get notSet;
+
+  /// No description provided for @backupFromDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup from {date}'**
+  String backupFromDate(Object date);
+
+  /// No description provided for @backupSizeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Size: {size}'**
+  String backupSizeLabel(Object size);
+
+  /// No description provided for @unknownDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Date'**
+  String get unknownDate;
+
+  /// No description provided for @unknownSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Size'**
+  String get unknownSize;
+
+  /// No description provided for @accountDeletionWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Warning: Account Deletion is PERMANENT!'**
+  String get accountDeletionWarning;
+
+  /// No description provided for @accountDeletionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'If you decided to proceed, all your application data, including financial records, goals, and settings, will be permanently erased from this device. This action cannot be undone or reversed. The application will be reset to its initial state, and you will be logged out.\n\nThis will not delete any backup files you may have stored on local storage or Google Drive. If you are not sure, please back up to local or Google Drive first.\n\nYou may restore your backup file later.'**
+  String get accountDeletionDescription;
+
+  /// No description provided for @typeYourNameToContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Type your name \'{userName}\' to continue:'**
+  String typeYourNameToContinue(Object userName);
+
+  /// No description provided for @enterYourUsername.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your username'**
+  String get enterYourUsername;
+
+  /// No description provided for @challengeConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge Confirmation'**
+  String get challengeConfirmation;
 }
 
 class _AppLocalizationsDelegate

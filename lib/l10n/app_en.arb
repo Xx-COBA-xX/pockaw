@@ -286,5 +286,21 @@
   "recordDebtOnlyOption": "Record as debt only (without affecting any account balance)",
   "whichAccountDeductRepaymentFrom": "Which account should this repayment be deducted from?",
   "whichAccountReceiveRepayment": "Which account should receive this repayment?",
-  "selectAccount": "Select Account"
+  "selectAccount": "Select Account",
+  "localBackupInfo": "Local Backup Info",
+  "googleDriveBackupInfo": "Google Drive Backup Info",
+  "backupDirectoryLabel": "Backup Directory: {directory}",
+  "backupFileLabel": "Backup File: {file}",
+  "lastBackupTimeLabel": "Last Backup Time: {time}",
+  "lastRestoreTimeLabel": "Last Restore Time: {time}",
+  "notSet": "Not set",
+  "backupFromDate": "Backup from {date}",
+  "backupSizeLabel": "Size: {size}",
+  "unknownDate": "Unknown Date",
+  "unknownSize": "Unknown Size",
+  "accountDeletionWarning": "Warning: Account Deletion is PERMANENT!",
+  "accountDeletionDescription": "If you decided to proceed, all your application data, including financial records, goals, and settings, will be permanently erased from this device. This action cannot be undone or reversed. The application will be reset to its initial state, and you will be logged out.\n\nThis will not delete any backup files you may have stored on local storage or Google Drive. If you are not sure, please back up to local or Google Drive first.\n\nYou may restore your backup file later.",
+  "typeYourNameToContinue": "Type your name '{userName}' to continue:",
+  "enterYourUsername": "Enter your username",
+  "challengeConfirmation": "Challenge Confirmation"
 }

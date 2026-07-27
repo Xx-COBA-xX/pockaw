@@ -877,4 +877,68 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get selectAccount => 'اختر الحساب';
+
+  @override
+  String get localBackupInfo => 'معلومات النسخ الاحتياطي المحلي';
+
+  @override
+  String get googleDriveBackupInfo => 'معلومات النسخ الاحتياطي في Google Drive';
+
+  @override
+  String backupDirectoryLabel(Object directory) {
+    return 'مجلد النسخ الاحتياطي: $directory';
+  }
+
+  @override
+  String backupFileLabel(Object file) {
+    return 'ملف النسخ الاحتياطي: $file';
+  }
+
+  @override
+  String lastBackupTimeLabel(Object time) {
+    return 'وقت آخر نسخة احتياطية: $time';
+  }
+
+  @override
+  String lastRestoreTimeLabel(Object time) {
+    return 'وقت آخر استعادة: $time';
+  }
+
+  @override
+  String get notSet => 'غير محدد';
+
+  @override
+  String backupFromDate(Object date) {
+    return 'نسخة احتياطية بتاريخ $date';
+  }
+
+  @override
+  String backupSizeLabel(Object size) {
+    return 'الحجم: $size';
+  }
+
+  @override
+  String get unknownDate => 'تاريخ غير معروف';
+
+  @override
+  String get unknownSize => 'حجم غير معروف';
+
+  @override
+  String get accountDeletionWarning =>
+      'تحذير: حذف الحساب نهائي ولا يمكن التراجع عنه!';
+
+  @override
+  String get accountDeletionDescription =>
+      'إذا قررت المتابعة، فسيتم حذف جميع بيانات تطبيقك بشكل نهائي من هذا الجهاز، بما في ذلك السجلات المالية، الأهداف، والإعدادات. هذا الإجراء لا يمكن التراجع عنه.\n\nسيتم إعادة ضبط التطبيق إلى حالته الأولية وتسجيل الخروج.\n\nلن يؤدي هذا إلى حذف أي ملفات نسخ احتياطي قمت بحفظها محلياً أو على Google Drive. إذا لم تكن متأكداً، يرجى إجراء نسخة احتياطية أولاً.\n\nيمكنك استعادة بياناتك من ملف النسخ الاحتياطي لاحقاً.';
+
+  @override
+  String typeYourNameToContinue(Object userName) {
+    return 'اكتب اسمك \'$userName\' للمتابعة:';
+  }
+
+  @override
+  String get enterYourUsername => 'أدخل اسم المستخدم';
+
+  @override
+  String get challengeConfirmation => 'تأكيد الحذف';
 }

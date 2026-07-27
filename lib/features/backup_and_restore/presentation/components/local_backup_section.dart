@@ -80,23 +80,27 @@ class LocalBackupSection extends HookConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Local Backup Info',
+                l10n.localBackupInfo,
                 style: AppTextStyles.body4.bold,
               ),
               const Gap(AppSpacing.spacing8),
               Text(
-                'Backup Directory: ${state.localDirectory ?? 'Not set'}',
+                l10n.backupDirectoryLabel(state.localDirectory ?? l10n.notSet),
                 style: AppTextStyles.body4,
               ),
               const Gap(AppSpacing.spacing4),
               Text(
-                'Last Backup Time: ${state.lastLocalBackupTime != null ? state.lastLocalBackupTime!.toDayMonthYearTime12Hour() : 'No backups yet'}',
+                l10n.lastBackupTimeLabel(state.lastLocalBackupTime != null
+                    ? state.lastLocalBackupTime!.toDayMonthYearTime12Hour()
+                    : l10n.noBackupsYet),
                 style: AppTextStyles.body4,
               ),
               // last restore time
               const Gap(AppSpacing.spacing4),
               Text(
-                'Last Restore Time: ${state.lastLocalRestoreTime != null ? state.lastLocalRestoreTime!.toDayMonthYearTime12Hour() : 'No restores yet'}',
+                l10n.lastRestoreTimeLabel(state.lastLocalRestoreTime != null
+                    ? state.lastLocalRestoreTime!.toDayMonthYearTime12Hour()
+                    : l10n.noRestoresYet),
                 style: AppTextStyles.body4,
               ),
             ],

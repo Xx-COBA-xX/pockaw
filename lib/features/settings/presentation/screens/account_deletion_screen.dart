@@ -94,8 +94,8 @@ class AccountDeletionScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final isLoading = ref.watch(accountDeletionLoadingProvider);
-    // Assuming UserModel has a 'name' property. Adjust if it's different (e.g., 'username').
     final currentUser = ref.read(authStateProvider);
 
     final userName = currentUser.name;
@@ -104,7 +104,7 @@ class AccountDeletionScreen extends HookConsumerWidget {
     return Stack(
       children: [
         CustomScaffold(
-          title: 'Delete Account',
+          title: l10n.deleteAccount,
           showBalance: false,
           body: Padding(
             padding: const EdgeInsets.symmetric(
@@ -115,41 +115,33 @@ class AccountDeletionScreen extends HookConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Warning: Account Deletion is PERMANENT!',
+                  l10n.accountDeletionWarning,
                   style: AppTextStyles.body3.bold.copyWith(
                     color: AppColors.red500,
                   ),
                 ),
                 const Gap(AppSpacing.spacing12),
                 Text(
-                  'If you decided to proceed, all your application data, including financial records, '
-                  'goals, and settings, will be permanently erased from this device. '
-                  'This action cannot be undone or irreversible. '
-                  'The application will be reset to its initial state, '
-                  'and you will be logged out. \n\n'
-                  'This will not delete any backup files '
-                  'you may have stored on local and/or Google Drive. '
-                  'If you are not confident, please backup to local or Google Drive first. \n\n'
-                  'You may restore your backup file from local or Google Drive later.',
+                  l10n.accountDeletionDescription,
                   style: AppTextStyles.body3,
                 ),
                 const Gap(AppSpacing.spacing16),
                 Text(
-                  "Type your name '$userName' to continue:",
+                  l10n.typeYourNameToContinue(userName),
                   style: AppTextStyles.body3,
                 ),
                 const Gap(AppSpacing.spacing8),
                 CustomTextField(
                   context: context,
-                  hint: 'Enter your username',
-                  label: 'Challenge Confirmation',
+                  hint: l10n.enterYourUsername,
+                  label: l10n.challengeConfirmation,
                   onChanged: (value) {
                     isChallengeMet.value = value == userName;
                   },
                 ),
                 const Spacer(),
                 PrimaryButton(
-                  label: 'Delete My Data',
+                  label: l10n.deleteMyData,
                   onPressed: isChallengeMet.value
                       ? () => _showConfirmationSheet(context, ref)
                       : null,
