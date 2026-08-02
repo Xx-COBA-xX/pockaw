@@ -3,6 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.security.application-groups</key>
-	<array/>
+	<array>
+		<string>group.com.pockaw.surrah</string>
+		<string>group.SurrahWidgetExtension</string>
+	</array>
 </dict>
 </plist>

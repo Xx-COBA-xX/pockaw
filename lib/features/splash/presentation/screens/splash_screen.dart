@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
@@ -12,9 +13,10 @@ import 'package:pockaw/core/services/device_info/device_info.dart';
 import 'package:pockaw/core/services/package_info/package_info_provider.dart';
 import 'package:pockaw/core/utils/logger.dart';
 import 'package:pockaw/features/authentication/presentation/riverpod/auth_provider.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pockaw/features/user_activity/data/enum/user_activity_action.dart';
-import 'package:pockaw/features/user_activity/riverpod/user_activity_provider.dart'; // Import for useEffect
+import 'package:pockaw/features/user_activity/riverpod/user_activity_provider.dart';
+import 'package:pockaw/core/services/widget_service/widget_service.dart';
+import 'package:pockaw/core/services/widget_service/widget_sync_provider.dart';
 
 class SplashScreen extends HookConsumerWidget {
   // Changed to HookConsumerWidget
@@ -48,6 +50,10 @@ class SplashScreen extends HookConsumerWidget {
         await userActivityService.logActivity(
           action: UserActivityAction.appLaunched,
         );
+
+        // Initialize Home Screen Widget Service & Sync Data
+        await WidgetService.initialize();
+        ref.read(widgetSyncProvider).syncWidgetData();
 
         // Delete log file only for mobile platforms
         if (Platform.isAndroid || Platform.isIOS) {

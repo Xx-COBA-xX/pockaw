@@ -20,6 +20,7 @@ import 'package:pockaw/features/transaction/presentation/riverpod/date_picker_pr
 import 'package:pockaw/features/user_activity/data/enum/user_activity_action.dart';
 import 'package:pockaw/features/user_activity/riverpod/user_activity_provider.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
+import 'package:pockaw/core/services/widget_service/widget_sync_provider.dart';
 import 'package:toastification/toastification.dart';
 
 class TransactionFormState {
@@ -143,6 +144,9 @@ class TransactionFormState {
             subjectId: savedTransactionId,
           );
 
+      // Sync updated data with Home Screen Widget
+      ref.read(widgetSyncProvider).syncWidgetData();
+
       if (context.mounted) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (context.mounted) {
@@ -195,6 +199,8 @@ class TransactionFormState {
                 action: UserActivityAction.transactionDeleted,
                 subjectId: id,
               );
+
+          ref.read(widgetSyncProvider).syncWidgetData();
 
           Log.d(id, label: 'deleted transaction id');
 

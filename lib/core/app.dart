@@ -15,6 +15,8 @@ import 'package:pockaw/l10n/app_localizations.dart';
 
 import 'package:pockaw/core/constants/app_font_families.dart';
 
+import 'package:pockaw/core/services/widget_service/widget_sync_provider.dart';
+
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
@@ -22,6 +24,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(autoWidgetSyncProvider);
     final themeMode = ref.watch(themeModeProvider);
     final locale = ref.watch(localeNotifierProvider);
 
