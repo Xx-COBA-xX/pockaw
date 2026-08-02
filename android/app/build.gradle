@@ -50,7 +50,7 @@ android {
 
     signingConfigs {
         release {
-            if (keystorePropertiesFile.exists() && keystoreProperties['storeFile'] != null) {
+            if (keystorePropertiesFile.exists()) {
                 storeFile file(keystoreProperties['storeFile'])
                 storePassword keystoreProperties['storePassword']
                 keyAlias keystoreProperties['keyAlias']
@@ -61,20 +61,17 @@ android {
 
     buildTypes {
         getByName("debug") {
-            if (keystorePropertiesFile.exists() && keystoreProperties['storeFile'] != null) {
+            if (keystorePropertiesFile.exists()) {
                 signingConfig = signingConfigs.release
             } else {
                 signingConfig = signingConfigs.debug
             }
         }
         getByName("release") {
-            if (keystorePropertiesFile.exists() && keystoreProperties['storeFile'] != null) {
+            if (keystorePropertiesFile.exists()) {
                 signingConfig = signingConfigs.release
             } else {
                 signingConfig = signingConfigs.debug
-            }
-            firebaseCrashlytics {
-                mappingFileUploadEnabled false
             }
         }
     }
