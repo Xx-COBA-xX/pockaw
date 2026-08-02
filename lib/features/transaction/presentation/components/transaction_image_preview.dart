@@ -13,12 +13,14 @@ import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/extensions/popup_extension.dart';
 import 'package:pockaw/core/services/image_service/riverpod/image_notifier.dart';
 import 'package:pockaw/core/utils/logger.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class TransactionImagePreview extends ConsumerWidget {
   const TransactionImagePreview({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     final imageState = ref.watch(imageProvider);
 
     Log.d(imageState.imageFile?.path, label: 'imageState.imageFile');
@@ -76,11 +78,12 @@ class TransactionImagePreview extends ConsumerWidget {
             onPressed: () {
               context.openBottomSheet(
                 child: AlertBottomSheet(
-                  title: 'Delete Image',
+                  title: l10n.deleteImage,
                   content: Text(
-                    'Are you sure you want to delete this image?',
+                    l10n.confirmDeleteImage,
                     style: AppTextStyles.body2,
                   ),
+                  confirmText: l10n.delete,
                   onConfirm: () {
                     context.pop(); // close dialog
                     ref.read(imageProvider.notifier).clearImage();

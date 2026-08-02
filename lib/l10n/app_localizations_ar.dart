@@ -9,7 +9,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appName => 'بوكاو';
+  String get appName => 'صُـرّة';
 
   @override
   String get dashboard => 'الرئيسية';
@@ -210,7 +210,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get breakdownByCategory => 'تفصيل مصروفاتك حسب الفئة';
 
   @override
-  String get totalSpent => 'إجمالي المصروفات';
+  String get totalSpent => 'إجمالي المصروف';
 
   @override
   String get noTransactionToDisplay => 'لا توجد معاملات لعرضها';
@@ -517,4 +517,468 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get editChecklistItem => 'تعديل عنصر القائمة';
+
+  @override
+  String get dataManagement => 'إدارة البيانات';
+
+  @override
+  String get appInfo => 'معلومات التطبيق';
+
+  @override
+  String get session => 'الجلسة';
+
+  @override
+  String get personalDetails => 'البيانات الشخصية';
+
+  @override
+  String get deleteMyData => 'حذف بياناتي';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get termsAndConditions => 'الشروط والأحكام';
+
+  @override
+  String get reportLogFile => 'تقرير ملف السجل';
+
+  @override
+  String get continueLogoutDevice =>
+      'هل تريد الاستمرار في تسجيل الخروج من هذا الجهاز؟';
+
+  @override
+  String get mainCurrency => 'العملة الرئيسية';
+
+  @override
+  String get selectMainCurrency => 'اختر العملة الرئيسية';
+
+  @override
+  String get signInWithGoogle => 'تسجيل الدخول باستخدام Google';
+
+  @override
+  String get setupWallet => 'إعداد المحفظة';
+
+  @override
+  String get tapToSetupFirstWallet => 'اضغط لإعداد محفظتك الأولى';
+
+  @override
+  String get savingsAccountHint => 'مثال: حساب الادخار';
+
+  @override
+  String get mySpendingThisMonth => 'مصروفاتي هذا الشهر';
+
+  @override
+  String get viewReport => 'عرض التقرير';
+
+  @override
+  String get deleteWalletWarning =>
+      'سيتم حذف جميع المعاملات والميزانيات والأهداف المقترنة بها أيضاً. لا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get deleteWalletComingSoon => 'حذف المحفظة سيتوفر قريباً...';
+
+  @override
+  String get readMore => 'اقرأ المزيد';
+
+  @override
+  String get toFindOut => ' لمعرفة التفاصيل.';
+
+  @override
+  String get localDataStorageNotice =>
+      'يمكنك إضافة المزيد من المحافظ لاحقاً. نطلب تخزين بياناتك فقط في قاعدة البيانات المحلية على هذا الجهاز. أنت المسؤول دائماً! ';
+
+  @override
+  String get getStartedDescPart1 => 'يرجى إدخال ';
+
+  @override
+  String get getStartedDescPart2 => 'اسمك أو اسم المحفظة';
+
+  @override
+  String get getStartedDescPart3 => '، واختيار أفضل ';
+
+  @override
+  String get getStartedDescPart4 => 'صورة لك';
+
+  @override
+  String get getStartedDescPart5 => ' وتحديد ';
+
+  @override
+  String get getStartedDescPart6 => 'عملتك';
+
+  @override
+  String get getStartedDescPart7 => ' لتخصيص حسابك.';
+
+  @override
+  String get welcomeTo => 'أهلاً بك في';
+
+  @override
+  String get onboardingDescription =>
+      'رفيقك المالي البسيط والذكي. تتبع مصروفاتك، حدد أهدافك، ونظم أموالك ومحفظتك بكل سهولة ويسر. 🚀';
+
+  @override
+  String get lunchWithMyFriends => 'عزمت صديقي';
+
+  @override
+  String get titleMax50 => 'العنوان (الحد الأقصى 50)';
+
+  @override
+  String get transactionDateTime => 'تاريخ ووقت المعاملة';
+
+  @override
+  String get deleteImage => 'حذف الصورة';
+
+  @override
+  String get confirmDeleteImage => 'هل أنت تأكد من رغبتك في حذف هذه الصورة؟';
+
+  @override
+  String get titleMax25 => 'العنوان (الحد الأقصى 25)';
+
+  @override
+  String get newCategoryTitle => 'عنوان الفئة الجديدة';
+
+  @override
+  String get parentCategory => 'الفئة الرئيسية';
+
+  @override
+  String get leaveEmptyForParent => 'اتركه فارغاً لتعيينها كفئة رئيسية';
+
+  @override
+  String get descriptionMax50 => 'الوصف (الحد الأقصى 50)';
+
+  @override
+  String get writeSimpleDescription => 'اكتب وصفاً بسيطاً...';
+
+  @override
+  String get makeAsParent => 'تعيين كفئة رئيسية';
+
+  @override
+  String get makeAsParentSubtitle =>
+      'سيتم تجاهل اختيار الفئة الرئيسية عند الحفظ.';
+
+  @override
+  String get editCategory => 'تعديل الفئة';
+
+  @override
+  String get addCategory => 'إضافة فئة';
+
+  @override
+  String get deleteCategory => 'حذف الفئة';
+
+  @override
+  String get deleteCategoryContent =>
+      'حذف هذه الفئة سيؤدي أيضاً إلى حذف جميع الفئات الفرعية والمعاملات المرتبطة بها. هل تريد الاستمرار؟\n\nلا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get addAnewCategory => '+ إضافة فئة جديد';
+
+  @override
+  String get today => 'اليوم';
+
+  @override
+  String get yesterday => 'أمس';
+
+  @override
+  String get time => 'الوقت';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get markAsComplete => 'تعيين كـ مكتمل';
+
+  @override
+  String get markAsIncomplete => 'تعيين كـ غير مكتمل';
+
+  @override
+  String get confirmMarkComplete =>
+      'هل أنت تأكد من رغبتك في تعيين هذا العنصر كـ مكتمل؟';
+
+  @override
+  String get confirmMarkIncomplete =>
+      'هل أنت تأكد من رغبتك في تعيين هذا العنصر كـ غير مكتمل؟';
+
+  @override
+  String get thisMonth => 'هذا الشهر';
+
+  @override
+  String get lastMonth => 'الشهر الماضي';
+
+  @override
+  String get totalRemainingBudgets => 'إجمالي الميزانيات المتبقية';
+
+  @override
+  String get totalBudget => 'إجمالي الميزانية';
+
+  @override
+  String get left => 'متبقٍ';
+
+  @override
+  String get ofTotal => 'من';
+
+  @override
+  String get budgetPeriod => 'فترة الميزانية';
+
+  @override
+  String get fundsSource => 'مصدر التمويل';
+
+  @override
+  String get noBudgetsFoundCreateOne => 'لا توجد ميزانيات. قم بإنشاء واحدة!';
+
+  @override
+  String get noTransactionsToDisplay => 'لا توجد معاملات لعرضها.';
+
+  @override
+  String noTransactionsForPeriod(Object period) {
+    return 'لا توجد معاملات لشهر $period.';
+  }
+
+  @override
+  String amountAvailable(Object amount) {
+    return 'المبلغ (المتاح: $amount)';
+  }
+
+  @override
+  String get pleaseSelectCategory => 'يرجى اختيار فئة.';
+
+  @override
+  String get pleaseSelectFundSource => 'يرجى اختيار مصدر التمويل (المحفظة).';
+
+  @override
+  String get pleaseSelectValidDateRange => 'يرجى اختيار نطاق تاريخ صحيح.';
+
+  @override
+  String get budgetAmountExceedsBalance =>
+      'لا يمكن أن يتجاوز إجمالي الميزانية رصيد المحفظة.';
+
+  @override
+  String get budgetCreated => 'تم إنشاء الميزانية!';
+
+  @override
+  String get budgetUpdated => 'تم تحديث الميزانية!';
+
+  @override
+  String get budgetDeleted => 'تم حذف الميزانية!';
+
+  @override
+  String get failedToSaveBudget => 'فشل في حفظ الميزانية';
+
+  @override
+  String get debts => 'الديون والذمم';
+
+  @override
+  String get iOwe => 'ديون عليّ';
+
+  @override
+  String get iAmOwed => 'ديون لي';
+
+  @override
+  String get allDebts => 'جميع الديون';
+
+  @override
+  String get completedDebts => 'المسددة';
+
+  @override
+  String get totalIOwe => 'إجمالي ديون عليّ';
+
+  @override
+  String get totalIAmOwed => 'إجمالي ديون لي';
+
+  @override
+  String get netDebtBalance => 'الرصيد الصافي للديون';
+
+  @override
+  String get createDebt => 'إضافة دين جديد';
+
+  @override
+  String get editDebt => 'تعديل الدين';
+
+  @override
+  String get deleteDebt => 'حذف الدين';
+
+  @override
+  String get addPayment => 'تسديد دفعة';
+
+  @override
+  String get paymentHistory => 'سجل الدفعات';
+
+  @override
+  String get personName => 'اسم الشخص / الجهة';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
+
+  @override
+  String get debtType => 'نوع الدين';
+
+  @override
+  String get dueDate => 'تاريخ الاستحقاق';
+
+  @override
+  String get overdue => 'متأخر';
+
+  @override
+  String get noDebtsYet => 'لا توجد ديون مسجلة بعد.';
+
+  @override
+  String get noPaymentsYet => 'لا توجد دفعات سداد مسجلة.';
+
+  @override
+  String get debtCreated => 'تم إضافة الدين بنجاح!';
+
+  @override
+  String get debtUpdated => 'تم تحديث بيانات الدين!';
+
+  @override
+  String get debtDeleted => 'تم حذف الدين!';
+
+  @override
+  String get paymentAdded => 'تم تسديد الدفعة بنجاح!';
+
+  @override
+  String get paymentDeleted => 'تم حذف الدفعة!';
+
+  @override
+  String get recordTransactionInWallet => 'تسجيل المعاملة في الحساب';
+
+  @override
+  String get confirmDeleteDebt =>
+      'هل أنت تأكد من رغبتك في حذف هذا الدين؟ سيتم حذف جميع الدفعات المرتبطة به.';
+
+  @override
+  String get viewAll => 'عرض الكل';
+
+  @override
+  String get noDebtsFoundCreateOne =>
+      'لا توجد ديون حالياً. انقر لإضافة دين جديد.';
+
+  @override
+  String get deductFromAccount => 'تخصيم من الحساب';
+
+  @override
+  String get whichAccountDeductLoanFrom => 'أي حساب يجب تخصيم هذا المبلغ منه؟';
+
+  @override
+  String get whichAccountReceiveBorrowedAmount =>
+      'أي حساب يجب أن يستلم هذا المبلغ؟';
+
+  @override
+  String get depositIntoAccountOption => 'إيداع المبلغ في أحد حساباتي الحالية';
+
+  @override
+  String get recordDebtOnlyOption => 'تسجيل كدين فقط (دون إيداع في أي حساب)';
+
+  @override
+  String get whichAccountDeductRepaymentFrom =>
+      'أي حساب يجب تخصيم دفعة السداد منه؟';
+
+  @override
+  String get whichAccountReceiveRepayment =>
+      'أي حساب يجب إرجاع المبلغ السديد إليه؟';
+
+  @override
+  String get selectAccount => 'اختر الحساب';
+
+  @override
+  String get localBackupInfo => 'معلومات النسخ الاحتياطي المحلي';
+
+  @override
+  String get googleDriveBackupInfo => 'معلومات النسخ الاحتياطي في Google Drive';
+
+  @override
+  String backupDirectoryLabel(Object directory) {
+    return 'مجلد النسخ الاحتياطي: $directory';
+  }
+
+  @override
+  String backupFileLabel(Object file) {
+    return 'ملف النسخ الاحتياطي: $file';
+  }
+
+  @override
+  String lastBackupTimeLabel(Object time) {
+    return 'وقت آخر نسخة احتياطية: $time';
+  }
+
+  @override
+  String lastRestoreTimeLabel(Object time) {
+    return 'وقت آخر استعادة: $time';
+  }
+
+  @override
+  String get notSet => 'غير محدد';
+
+  @override
+  String backupFromDate(Object date) {
+    return 'نسخة احتياطية بتاريخ $date';
+  }
+
+  @override
+  String backupSizeLabel(Object size) {
+    return 'الحجم: $size';
+  }
+
+  @override
+  String get unknownDate => 'تاريخ غير معروف';
+
+  @override
+  String get unknownSize => 'حجم غير معروف';
+
+  @override
+  String get accountDeletionWarning =>
+      'تحذير: حذف الحساب نهائي ولا يمكن التراجع عنه!';
+
+  @override
+  String get accountDeletionDescription =>
+      'إذا قررت المتابعة، فسيتم حذف جميع بيانات تطبيقك بشكل نهائي من هذا الجهاز، بما في ذلك السجلات المالية، الأهداف، والإعدادات. هذا الإجراء لا يمكن التراجع عنه.\n\nسيتم إعادة ضبط التطبيق إلى حالته الأولية وتسجيل الخروج.\n\nلن يؤدي هذا إلى حذف أي ملفات نسخ احتياطي قمت بحفظها محلياً أو على Google Drive. إذا لم تكن متأكداً، يرجى إجراء نسخة احتياطية أولاً.\n\nيمكنك استعادة بياناتك من ملف النسخ الاحتياطي لاحقاً.';
+
+  @override
+  String typeYourNameToContinue(Object userName) {
+    return 'اكتب اسمك \'$userName\' للمتابعة:';
+  }
+
+  @override
+  String get enterYourUsername => 'أدخل اسم المستخدم';
+
+  @override
+  String get challengeConfirmation => 'تأكيد الحذف';
+
+  @override
+  String get reportLogFileNotice =>
+      'يحتوي ملف السجل على معلومات غير حساسة. وهو مخصص لأغراض التطوير والتحقيق فقط. يرجى مشاركة هذا الملف مع المطور فقط.\n\nسجل النشاطات مخصص لجلسة واحدة فقط. سيتم مسحه في كل مرة تفتح فيها التطبيق.';
+
+  @override
+  String get understandAndContinue => 'فهمت والمتابعة';
+
+  @override
+  String get developerPortalWarning =>
+      'تنبيه! تأكد من أنك تعرف ما تفعل. استخدم الخيارات بحذر.';
+
+  @override
+  String get resetCategories => 'إعادة ضبط الفئات';
+
+  @override
+  String get confirmResetCategories =>
+      'هل أنت تأكد من رغبتك في إعادة ضبط الفئات؟';
+
+  @override
+  String get resetWallets => 'إعادة ضبط المحافظ';
+
+  @override
+  String get confirmResetWallets =>
+      'هل أنت تأكد من رغبتك في إعادة ضبط المحافظ؟';
+
+  @override
+  String get resetDatabase => 'إعادة ضبط قاعدة البيانات';
+
+  @override
+  String get confirmResetDatabase =>
+      'هل أنت تأكد من رغبتك في إعادة ضبط قاعدة البيانات؟';
+
+  @override
+  String get privacyPolicyContent =>
+      '### ملخص\n- **التطبيق يعمل أوفلاين أولاً:** بياناتك محفوظة على جهازك بشكل افتراضي.\n- **نحن لا نبيع البيانات:** ليس لدينا أي وصول إلى معاملاتك المالية.\n- **النسخ الاحتياطي يدوي:** أنت من يتحكم في وقت ومكان حفظ بياناتك.\n\n### 1. جمع البيانات واستخدامها\nتم تصميم تطبيق Pockaw كـ **تطبيق يعمل دون اتصال بالإنترنت (Offline-First)**. هذا يعني أن قاعدة البيانات الأساسية التي تحتوي على ميزانياتك ومعاملاتك وأهدافك يتم إنشاؤها وتخزينها محلياً على جهازك.\n\n#### 1.1. تسجيل الدخول عبر Google\nنستخدم تسجيل الدخول عبر Google فقط لأغراض المصادقة لتسهيل عمليات النسخ الاحتياطي الآمنة. عند تسجيل الدخول، نلتزم بتلقي رمز مصادقة أساسي للتحقق من هويتك. **لا يقوم** Pockaw بقراءة بريدك الإلكتروني أو جهات اتصالك أو أي معلومات شخصية أخرى من حساب Google الخاص بك.\n\n#### 1.2. تحليلات وتقارير الأعطال\nلتحسين استقرار التطبيق، نستخدم **Firebase Analytics** و **Crashlytics**. تجميع هذه الخدمات بيانات استخدام مجهولة الهوية (مثل \"فتح المستخدم شاشة الإعدادات\") وسجلات الأعطال. يتم تجميع هذه البيانات ولا يمكن استخدامها للتعرف عليك شخصياً أو الاطلاع على مدخلاتك المالية.\n\n### 2. النسخ الاحتياطي واستعادة البيانات\nلمنع فقدان البيانات، يوفر Pockaw خيارات النسخ الاحتياطي اليدوي. أنت في تحكم كامل لتشغيل هذه الإجراءات.\n\n#### 2.1. النسخ الاحتياطي المحلي\nيمكنك اختيار تصدير ملف نسخة احتياطية مباشرة إلى وحدة تخزين جهازك.\n- **Android:** يتم تخزين النسخ الاحتياطية في `Internal Storage/Documents/PockawBackup/`.\n- **iOS:** يتم تخزين النسخ الاحتياطية في مجلد مستندات التطبيق، ويمكن الوصول إليها عبر تطبيق الملفات (Files).\n\n*ملاحظة: أنت المسؤول عن أمان هذه الملفات. إذا فقدت جهازك أو قمت بحذف هذه الملفات، فلا يمكننا استعادة البيانات.*\n\n#### 2.2. النسخ الاحتياطي على Google Drive\nيمكنك اختيارياً النسخ الاحتياطي لبياناتك على حساب Google Drive الشخصي الخاص بك.\n- يتم **تشغيل هذا الإجراء يدوياً** من قبلك في إعدادات \"النسخ الاحتياطي والاستعادة\".\n- يتطلب التطبيق اتصالاً بالإنترنت لتنفيذ هذا الإجراء.\n- يتم تخزين ملف النسخ الاحتياطي في مجلد خاص في Google Drive. لا يملك Pockaw إمكانية الوصول إلى الملفات الأخرى في Google Drive الخاص بك.\n\n### 3. حذف الحساب وإعادة ضبط البيانات\nلا يحتفظ Pockaw بسيرفر مركزي يضم سجلاتك المالية. لذلك، تعمل وظيفة \"حذف الحساب\" كالتالي:\n1. **إعادة ضبط الجلسة:** تقوم بتسجيل خروجك من حساب Google الخاص بك داخل التطبيق.\n2. **المسح المحلي:** تقوم بمسح بيانات الجلسة الحالية من التطبيق.\n\n**هام:** حذف حسابك في التطبيق **لا يؤدي تلقائياً** إلى حذف ملفات النسخ الاحتياطي التي قمت بحفظها سابقاً على Google Drive أو التخزين المحلي. نظراً لأنك تملك تلك الملفات، يجب عليك حذفها يدوياً من Drive أو جهازك إذا كنت ترغب في إزالة جميع آثار بياناتك.\n\n### 4. الأمان\nنحن نأخذ الأمان على محمل الجد. يتم تخزين قاعدة البيانات الخاصة بك باستخدام تشفير SQLite القياسي على جهازك. عند استخدام النسخ الاحتياطي على Google Drive، يتم نقل بياناتك بأمان باستخدام واجهات برمجية مشفرة من Google.\n\n### 5. تواصل معنا\nإذا كان لديك أي أسئلة حول هذه السياسة أو طبيعة مشروعنا مفتوح المصدر، تواصل معنا:\n- **البريد الإلكتروني:** idlayground@gmail.com\n- **المجتمع:** انضم إلى قناتنا على تلغرام (https://t.me/PockawApp)';
+
+  @override
+  String get termsAndConditionsContent =>
+      '### ملخص\n- **ترخيص مجاني:** تطبيق Pockaw مجاني للاستخدام الشخصي.\n- **مسؤوليتك:** أنت المسؤول عن النسخ الاحتياطية الخاصة بك وأمان بياناتك.\n- **لا يوجد ضمان:** يتم توفير التطبيق \"كما هو\" دون ضمانات مالية.\n\n### 1. القبول بالشروط\nبتحميل التطبيق أو تثبيته أو استخدامه، فإنك توافق على الالتزام بهامش الشروط والأحكام. إذا كنت لا توافق على هذه الشروط، فيرجى عدم استخدام التطبيق.\n\n### 2. مسؤولية المستخدم عن البيانات\nيعمل Pockaw بناءً على **نموذج يعمل بدون إنترنت أوفلاين أولاً**. نحن لا نخزن بياناتك المالية على خوادمنا.\n\n#### 2.1. فقدان البيانات والنسخ الاحتياطي\nأنك تقر بأنك المسؤول الوحيد عن الاحتفاظ بنسخ احتياطية من بياناتك.\n- **النسخ الاحتياطي اليدوي مطلوب:** تتطلب ميزة \"النسخ الاحتياطي والاستعادة\" بدءاً يدوياً من قبلك. التزامن السحابي التلقائي غير مفعل بشكل افتراضي.\n- **عطل الجهاز:** لسنا مسؤولين عن أي فقدان للبيانات ناتج عن أجهزة مفقودة، أو تطبيقات ملغاة التثبيت، أو تلف في التخزين المحلي.\n\n#### 2.2. البيئات المدعومة\nتم تصميم Pockaw للعمل على أنظمة التشغيل القياسية غير المعدلة (Android, iOS, Windows, macOS, Linux). **لا نضمن الوظائف أو الدعم للأجهزة التي تم عمل \"Root\" أو \"Jailbreak\" لها.** قد تفشل ميزات مثل النسخ الاحتياطي المحلي على هذه الأجهزة بسبب قيود أذونات نظام الملفات.\n\n### 3. خدمات الطرف الثالث\n#### 3.1. خدمات Google\nإذا اخترت استخدام تسجيل الدخول عبر Google أو النسخ الاحتياطي على Google Drive:\n- فإنك توافق على الالتزام بشروط خدمة Google.\n- تفهم أن Pockaw يسهل الاتصال بـ Google Drive فقط. لسنا مسؤولين عن توفر أو موثوقية خدمات Google.\n\n### 4. حذف الحساب\nيؤدي تحديد \"حذف الحساب\" داخل التطبيق إلى إعادة ضبط محلية لجلساتك الحالية وفصل رمز حساب Google الخاص بك. **ولا يؤدي إلى حذف ملفات النسخ الاحتياطي** التي قمت بتصديرها سابقاً إلى Google Drive أو التخزين المحلي لجهازك. إدارة وتعديل تلك الملفات الخارجية هي مسؤوليتك.\n\n### 5. الملكية الفكرية\nPockaw هو برنامج مفتوح المصدر (Open Source). بينما تتوفر الكود المصدري للمعاينة والمساهمة بموجب ترخيص LGPL v3، فإن العلامة التجارية Pockaw والشعارات والأصول المرئية هي ملكية فكرية للمطورين ولا يجوز استخدامها لأغراض تجارية دون إذن.\n\n### 6. إخلاء المسؤولية عن الضمانات\nيتم توفير التطبيق \"كما هو\" و \"كما هو متاح\" دون أي ضمان من أي نوع.\n- **ليست نصيحة مالية:** Pockaw هو أداة تتبع، وليس مستشاراً مالياً. لسنا مسؤولين عن أي قرارات مالية تتخذها بناءً على البيانات المعروضة في التطبيق.\n- **الأخطاء والأعطال:** بينما نسعى جاهدين للاستقرار، لا نضمن أن التطبيق سيكون خالياً من الأخطاء أو مستمراً دون انقطاع.\n\n### 7. التعديلات على الشروط\nنحتفظ بالحق في تعديل هذه الشروط في أي وقت. الاستمرار في استخدام التطبيق بعد أي تغييرات يعني قبولك للشروط الجديدة.\n\n### 8. تواصل معنا\nلأي أسئلة تتعلق بهذه الشروط، يرجى التواصل معنا عبر: idlayground@gmail.com';
 }

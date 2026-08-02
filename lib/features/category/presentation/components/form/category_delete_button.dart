@@ -12,21 +12,22 @@ class CategoryDeleteButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return TextButton(
       child: Text(
-        'Delete',
+        l10n.delete,
         style: AppTextStyles.body2.copyWith(color: AppColors.red),
       ),
       onPressed: () {
         context.openBottomSheet(
           child: AlertBottomSheet(
-            title: 'Delete Category',
+            title: l10n.deleteCategory,
             content: Text(
-              'Deleting this category will also remove all sub-categories as well as transactions related to it. '
-              'Continue?\n\nThis action cannot be undone.',
+              l10n.deleteCategoryContent,
               style: AppTextStyles.body2,
               textAlign: TextAlign.center,
             ),
+            confirmText: l10n.delete,
             onConfirm: () {
               final categories = ref.read(hierarchicalCategoriesProvider).value;
 

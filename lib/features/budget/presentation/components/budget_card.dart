@@ -19,6 +19,8 @@ import 'package:pockaw/features/category_picker/presentation/components/category
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetCard extends ConsumerWidget {
   final BudgetModel budget;
   final bool editing;
@@ -26,6 +28,7 @@ class BudgetCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final wallet = ref.read(activeWalletProvider);
     final currency = wallet.value?.currencyByIsoCode(ref).symbol;
 
@@ -63,7 +66,9 @@ class BudgetCard extends ConsumerWidget {
                 category: budget.category,
                 suffixIcon: editing
                     ? null
-                    : HugeIcons.strokeRoundedArrowRight01,
+                    : (Directionality.of(context) == TextDirection.rtl
+                        ? HugeIcons.strokeRoundedArrowLeft01
+                        : HugeIcons.strokeRoundedArrowRight01),
               ),
             ),
             const Gap(AppSpacing.spacing8),
@@ -71,7 +76,7 @@ class BudgetCard extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '$currency ${remainingAmount.toPriceFormat()} left',
+                  '$currency ${remainingAmount.toPriceFormat()} ${l10n.left}',
                   style: AppTextStyles.body4.bold.copyWith(
                     color: remainingAmount < 0
                         ? AppColors.red
@@ -79,7 +84,7 @@ class BudgetCard extends ConsumerWidget {
                   ),
                 ),
                 Text(
-                  '$currency ${spentAmount.toPriceFormat()} of ${budget.amount.toPriceFormat()}',
+                  '$currency ${spentAmount.toPriceFormat()} ${l10n.ofTotal} ${budget.amount.toPriceFormat()}',
                   textAlign: TextAlign.right,
                   style: AppTextStyles.body4.bold,
                 ),

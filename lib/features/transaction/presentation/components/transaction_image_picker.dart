@@ -8,12 +8,14 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:pockaw/core/components/buttons/secondary_button.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/services/image_service/riverpod/image_notifier.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class TransactionImagePicker extends ConsumerWidget {
   const TransactionImagePicker({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     final imageNotifier = ref.read(imageProvider.notifier);
 
     return Row(
@@ -27,7 +29,7 @@ class TransactionImagePicker extends ConsumerWidget {
                   imageNotifier.saveImage();
                 });
               },
-              label: 'Camera',
+              label: l10n.camera,
               icon: HugeIcons.strokeRoundedCamera01,
             ),
           ),
@@ -41,7 +43,7 @@ class TransactionImagePicker extends ConsumerWidget {
                 imageNotifier.saveImage();
               });
             },
-            label: 'Gallery',
+            label: l10n.gallery,
             icon: HugeIcons.strokeRoundedImage01,
           ),
         ),

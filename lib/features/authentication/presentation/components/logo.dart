@@ -14,7 +14,10 @@ class Logo extends StatelessWidget {
         children: [
           Image.asset('assets/icon/icon-transparent-full.png', width: size),
           const Gap(AppSpacing.spacing12),
-          const Text(AppConstants.appName, style: AppTextStyles.heading2),
+          Text(
+            AppLocalizations.of(context).appName,
+            style: AppTextStyles.heading2,
+          ),
         ],
       ),
     );

@@ -10,12 +10,16 @@ import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/extensions/text_style_extensions.dart';
 import 'package:pockaw/features/budget/data/model/budget_model.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetFundSourceCard extends StatelessWidget {
   final BudgetModel budget;
   const BudgetFundSourceCard({super.key, required this.budget});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Container(
       padding: const EdgeInsets.all(AppSpacing.spacing8),
       decoration: BoxDecoration(
@@ -40,7 +44,7 @@ class BudgetFundSourceCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Funds Source',
+                l10n.fundsSource,
                 style: AppTextStyles.body5.bold.copyWith(
                   color: context.incomeText,
                 ),

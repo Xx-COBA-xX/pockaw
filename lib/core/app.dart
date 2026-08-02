@@ -27,7 +27,8 @@ class MyApp extends ConsumerWidget {
 
     return ToastificationWrapper(
       child: MaterialApp.router(
-        title: AppConstants.appName,
+        onGenerateTitle: (context) =>
+            AppLocalizations.of(context).appName,
         debugShowCheckedModeBanner: false,
         theme: _buildTheme(Brightness.light, locale: locale),
         darkTheme: _buildTheme(Brightness.dark, locale: locale),

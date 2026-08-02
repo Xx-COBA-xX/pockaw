@@ -167,11 +167,12 @@ class SpendingProgressChart extends ConsumerWidget {
   }
 
   Widget _buildHeader(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'My spending this month',
+          l10n.mySpendingThisMonth,
           style: AppTextStyles.body4.bold,
         ),
         InkWell(
@@ -179,7 +180,7 @@ class SpendingProgressChart extends ConsumerWidget {
             context.push(Routes.basicMonthlyReports, extra: DateTime.now());
           },
           child: Text(
-            'View report',
+            l10n.viewReport,
             style: AppTextStyles.body5.copyWith(
               decoration: TextDecoration.underline,
             ),

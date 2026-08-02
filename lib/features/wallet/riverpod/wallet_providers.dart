@@ -89,6 +89,8 @@ class ActiveWalletNotifier extends AsyncNotifier<WalletModel?> {
     int id = await db.walletDao.addWallet(newWallet);
     Log.d(id, label: 'new wallet');
 
+    state = AsyncValue.data(newWallet.copyWith(id: id));
+
     ref
         .read(userActivityServiceProvider)
         .logActivity(

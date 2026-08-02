@@ -8,9 +8,15 @@ import 'package:pockaw/core/services/image_service/riverpod/image_service_provid
 final dataBackupServiceProvider = Provider<DataBackupService>((ref) {
   final db = ref.watch(databaseProvider);
   final imageService = ref.watch(imageServiceProvider);
+  FirebaseCrashlytics? crashlytics;
+  try {
+    crashlytics = FirebaseCrashlytics.instance;
+  } catch (_) {
+    // Firebase is not initialized
+  }
   return DataBackupService(
     db,
     imageService,
-    FirebaseCrashlytics.instance,
+    crashlytics,
   );
 });

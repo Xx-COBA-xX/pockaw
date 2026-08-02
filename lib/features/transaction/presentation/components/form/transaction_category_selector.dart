@@ -8,6 +8,7 @@ import 'package:pockaw/core/database/tables/category_table.dart';
 import 'package:pockaw/core/router/routes.dart';
 import 'package:pockaw/core/utils/logger.dart';
 import 'package:pockaw/features/category/data/model/category_model.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class TransactionCategorySelector extends HookConsumerWidget {
   final TextEditingController controller;
@@ -22,11 +23,12 @@ class TransactionCategorySelector extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     return CustomSelectField(
       context: context,
       controller: controller,
-      label: 'Category',
-      hint: 'Select Category',
+      label: l10n.category,
+      hint: l10n.categories,
       isRequired: true,
       prefixIcon: HugeIcons.strokeRoundedStructure01,
       onTap: () async {

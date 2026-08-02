@@ -8,22 +8,26 @@ import 'package:pockaw/core/components/form_fields/custom_select_field.dart';
 import 'package:pockaw/core/extensions/date_time_extension.dart';
 import 'package:pockaw/features/budget/presentation/riverpod/date_picker_provider.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetDateRangePicker extends HookConsumerWidget {
   const BudgetDateRangePicker({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).languageCode;
     final selectedDate = ref.watch(datePickerProvider);
     final selectedDateNotifier = ref.read(datePickerProvider.notifier);
     final dateFieldController = useTextEditingController();
 
     dateFieldController.text =
-        '${selectedDate.first!.toDayShortMonthYear()} - ${selectedDate.last!.toDayShortMonthYear()}';
+        '${selectedDate.first!.toDayShortMonthYear(locale)} - ${selectedDate.last!.toDayShortMonthYear(locale)}';
 
     return CustomSelectField(
       context: context,
       controller: dateFieldController,
-      label: 'Set a budget period',
+      label: l10n.setBudgetPeriod,
       hint: '12 Nov 2024 - 12 Nov 2026',
       prefixIcon: HugeIcons.strokeRoundedCalendar01,
       isRequired: true,
@@ -37,7 +41,7 @@ class BudgetDateRangePicker extends HookConsumerWidget {
         if (dateRange != null) {
           selectedDateNotifier.setRange(dateRange);
           dateFieldController.text =
-              '${dateRange.first!.toDayShortMonthYear()} - ${dateRange.last!.toDayShortMonthYear()}';
+              '${dateRange.first!.toDayShortMonthYear(locale)} - ${dateRange.last!.toDayShortMonthYear(locale)}';
         }
       },
     );

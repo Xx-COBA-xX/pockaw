@@ -41,7 +41,7 @@ class GoalCard extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _title(),
+            _title(context),
             const Gap(AppSpacing.spacing16),
             ref
                 .watch(checklistItemsProvider(goal.id!))
@@ -75,7 +75,7 @@ class GoalCard extends ConsumerWidget {
     );
   }
 
-  Widget _title() {
+  Widget _title(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +89,12 @@ class GoalCard extends ConsumerWidget {
             overflow: TextOverflow.ellipsis,
           ),
         ),
-        HugeIcon(icon: HugeIcons.strokeRoundedArrowRight01, size: 20),
+        HugeIcon(
+          icon: Directionality.of(context) == TextDirection.rtl
+              ? HugeIcons.strokeRoundedArrowLeft01
+              : HugeIcons.strokeRoundedArrowRight01,
+          size: 20,
+        ),
       ],
     );
   }

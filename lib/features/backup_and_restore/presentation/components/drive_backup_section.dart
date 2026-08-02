@@ -91,10 +91,21 @@ class DriveBackupSection extends ConsumerWidget {
                               final backup = state.driveBackups[index];
                               return ListTile(
                                 title: Text(
-                                  'Backup from ${backup.modifiedTime?.toLocal().toString().split('.').first ?? 'Unknown Date'}',
+                                  l10n.backupFromDate(
+                                    backup.modifiedTime
+                                            ?.toLocal()
+                                            .toString()
+                                            .split('.')
+                                            .first ??
+                                        l10n.unknownDate,
+                                  ),
                                 ),
                                 subtitle: Text(
-                                  'Size: ${(backup.size > 0) ? '${(backup.size / (1024 * 1024)).toStringAsFixed(2)} MB' : 'Unknown Size'}',
+                                  l10n.backupSizeLabel(
+                                    (backup.size > 0)
+                                        ? '${(backup.size / (1024 * 1024)).toStringAsFixed(2)} MB'
+                                        : l10n.unknownSize,
+                                  ),
                                 ),
                                 onTap: () async {
                                   context.pop();
@@ -126,23 +137,27 @@ class DriveBackupSection extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Google Drive Backup Info',
+                l10n.googleDriveBackupInfo,
                 style: AppTextStyles.body4.bold,
               ),
               const Gap(AppSpacing.spacing8),
               Text(
-                'Backup File: ${state.driveDirectory ?? 'Not set'}',
+                l10n.backupFileLabel(state.driveDirectory ?? l10n.notSet),
                 style: AppTextStyles.body4,
               ),
               const Gap(AppSpacing.spacing4),
               Text(
-                'Last Backup Time: ${state.lastDriveBackupTime != null ? state.lastDriveBackupTime!.toDayMonthYearTime12Hour() : 'No backups yet'}',
+                l10n.lastBackupTimeLabel(state.lastDriveBackupTime != null
+                    ? state.lastDriveBackupTime!.toDayMonthYearTime12Hour()
+                    : l10n.noBackupsYet),
                 style: AppTextStyles.body4,
               ),
               // last restore time
               const Gap(AppSpacing.spacing4),
               Text(
-                'Last Restore Time: ${state.lastDriveRestoreTime != null ? state.lastDriveRestoreTime!.toDayMonthYearTime12Hour() : 'No restores yet'}',
+                l10n.lastRestoreTimeLabel(state.lastDriveRestoreTime != null
+                    ? state.lastDriveRestoreTime!.toDayMonthYearTime12Hour()
+                    : l10n.noRestoresYet),
                 style: AppTextStyles.body4,
               ),
 

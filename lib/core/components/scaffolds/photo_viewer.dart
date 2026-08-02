@@ -30,7 +30,9 @@ class PhotoViewer extends HookConsumerWidget {
         leading: CustomIconButton(
           context,
           onPressed: () => context.pop(),
-          icon: HugeIcons.strokeRoundedArrowLeft01,
+          icon: Directionality.of(context) == TextDirection.rtl
+              ? HugeIcons.strokeRoundedArrowRight01
+              : HugeIcons.strokeRoundedArrowLeft01,
         ),
       ),
       extendBody: true,

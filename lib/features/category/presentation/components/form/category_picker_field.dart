@@ -20,6 +20,7 @@ class CategoryPickerField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return IntrinsicHeight(
       child: Row(
         children: [
@@ -58,11 +59,11 @@ class CategoryPickerField extends StatelessWidget {
                 return CustomSelectField(
                   context: context,
                   controller: parentCategoryController,
-                  label: 'Parent Category',
+                  label: l10n.parentCategory,
                   hint: isEditingParent
                       ? '-'
                       : selectedParentCategory?.title ??
-                            'Leave empty for parent',
+                            l10n.leaveEmptyForParent,
                   prefixIcon: HugeIcons.strokeRoundedStructure01,
                   onTap: () async {
                     // Navigate to the picker screen and wait for a result

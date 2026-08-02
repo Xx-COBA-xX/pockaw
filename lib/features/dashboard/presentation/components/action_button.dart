@@ -20,6 +20,12 @@ class ActionButton extends ConsumerWidget {
         ),
         CustomIconButton(
           context,
+          onPressed: () => context.push(Routes.debtList),
+          icon: HugeIcons.strokeRoundedUserGroup,
+          themeMode: context.themeMode,
+        ),
+        CustomIconButton(
+          context,
           onPressed: () {
             context.push(Routes.settings);
           },

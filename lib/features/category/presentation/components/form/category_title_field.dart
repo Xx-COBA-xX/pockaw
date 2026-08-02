@@ -7,11 +7,12 @@ class CategoryTitleField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     return CustomTextField(
       context: context,
       controller: titleController, // Use the controller
-      label: 'Title (max. 25)',
-      hint: 'New Category Title',
+      label: l10n.titleMax25,
+      hint: l10n.newCategoryTitle,
       isRequired: true,
       prefixIcon: HugeIcons.strokeRoundedTextSmallcaps,
       textInputAction: TextInputAction.next,

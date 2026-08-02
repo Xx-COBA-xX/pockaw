@@ -6,6 +6,7 @@ import 'package:pockaw/core/components/form_fields/custom_select_field.dart';
 import 'package:pockaw/core/extensions/date_time_extension.dart';
 import 'package:pockaw/core/utils/logger.dart';
 import 'package:pockaw/features/transaction/presentation/riverpod/date_picker_provider.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class TransactionDatePicker extends ConsumerWidget {
   final DateTime? initialDate;
@@ -18,15 +19,19 @@ class TransactionDatePicker extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     final selectedDateNotifier = ref.read(datePickerProvider.notifier);
-    dateFieldController.text = (initialDate ?? DateTime.now())
-        .toRelativeDayFormatted(showTime: true, use24Hours: false);
+    if (dateFieldController.text.isEmpty) {
+      dateFieldController.text = (initialDate ?? DateTime.now())
+          .toRelativeDayFormatted(context: context, showTime: true, use24Hours: false);
+    }
 
     return CustomSelectField(
       context: context,
       controller: dateFieldController,
-      label: 'Set a date',
+      label: l10n.date,
       hint: DateTime.now().toRelativeDayFormatted(
+        context: context,
         showTime: true,
         use24Hours: false,
       ),
@@ -37,12 +42,13 @@ class TransactionDatePicker extends ConsumerWidget {
 
         CustomDatePicker.selectSingleDate(
           context,
-          title: 'Transaction Date & Time',
+          title: l10n.transactionDateTime,
           selectedDate: initialDate ?? DateTime.now(),
           onDateTimeChanged: (date) {
             selectedDateNotifier.setDate(date);
             Log.d(date, label: 'selected date');
             dateFieldController.text = date.toRelativeDayFormatted(
+              context: context,
               showTime: true,
               use24Hours: false,
             );

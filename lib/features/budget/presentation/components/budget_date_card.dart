@@ -11,12 +11,17 @@ import 'package:pockaw/core/extensions/date_time_extension.dart';
 import 'package:pockaw/core/extensions/text_style_extensions.dart';
 import 'package:pockaw/features/budget/data/model/budget_model.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetDateCard extends StatelessWidget {
   final BudgetModel budget;
   const BudgetDateCard({super.key, required this.budget});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).languageCode;
+
     return Container(
       padding: const EdgeInsets.all(AppSpacing.spacing8),
       decoration: BoxDecoration(
@@ -41,11 +46,11 @@ class BudgetDateCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Budget Period',
+                l10n.budgetPeriod,
                 style: AppTextStyles.body5.copyWith(color: context.purpleText),
               ),
               Text(
-                '${budget.startDate.toDayShortMonth()} - ${budget.endDate.toDayShortMonthYear()}',
+                '${budget.startDate.toDayShortMonth(locale)} - ${budget.endDate.toDayShortMonthYear(locale)}',
                 style: AppTextStyles.body5.bold,
               ),
             ],

@@ -10,10 +10,11 @@ class CategoryDescriptionField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return CustomTextField(
       context: context,
-      label: 'Description (max. 50)',
-      hint: 'Write simple description...',
+      label: l10n.descriptionMax50,
+      hint: l10n.writeSimpleDescription,
       controller: descriptionController, // Use the controller
       prefixIcon: HugeIcons.strokeRoundedNote,
       minLines: 1,

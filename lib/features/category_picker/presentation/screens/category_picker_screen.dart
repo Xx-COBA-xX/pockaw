@@ -84,7 +84,7 @@ class CategoryPickerScreen extends ConsumerWidget {
           ),
           if (!isPickingParent)
             PrimaryButton(
-              label: 'Add New Category',
+              label:  l10n.addAnewCategory,
               state: ButtonState.outlinedActive,
               onPressed: () {
                 ref.read(selectedParentCategoryProvider.notifier).clear();

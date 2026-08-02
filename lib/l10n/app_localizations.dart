@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:
-  /// **'Pockaw'**
+  /// **'SURRAH'**
   String get appName;
 
   /// No description provided for @dashboard.
@@ -1105,6 +1105,852 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Edit Checklist Item'**
   String get editChecklistItem;
+
+  /// No description provided for @dataManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Management'**
+  String get dataManagement;
+
+  /// No description provided for @appInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'App Info'**
+  String get appInfo;
+
+  /// No description provided for @session.
+  ///
+  /// In en, this message translates to:
+  /// **'Session'**
+  String get session;
+
+  /// No description provided for @personalDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Details'**
+  String get personalDetails;
+
+  /// No description provided for @deleteMyData.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete My Data'**
+  String get deleteMyData;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @termsAndConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions'**
+  String get termsAndConditions;
+
+  /// No description provided for @reportLogFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Log File'**
+  String get reportLogFile;
+
+  /// No description provided for @continueLogoutDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue logging out from this device?'**
+  String get continueLogoutDevice;
+
+  /// No description provided for @mainCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Main Currency'**
+  String get mainCurrency;
+
+  /// No description provided for @selectMainCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Main Currency'**
+  String get selectMainCurrency;
+
+  /// No description provided for @signInWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google'**
+  String get signInWithGoogle;
+
+  /// No description provided for @setupWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Setup Wallet'**
+  String get setupWallet;
+
+  /// No description provided for @tapToSetupFirstWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to setup your first wallet'**
+  String get tapToSetupFirstWallet;
+
+  /// No description provided for @savingsAccountHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., Savings Account'**
+  String get savingsAccountHint;
+
+  /// No description provided for @mySpendingThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'My spending this month'**
+  String get mySpendingThisMonth;
+
+  /// No description provided for @viewReport.
+  ///
+  /// In en, this message translates to:
+  /// **'View report'**
+  String get viewReport;
+
+  /// No description provided for @deleteWalletWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'All transactions, budgets, and goals will also be deleted. This action cannot be undone.'**
+  String get deleteWalletWarning;
+
+  /// No description provided for @deleteWalletComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete a wallet is coming soon...'**
+  String get deleteWalletComingSoon;
+
+  /// No description provided for @readMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Read more'**
+  String get readMore;
+
+  /// No description provided for @toFindOut.
+  ///
+  /// In en, this message translates to:
+  /// **' to find out.'**
+  String get toFindOut;
+
+  /// No description provided for @localDataStorageNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'You can add more wallets later. We only store your data into local database on this device. So you are in charge! '**
+  String get localDataStorageNotice;
+
+  /// No description provided for @getStartedDescPart1.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your '**
+  String get getStartedDescPart1;
+
+  /// No description provided for @getStartedDescPart2.
+  ///
+  /// In en, this message translates to:
+  /// **'name or brand name'**
+  String get getStartedDescPart2;
+
+  /// No description provided for @getStartedDescPart3.
+  ///
+  /// In en, this message translates to:
+  /// **', pick your best '**
+  String get getStartedDescPart3;
+
+  /// No description provided for @getStartedDescPart4.
+  ///
+  /// In en, this message translates to:
+  /// **'picture'**
+  String get getStartedDescPart4;
+
+  /// No description provided for @getStartedDescPart5.
+  ///
+  /// In en, this message translates to:
+  /// **' and choose your '**
+  String get getStartedDescPart5;
+
+  /// No description provided for @getStartedDescPart6.
+  ///
+  /// In en, this message translates to:
+  /// **'currency'**
+  String get getStartedDescPart6;
+
+  /// No description provided for @getStartedDescPart7.
+  ///
+  /// In en, this message translates to:
+  /// **' to personalize your account.'**
+  String get getStartedDescPart7;
+
+  /// No description provided for @welcomeTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to'**
+  String get welcomeTo;
+
+  /// No description provided for @onboardingDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple and intuitive finance buddy. Track your expenses, set goals, organize your pocket and wallet sized finance — everything effortlessly. 🚀'**
+  String get onboardingDescription;
+
+  /// No description provided for @lunchWithMyFriends.
+  ///
+  /// In en, this message translates to:
+  /// **'Lunch with my friends'**
+  String get lunchWithMyFriends;
+
+  /// No description provided for @titleMax50.
+  ///
+  /// In en, this message translates to:
+  /// **'Title (max. 50)'**
+  String get titleMax50;
+
+  /// No description provided for @transactionDateTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction Date & Time'**
+  String get transactionDateTime;
+
+  /// No description provided for @deleteImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Image'**
+  String get deleteImage;
+
+  /// No description provided for @confirmDeleteImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this image?'**
+  String get confirmDeleteImage;
+
+  /// No description provided for @titleMax25.
+  ///
+  /// In en, this message translates to:
+  /// **'Title (max. 25)'**
+  String get titleMax25;
+
+  /// No description provided for @newCategoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New Category Title'**
+  String get newCategoryTitle;
+
+  /// No description provided for @parentCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent Category'**
+  String get parentCategory;
+
+  /// No description provided for @leaveEmptyForParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave empty for parent'**
+  String get leaveEmptyForParent;
+
+  /// No description provided for @descriptionMax50.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (max. 50)'**
+  String get descriptionMax50;
+
+  /// No description provided for @writeSimpleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Write simple description...'**
+  String get writeSimpleDescription;
+
+  /// No description provided for @makeAsParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Make as parent'**
+  String get makeAsParent;
+
+  /// No description provided for @makeAsParentSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent category selection will be ignored on save.'**
+  String get makeAsParentSubtitle;
+
+  /// No description provided for @editCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Category'**
+  String get editCategory;
+
+  /// No description provided for @addCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Category'**
+  String get addCategory;
+
+  /// No description provided for @deleteCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Category'**
+  String get deleteCategory;
+
+  /// No description provided for @deleteCategoryContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting this category will also remove all sub-categories as well as transactions related to it. Continue?\n\nThis action cannot be undone.'**
+  String get deleteCategoryContent;
+
+  /// No description provided for @addAnewCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'+ Add New Category'**
+  String get addAnewCategory;
+
+  /// No description provided for @today.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// No description provided for @yesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterday;
+
+  /// No description provided for @time.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get time;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @markAsComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Complete'**
+  String get markAsComplete;
+
+  /// No description provided for @markAsIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Incomplete'**
+  String get markAsIncomplete;
+
+  /// No description provided for @confirmMarkComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to mark this item as complete?'**
+  String get confirmMarkComplete;
+
+  /// No description provided for @confirmMarkIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to mark this item as incomplete?'**
+  String get confirmMarkIncomplete;
+
+  /// No description provided for @thisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'This Month'**
+  String get thisMonth;
+
+  /// No description provided for @lastMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Month'**
+  String get lastMonth;
+
+  /// No description provided for @totalRemainingBudgets.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Remaining Budgets'**
+  String get totalRemainingBudgets;
+
+  /// No description provided for @totalBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Budget'**
+  String get totalBudget;
+
+  /// No description provided for @left.
+  ///
+  /// In en, this message translates to:
+  /// **'left'**
+  String get left;
+
+  /// No description provided for @ofTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'of'**
+  String get ofTotal;
+
+  /// No description provided for @budgetPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget Period'**
+  String get budgetPeriod;
+
+  /// No description provided for @fundsSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Funds Source'**
+  String get fundsSource;
+
+  /// No description provided for @noBudgetsFoundCreateOne.
+  ///
+  /// In en, this message translates to:
+  /// **'No budgets found. Create one!'**
+  String get noBudgetsFoundCreateOne;
+
+  /// No description provided for @noTransactionsToDisplay.
+  ///
+  /// In en, this message translates to:
+  /// **'No transactions to display.'**
+  String get noTransactionsToDisplay;
+
+  /// No description provided for @noTransactionsForPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'No transactions for {period}.'**
+  String noTransactionsForPeriod(Object period);
+
+  /// No description provided for @amountAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount (Available: {amount})'**
+  String amountAvailable(Object amount);
+
+  /// No description provided for @pleaseSelectCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a category.'**
+  String get pleaseSelectCategory;
+
+  /// No description provided for @pleaseSelectFundSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a fund source (wallet).'**
+  String get pleaseSelectFundSource;
+
+  /// No description provided for @pleaseSelectValidDateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a valid date range.'**
+  String get pleaseSelectValidDateRange;
+
+  /// No description provided for @budgetAmountExceedsBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Total budget amount cannot exceed wallet balance.'**
+  String get budgetAmountExceedsBalance;
+
+  /// No description provided for @budgetCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget created!'**
+  String get budgetCreated;
+
+  /// No description provided for @budgetUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget updated!'**
+  String get budgetUpdated;
+
+  /// No description provided for @budgetDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget deleted!'**
+  String get budgetDeleted;
+
+  /// No description provided for @failedToSaveBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to save budget'**
+  String get failedToSaveBudget;
+
+  /// No description provided for @debts.
+  ///
+  /// In en, this message translates to:
+  /// **'Debts'**
+  String get debts;
+
+  /// No description provided for @iOwe.
+  ///
+  /// In en, this message translates to:
+  /// **'I Owe'**
+  String get iOwe;
+
+  /// No description provided for @iAmOwed.
+  ///
+  /// In en, this message translates to:
+  /// **'I Am Owed'**
+  String get iAmOwed;
+
+  /// No description provided for @allDebts.
+  ///
+  /// In en, this message translates to:
+  /// **'All Debts'**
+  String get allDebts;
+
+  /// No description provided for @completedDebts.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get completedDebts;
+
+  /// No description provided for @totalIOwe.
+  ///
+  /// In en, this message translates to:
+  /// **'Total I Owe'**
+  String get totalIOwe;
+
+  /// No description provided for @totalIAmOwed.
+  ///
+  /// In en, this message translates to:
+  /// **'Total I Am Owed'**
+  String get totalIAmOwed;
+
+  /// No description provided for @netDebtBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Net Debt Balance'**
+  String get netDebtBalance;
+
+  /// No description provided for @createDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Debt'**
+  String get createDebt;
+
+  /// No description provided for @editDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Debt'**
+  String get editDebt;
+
+  /// No description provided for @deleteDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Debt'**
+  String get deleteDebt;
+
+  /// No description provided for @addPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Payment'**
+  String get addPayment;
+
+  /// No description provided for @paymentHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment History'**
+  String get paymentHistory;
+
+  /// No description provided for @personName.
+  ///
+  /// In en, this message translates to:
+  /// **'Person Name'**
+  String get personName;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneNumber;
+
+  /// No description provided for @debtType.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt Type'**
+  String get debtType;
+
+  /// No description provided for @dueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Due Date'**
+  String get dueDate;
+
+  /// No description provided for @overdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get overdue;
+
+  /// No description provided for @noDebtsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No debts recorded yet.'**
+  String get noDebtsYet;
+
+  /// No description provided for @noPaymentsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No payments recorded yet.'**
+  String get noPaymentsYet;
+
+  /// No description provided for @debtCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt created!'**
+  String get debtCreated;
+
+  /// No description provided for @debtUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt updated!'**
+  String get debtUpdated;
+
+  /// No description provided for @debtDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Debt deleted!'**
+  String get debtDeleted;
+
+  /// No description provided for @paymentAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment added successfully!'**
+  String get paymentAdded;
+
+  /// No description provided for @paymentDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment deleted!'**
+  String get paymentDeleted;
+
+  /// No description provided for @recordTransactionInWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Record transaction in wallet'**
+  String get recordTransactionInWallet;
+
+  /// No description provided for @confirmDeleteDebt.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this debt? All associated payments will be deleted.'**
+  String get confirmDeleteDebt;
+
+  /// No description provided for @viewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get viewAll;
+
+  /// No description provided for @noDebtsFoundCreateOne.
+  ///
+  /// In en, this message translates to:
+  /// **'No debts found. Tap to add one.'**
+  String get noDebtsFoundCreateOne;
+
+  /// No description provided for @deductFromAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Deduct from Account'**
+  String get deductFromAccount;
+
+  /// No description provided for @whichAccountDeductLoanFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should this amount be deducted from?'**
+  String get whichAccountDeductLoanFrom;
+
+  /// No description provided for @whichAccountReceiveBorrowedAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should receive this amount?'**
+  String get whichAccountReceiveBorrowedAmount;
+
+  /// No description provided for @depositIntoAccountOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit amount into an existing account'**
+  String get depositIntoAccountOption;
+
+  /// No description provided for @recordDebtOnlyOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Record as debt only (without affecting any account balance)'**
+  String get recordDebtOnlyOption;
+
+  /// No description provided for @whichAccountDeductRepaymentFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should this repayment be deducted from?'**
+  String get whichAccountDeductRepaymentFrom;
+
+  /// No description provided for @whichAccountReceiveRepayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Which account should receive this repayment?'**
+  String get whichAccountReceiveRepayment;
+
+  /// No description provided for @selectAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Account'**
+  String get selectAccount;
+
+  /// No description provided for @localBackupInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Local Backup Info'**
+  String get localBackupInfo;
+
+  /// No description provided for @googleDriveBackupInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Drive Backup Info'**
+  String get googleDriveBackupInfo;
+
+  /// No description provided for @backupDirectoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup Directory: {directory}'**
+  String backupDirectoryLabel(Object directory);
+
+  /// No description provided for @backupFileLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup File: {file}'**
+  String backupFileLabel(Object file);
+
+  /// No description provided for @lastBackupTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Backup Time: {time}'**
+  String lastBackupTimeLabel(Object time);
+
+  /// No description provided for @lastRestoreTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Restore Time: {time}'**
+  String lastRestoreTimeLabel(Object time);
+
+  /// No description provided for @notSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get notSet;
+
+  /// No description provided for @backupFromDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup from {date}'**
+  String backupFromDate(Object date);
+
+  /// No description provided for @backupSizeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Size: {size}'**
+  String backupSizeLabel(Object size);
+
+  /// No description provided for @unknownDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Date'**
+  String get unknownDate;
+
+  /// No description provided for @unknownSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Size'**
+  String get unknownSize;
+
+  /// No description provided for @accountDeletionWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Warning: Account Deletion is PERMANENT!'**
+  String get accountDeletionWarning;
+
+  /// No description provided for @accountDeletionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'If you decided to proceed, all your application data, including financial records, goals, and settings, will be permanently erased from this device. This action cannot be undone or reversed. The application will be reset to its initial state, and you will be logged out.\n\nThis will not delete any backup files you may have stored on local storage or Google Drive. If you are not sure, please back up to local or Google Drive first.\n\nYou may restore your backup file later.'**
+  String get accountDeletionDescription;
+
+  /// No description provided for @typeYourNameToContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Type your name \'{userName}\' to continue:'**
+  String typeYourNameToContinue(Object userName);
+
+  /// No description provided for @enterYourUsername.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your username'**
+  String get enterYourUsername;
+
+  /// No description provided for @challengeConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge Confirmation'**
+  String get challengeConfirmation;
+
+  /// No description provided for @reportLogFileNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Log file contains non-sensitive information. It is for development and investigation purposes only. Please only share this file with the developer.\n\nLog history is one-time session. It will be cleared every time you open the app.'**
+  String get reportLogFileNotice;
+
+  /// No description provided for @understandAndContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand and Continue'**
+  String get understandAndContinue;
+
+  /// No description provided for @developerPortalWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Warning! Make sure you know what you are doing. Use with caution.'**
+  String get developerPortalWarning;
+
+  /// No description provided for @resetCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Categories'**
+  String get resetCategories;
+
+  /// No description provided for @confirmResetCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to reset the categories?'**
+  String get confirmResetCategories;
+
+  /// No description provided for @resetWallets.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Wallets'**
+  String get resetWallets;
+
+  /// No description provided for @confirmResetWallets.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to reset the wallets?'**
+  String get confirmResetWallets;
+
+  /// No description provided for @resetDatabase.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Database'**
+  String get resetDatabase;
+
+  /// No description provided for @confirmResetDatabase.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to reset the database?'**
+  String get confirmResetDatabase;
+
+  /// No description provided for @privacyPolicyContent.
+  ///
+  /// In en, this message translates to:
+  /// **'### Summary\n- **We are offline-first:** Your data lives on your device by default.\n- **We don\'t sell data:** We have no access to your financial transactions.\n- **Backups are manual:** You control when and where your data is saved.\n\n### 1. Data Collection & Usage\nPockaw is designed as an **offline-first application**. This means the core database containing your budgets, transactions, and goals is created and stored locally on your device.\n\n#### 1.1. Google Sign-In\nWe use Google Sign-In solely for authentication purposes to facilitate secure backups. When you sign in, we receive a basic authentication token to verify your identity. Pockaw **does not** read your emails, contacts, or other personal information from your Google account.\n\n#### 1.2. Analytics & Crash Reports\nTo improve app stability, we use **Firebase Analytics** and **Crashlytics**. These services collect anonymous usage data (e.g., \"User opened Settings screen\") and crash logs. This data is aggregated and cannot be used to identify you personally or view your financial entries.\n\n### 2. Data Backup & Restore\nTo prevent data loss, Pockaw offers manual backup options. You are in full control of triggering these actions.\n\n#### 2.1. Local Backup\nYou can choose to export a backup file directly to your device\'s storage.\n- **Android:** Backups are stored in `Internal Storage/Documents/PockawBackup/`.\n- **iOS:** Backups are stored in the application\'s document directory, accessible via the Files app.\n\n*Note: You are responsible for the security of these files. If you lose your device or delete these files, the data cannot be recovered by us.*\n\n#### 2.2. Google Drive Backup\nYou may optionally choose to back up your data to your personal Google Drive.\n- This action is **manually triggered** by you in the \"Backup & Restore\" settings.\n- The app requires an internet connection to perform this action.\n- The backup file is stored in a private folder in your Google Drive. Pockaw does not have access to other files in your Drive.\n\n### 3. Account Deletion & Data Reset\nPockaw does not maintain a central server with your financial records. Therefore, the \"Delete Account\" function works as follows:\n1. **Session Reset:** It signs you out of your Google account within the app.\n2. **Local Wipe:** It clears the current session data from the app.\n\n**Important:** Deleting your account in the app **does not** automatically delete backup files you have previously saved to your Google Drive or local storage. Since you own those files, you must manually delete them from your Drive or device if you wish to remove all traces of your data.\n\n### 4. Security\nWe take security seriously. Your database is stored using industry-standard SQLite encryption on your device. When using Google Drive backup, your data is transmitted securely using Google\'s encrypted APIs.\n\n### 5. Contact Us\nIf you have questions about this policy or the open-source nature of our project, reach out to us:\n- **Email:** idlayground@gmail.com\n- **Community:** Join our Telegram (https://t.me/PockawApp)'**
+  String get privacyPolicyContent;
+
+  /// No description provided for @termsAndConditionsContent.
+  ///
+  /// In en, this message translates to:
+  /// **'### Summary\n- **Free License:** Pockaw is free for personal use.\n- **Your Responsibility:** You are responsible for your own backups and data security.\n- **No Warranty:** The app is provided \"as is\" without financial guarantees.\n\n### 1. Acceptance of Terms\nBy downloading, installing, or using Pockaw (\"the App\"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the App.\n\n### 2. User Responsibility for Data\nPockaw operates on an **offline-first model**. We do not store your financial data on our servers.\n\n#### 2.1. Data Loss & Backups\nYou acknowledge that you are solely responsible for maintaining backups of your data.\n- **Manual Backup Required:** The \"Backup & Restore\" feature requires manual initiation by you. Automatic cloud syncing is not enabled by default.\n- **Device Failure:** We are not liable for any data loss resulting from lost devices, uninstalled apps, or corrupted local storage.\n\n#### 2.2. Supported Environments\nPockaw is designed to work on standard, unmodified operating systems (Android, iOS, Windows, macOS, Linux). **We do not guarantee functionality or support for devices that have been \"rooted,\" \"jailbroken,\" or modified with custom ROMs.** Features like Local Backup may fail on such devices due to restricted file system permissions.\n\n### 3. Third-Party Services\n#### 3.1. Google Services\nIf you choose to use Google Sign-In or Google Drive Backups:\n- You agree to abide by Google\'s Terms of Service.\n- You understand that Pockaw only facilitates the connection to your Google Drive. We are not responsible for the availability or reliability of Google\'s services.\n\n### 4. Account Deletion\nSelecting \"Delete Account\" within the app performs a local reset of your current session and disconnects your Google account token. **It does not delete backup files** you may have previously exported to Google Drive or your device\'s internal storage. Managing and deleting those external files is your responsibility.\n\n### 5. Intellectual Property\nPockaw is Open Source software. While the source code is available for inspection and contribution under the LGPL v3 License, the Pockaw branding, logos, and visual assets are the intellectual property of the developers and may not be used for commercial purposes without permission.\n\n### 6. Disclaimer of Warranties\nThe App is provided \"AS IS\" and \"AS AVAILABLE\" without warranty of any kind.\n- **Not Financial Advice:** Pockaw is a tracking tool, not a financial advisor. We are not responsible for any financial decisions you make based on data presented in the App.\n- **Bugs & Errors:** While we strive for stability, we do not warrant that the App will be error-free or uninterrupted.\n\n### 7. Modifications to Terms\nWe reserve the right to modify these terms at any time. Continued use of the App following any changes signifies your acceptance of the new terms.\n\n### 8. Contact Us\nFor any questions regarding these terms, please contact us at: idlayground@gmail.com'**
+  String get termsAndConditionsContent;
 }
 
 class _AppLocalizationsDelegate

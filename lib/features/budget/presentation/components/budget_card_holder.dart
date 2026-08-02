@@ -6,11 +6,14 @@ import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/features/budget/presentation/components/budget_card.dart';
 import 'package:pockaw/features/budget/presentation/riverpod/budget_providers.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetCardHolder extends ConsumerWidget {
   const BudgetCardHolder({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final budgetsAsync = ref.watch(budgetListProvider);
 
     return budgetsAsync.when(
@@ -20,7 +23,7 @@ class BudgetCardHolder extends ConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.spacing20),
               child: Text(
-                'No budgets found. Create one!',
+                l10n.noBudgetsFoundCreateOne,
                 style: AppTextStyles.body2,
               ),
             ),
@@ -38,7 +41,7 @@ class BudgetCardHolder extends ConsumerWidget {
         );
       },
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (err, stack) => Center(child: Text('Error: $err')),
+      error: (err, stack) => Center(child: Text(l10n.budgetDetailsCouldNotBeLoaded)),
     );
   }
 }

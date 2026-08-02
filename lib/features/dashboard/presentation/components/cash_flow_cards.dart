@@ -49,11 +49,13 @@ class CashFlowCards extends ConsumerWidget {
         final expensePercentDifference = currentMonthExpense
             .calculatePercentDifference(lastMonthExpense);
 
+        final currentLocale = Localizations.localeOf(context).toLanguageTag();
+
         return Row(
           children: [
             Expanded(
               child: TransactionCard(
-                title: '${l10n.income} • ${DateTime.now().toMonthName()}',
+                title: '${l10n.income} • ${DateTime.now().toMonthName(currentLocale)} (${DateTime.now().toMonthYearNumeric()})',
                 amount: currentMonthIncome,
                 amountLastMonth: lastMonthIncome,
                 percentDifference: incomePercentDifference,
@@ -69,7 +71,7 @@ class CashFlowCards extends ConsumerWidget {
             const Gap(AppSpacing.spacing12),
             Expanded(
               child: TransactionCard(
-                title: '${l10n.expense} • ${DateTime.now().toMonthName()}',
+                title: '${l10n.expense} • ${DateTime.now().toMonthName(currentLocale)} (${DateTime.now().toMonthYearNumeric()})',
                 amount: currentMonthExpense,
                 amountLastMonth: lastMonthExpense,
                 percentDifference: expensePercentDifference,

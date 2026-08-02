@@ -7,6 +7,7 @@ import 'package:pockaw/core/components/scaffolds/custom_scaffold.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/router/routes.dart';
 import 'package:pockaw/features/theme_switcher/presentation/components/theme_mode_switcher.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 part '../components/get_started_button.dart';
 
@@ -15,6 +16,7 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return CustomScaffold(
       showBackButton: false,
       showBalance: false,
@@ -34,20 +36,19 @@ class OnboardingScreen extends StatelessWidget {
                   width: 160,
                 ),
                 const Gap(16),
-                const Text(
-                  'Welcome to',
+                Text(
+                  l10n.welcomeTo,
                   style: AppTextStyles.heading2,
                   textAlign: TextAlign.center,
                 ),
-                const Text(
-                  'Pockaw!',
+                Text(
+                  '${l10n.appName}!',
                   style: AppTextStyles.heading2,
                   textAlign: TextAlign.center,
                 ),
                 const Gap(16),
                 Text(
-                  'Simple and intuitive finance buddy. Track your expenses, set goals, '
-                  'organize your pocket and wallet sized finance — everything effortlessly. 🚀',
+                  l10n.onboardingDescription,
                   style: AppTextStyles.body1.copyWith(
                     fontVariations: [const FontVariation.weight(500)],
                   ),

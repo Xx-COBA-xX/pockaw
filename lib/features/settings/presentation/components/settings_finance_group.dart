@@ -5,18 +5,24 @@ class SettingsFinanceGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return SettingsGroupHolder(
-      title: 'Finance',
+      title: l10n.overview,
       settingTiles: [
         MenuTileButton(
-          label: 'Wallets',
+          label: l10n.accounts,
           icon: HugeIcons.strokeRoundedWallet03,
           onTap: () => context.push(Routes.manageWallets),
         ),
         MenuTileButton(
-          label: 'Categories',
+          label: l10n.categories,
           icon: HugeIcons.strokeRoundedStructure01,
           onTap: () => context.push(Routes.manageCategories),
+        ),
+        MenuTileButton(
+          label: l10n.debts,
+          icon: HugeIcons.strokeRoundedUserGroup,
+          onTap: () => context.push(Routes.debtList),
         ),
       ],
     );

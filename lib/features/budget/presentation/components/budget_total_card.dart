@@ -5,12 +5,15 @@ import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/extensions/double_extension.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetTotalCard extends StatelessWidget {
   final double totalAmount;
   const BudgetTotalCard({super.key, required this.totalAmount});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       padding: const EdgeInsets.all(AppSpacing.spacing8),
       decoration: BoxDecoration(
@@ -22,7 +25,7 @@ class BudgetTotalCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Total Budget',
+            l10n.totalBudget,
             style: AppTextStyles.body5.copyWith(
               color: context.incomeText,
               fontWeight: FontWeight.w600,

@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pockaw/core/components/buttons/button_chip.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/features/transaction/data/model/transaction_model.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class TransactionTypeSelector extends HookConsumerWidget {
   final TransactionType selectedType;
@@ -16,6 +17,7 @@ class TransactionTypeSelector extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       spacing: AppSpacing.spacing4,
@@ -23,13 +25,13 @@ class TransactionTypeSelector extends HookConsumerWidget {
         String label;
         switch (type) {
           case TransactionType.income:
-            label = 'Income';
+            label = l10n.income;
             break;
           case TransactionType.expense:
-            label = 'Expense';
+            label = l10n.expense;
             break;
           case TransactionType.transfer:
-            label = 'Transfer';
+            label = l10n.transfer;
             break;
         }
         return Expanded(

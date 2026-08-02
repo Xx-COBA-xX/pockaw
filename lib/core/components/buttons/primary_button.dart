@@ -6,7 +6,6 @@ import 'package:pockaw/core/components/buttons/button_type.dart';
 import 'package:pockaw/core/components/loading_indicators/loading_indicator.dart';
 import 'package:pockaw/core/constants/app_button_styles.dart';
 import 'package:pockaw/core/constants/app_colors.dart';
-import 'package:pockaw/core/constants/app_font_families.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 
@@ -32,10 +31,8 @@ class PrimaryButton extends FilledButton {
                themeMode: themeMode,
                isLoading: isLoading,
              ).copyWith(
-               textStyle: WidgetStatePropertyAll<TextStyle>(
-                 AppTextStyles.body1.copyWith(
-                   fontFamily: AppFontFamilies.montserrat,
-                 ),
+               textStyle: const WidgetStatePropertyAll<TextStyle>(
+                 AppTextStyles.body1,
                ),
                padding: padding == null
                    ? null
@@ -52,7 +49,7 @@ class PrimaryButton extends FilledButton {
              if (isLoading) const Gap(AppSpacing.spacing12),
              if (icon != null) Icon(icon),
              if (icon != null) const Gap(AppSpacing.spacing8),
-             Text(isLoading ? loadingText : label),
+             Text(isLoading ? loadingText : label, ),
            ],
          ),
        );

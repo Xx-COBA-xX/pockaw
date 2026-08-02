@@ -12,15 +12,14 @@ import 'package:pockaw/core/components/buttons/primary_button.dart';
 import 'package:pockaw/core/components/form_fields/custom_text_field.dart';
 import 'package:pockaw/core/components/scaffolds/custom_scaffold.dart';
 import 'package:pockaw/core/constants/app_colors.dart';
-import 'package:pockaw/core/constants/app_constants.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
 import 'package:pockaw/core/extensions/popup_extension.dart';
 import 'package:pockaw/core/router/routes.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:pockaw/core/services/image_service/domain/image_state.dart';
 import 'package:pockaw/core/services/image_service/image_service.dart';
 import 'package:pockaw/core/services/keyboard_service/virtual_keyboard_service.dart';
-import 'package:pockaw/core/services/url_launcher/url_launcher.dart';
 import 'package:pockaw/features/authentication/presentation/components/create_first_wallet_field.dart';
 import 'package:pockaw/features/authentication/presentation/components/google_signin_button.dart';
 import 'package:pockaw/features/authentication/presentation/riverpod/auth_provider.dart';
@@ -29,7 +28,6 @@ import 'package:pockaw/features/backup_and_restore/presentation/riverpod/backup_
 import 'package:pockaw/features/image_picker/presentation/screens/image_picker_dialog.dart';
 import 'package:pockaw/features/settings/presentation/components/report_log_file_dialog.dart';
 import 'package:pockaw/features/theme_switcher/presentation/components/theme_mode_switcher.dart';
-import 'package:pockaw/l10n/app_localizations.dart';
 
 part '../components/form.dart';
 part '../components/get_started_description.dart';

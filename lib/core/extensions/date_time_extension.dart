@@ -1,29 +1,31 @@
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 extension DateTimeExtension on DateTime {
-  /// Format: March
-  String toMonthName() {
-    return DateFormat('MMMM').format(this);
+  /// Format: March / آذار
+  String toMonthName([String? locale]) {
+    return DateFormat('MMMM', locale).format(this);
   }
 
   /// Format: 13 March 2025
-  String toDayMonthYear() {
-    return DateFormat('d MMMM yyyy').format(this);
+  String toDayMonthYear([String? locale]) {
+    return DateFormat('d MMMM yyyy', locale).format(this);
   }
 
   /// Format: 12 Nov 2024
-  String toDayShortMonth() {
-    return DateFormat('d MMM').format(this);
+  String toDayShortMonth([String? locale]) {
+    return DateFormat('d MMM', locale).format(this);
   }
 
   /// Format: 12 Nov 2024
-  String toDayShortMonthYear() {
-    return DateFormat('d MMM yyyy').format(this);
+  String toDayShortMonthYear([String? locale]) {
+    return DateFormat('d MMM yyyy', locale).format(this);
   }
 
   /// Format: March 13, 2025
-  String toMonthDayYear() {
-    return DateFormat('MMMM d, yyyy').format(this);
+  String toMonthDayYear([String? locale]) {
+    return DateFormat('MMMM d, yyyy', locale).format(this);
   }
 
   /// Format: 13/03/2025
@@ -37,8 +39,8 @@ extension DateTimeExtension on DateTime {
   }
 
   /// Format: Oct 2024
-  String toMonthYear() {
-    return DateFormat('MMM yyyy').format(this);
+  String toMonthYear([String? locale]) {
+    return DateFormat('MMM yyyy', locale).format(this);
   }
 
   DateTime get toMidnightStart {
@@ -51,17 +53,23 @@ extension DateTimeExtension on DateTime {
 
   /// Returns date in relative format with optional time.
   /// Examples:
-  /// - "Today, 10.22" (with showTime: true, use24Hours: true)
-  /// - "Today, 10.22 AM" (with showTime: true, use24Hours: false)
-  /// - "Yesterday, 15.23" (with showTime: true, use24Hours: true)
-  /// - "Yesterday, 03.23 PM" (with showTime: true, use24Hours: false)
-  /// - "13 June 2025, 10.22" (with showTime: true, use24Hours: true)
-  /// - "13 June 2025, 10.22 AM" (with showTime: true, use24Hours: false)
+  /// - "Today, 10:22" (with showTime: true, use24Hours: true)
+  /// - "Today, 10:22 AM" (with showTime: true, use24Hours: false)
+  /// - "Yesterday, 15:23" (with showTime: true, use24Hours: true)
+  /// - "Yesterday, 03:23 PM" (with showTime: true, use24Hours: false)
+  /// - "13 June 2025, 10:22" (with showTime: true, use24Hours: true)
+  /// - "13 June 2025, 10:22 AM" (with showTime: true, use24Hours: false)
   /// - "Today" (with showTime: false)
   String toRelativeDayFormatted({
+    BuildContext? context,
+    String? locale,
     bool showTime = false,
     bool use24Hours = true,
   }) {
+    final effectiveLocale =
+        locale ?? (context != null ? Localizations.localeOf(context).languageCode : null);
+    final l10n = context != null ? AppLocalizations.of(context) : null;
+
     final now = DateTime.now();
     // Normalize dates to midnight for accurate day difference
     final thisDateAtMidnight = DateTime(year, month, day);
@@ -74,17 +82,17 @@ extension DateTimeExtension on DateTime {
     String baseText;
     bool useComma = differenceInDays == 0 || differenceInDays == 1;
     if (differenceInDays == 0) {
-      baseText = 'Today';
+      baseText = l10n?.today ?? 'Today';
     } else if (differenceInDays == 1) {
-      baseText = 'Yesterday';
+      baseText = l10n?.yesterday ?? 'Yesterday';
     } else {
-      baseText = toDayMonthYear();
+      baseText = toDayMonthYear(effectiveLocale);
     }
 
     if (showTime) {
       final time = use24Hours
-          ? DateFormat('HH.mm').format(this)
-          : DateFormat('hh.mm a').format(this);
+          ? DateFormat('HH:mm', effectiveLocale).format(this)
+          : DateFormat('hh:mm a', effectiveLocale).format(this);
 
       if (useComma) {
         return '$baseText, $time';
@@ -97,20 +105,20 @@ extension DateTimeExtension on DateTime {
 
   /// Returns "This Month", "Last Month", or "Oct 2024" for tab labels.
   /// Compares `this` month to the `currentDate` month.
-  String toMonthTabLabel(DateTime currentDate) {
+  String toMonthTabLabel(DateTime currentDate, [AppLocalizations? l10n, String? locale]) {
     final thisMonthStart = DateTime(year, month, 1);
     final currentMonthStart = DateTime(currentDate.year, currentDate.month, 1);
     final lastMonthStart = DateTime(currentDate.year, currentDate.month - 1, 1);
 
     if (thisMonthStart.year == currentMonthStart.year &&
         thisMonthStart.month == currentMonthStart.month) {
-      return 'This Month';
+      return l10n?.thisMonth ?? 'This Month';
     }
     if (thisMonthStart.year == lastMonthStart.year &&
         thisMonthStart.month == lastMonthStart.month) {
-      return 'Last Month';
+      return l10n?.lastMonth ?? 'Last Month';
     }
-    return DateFormat('MMM yyyy').format(this); // e.g., "Oct 2024"
+    return DateFormat('MMM yyyy', locale).format(this); // e.g., "Oct 2024" / "أكتوبر ٢٠٢٤"
   }
 
   /// Format: 13 March 2025 05.44 am / 13 March 2025 05.44 pm

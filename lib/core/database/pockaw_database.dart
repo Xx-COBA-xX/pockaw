@@ -3,6 +3,7 @@ import 'package:drift_flutter/drift_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pockaw/core/database/daos/budget_dao.dart';
 import 'package:pockaw/core/database/daos/category_dao.dart';
+import 'package:pockaw/core/database/daos/debt_dao.dart';
 import 'package:pockaw/core/database/daos/transaction_dao.dart';
 import 'package:pockaw/core/database/daos/checklist_item_dao.dart';
 import 'package:pockaw/core/database/daos/goal_dao.dart';
@@ -11,6 +12,8 @@ import 'package:pockaw/core/database/daos/wallet_dao.dart'; // Import new DAO
 import 'package:pockaw/core/database/daos/user_activity_dao.dart';
 import 'package:pockaw/core/database/tables/budgets_table.dart';
 import 'package:pockaw/core/database/tables/category_table.dart';
+import 'package:pockaw/core/database/tables/debt_payment_table.dart';
+import 'package:pockaw/core/database/tables/debt_table.dart';
 import 'package:pockaw/core/database/tables/transaction_table.dart';
 import 'package:pockaw/core/database/tables/checklist_item_table.dart';
 import 'package:pockaw/core/database/tables/goal_table.dart';
@@ -33,6 +36,8 @@ part 'pockaw_database.g.dart';
     Wallets,
     Budgets,
     UserActivities,
+    Debts,
+    DebtPayments,
   ],
   daos: [
     UserDao,
@@ -43,13 +48,14 @@ part 'pockaw_database.g.dart';
     WalletDao,
     BudgetDao,
     UserActivityDao,
+    DebtDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 10; // Increment schema version for the new fields
+  int get schemaVersion => 13; // Increment schema version to 13 for default categories update
 
   @override
   MigrationStrategy get migration {
@@ -74,34 +80,40 @@ class AppDatabase extends _$AppDatabase {
         if (from < 9) {
           Log.i('Adding user_id column to wallets table...', label: 'database');
           await m.addColumn(wallets, wallets.userId);
-          return;
         }
 
         // Create user_activities table in version 10
         if (from < 10) {
           Log.i(
-            'Creating user_activities table by ensuring all tables exist...',
+            'Creating user_activities table...',
             label: 'database',
           );
-          // Create any missing tables (including the new user_activities table).
-          // Using createAll avoids referencing generated table symbols directly
-          // during migrations which can cause analyzer/codegen ordering issues.
-          await m.createAll();
-          return;
+          await m.createTable(userActivities);
         }
 
-        /* if (kDebugMode) {
-          // In debug mode, clear and recreate everything for other migrations
+        // Create debts and debt_payments tables in version 12
+        if (from < 12) {
           Log.i(
-            'Debug mode: Wiping and recreating all tables for upgrade from $from to $to.',
+            'Creating debts and debt_payments tables for schema v12...',
             label: 'database',
           );
-          await clearAllDataAndReset();
-          await populateData();
-          Log.i('All tables recreated after debug upgrade.', label: 'database');
+          try {
+            await m.createTable(debts);
+          } catch (e) {
+            Log.d('Table debts creation check: $e', label: 'database');
+          }
+          try {
+            await m.createTable(debtPayments);
+          } catch (e) {
+            Log.d('Table debtPayments creation check: $e', label: 'database');
+          }
+        }
 
-          return; // exit
-        } */
+        // Populate/upsert new default categories in version 13 (Debts category)
+        if (from < 13) {
+          Log.i('Updating default categories for schema v13...', label: 'database');
+          await CategoryPopulationService.populate(this);
+        }
       },
     );
   }

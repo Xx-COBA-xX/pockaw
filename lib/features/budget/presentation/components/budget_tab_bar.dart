@@ -1,38 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pockaw/core/components/tabs/custom_tab.dart';
 import 'package:pockaw/core/components/tabs/custom_tab_bar.dart';
 import 'package:pockaw/core/extensions/date_time_extension.dart';
-import 'package:pockaw/features/budget/presentation/riverpod/budget_providers.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class BudgetTabBar extends HookConsumerWidget {
-  const BudgetTabBar({super.key});
+  final List<DateTime> budgetPeriods;
+  const BudgetTabBar({super.key, required this.budgetPeriods});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final tabController = useTabController(initialLength: 1);
-    final budgetPeriods = ref.watch(budgetPeriodListProvider);
-    final selectedPeriodNotifier = ref.read(
-      selectedBudgetPeriodProvider.notifier,
-    );
-
-    // Update the selected period when the tab changes
-    useEffect(() {
-      void listener() {
-        selectedPeriodNotifier.setPeriod(budgetPeriods[tabController.index]);
-      }
-
-      tabController.addListener(listener);
-      return () => tabController.removeListener(listener);
-    }, [tabController, budgetPeriods, selectedPeriodNotifier]);
+    final l10n = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).languageCode;
+    final now = DateTime.now();
 
     return CustomTabBar(
-      tabController: tabController,
       tabs: budgetPeriods
           .map(
-            (period) => CustomTab(label: period.toMonthTabLabel(period)),
-          ) // Use extension
+            (period) => CustomTab(
+              label: period.toMonthTabLabel(now, l10n, locale),
+            ),
+          )
           .toList(),
     );
   }

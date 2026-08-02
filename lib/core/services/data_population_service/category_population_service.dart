@@ -28,7 +28,7 @@ class CategoryPopulationService {
             : Value(categoryModel.description!),
       );
       try {
-        await categoryDao.addCategory(companion);
+        await categoryDao.upsertCategory(companion);
       } catch (e) {
         Log.e(
           'Failed to add category ${categoryModel.title}: $e',

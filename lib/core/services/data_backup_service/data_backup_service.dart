@@ -16,13 +16,13 @@ import 'package:share_plus/share_plus.dart';
 class DataBackupService {
   final AppDatabase _db;
   final ImageService _imageService;
-  final FirebaseCrashlytics _crashlytics;
+  final FirebaseCrashlytics? _crashlytics;
 
   DataBackupService(
     this._db,
-    this._imageService,
+    this._imageService, [
     this._crashlytics,
-  );
+  ]);
 
   static const String _jsonFileName = 'data.json';
   static const String _imagesDirName = 'images';
@@ -194,7 +194,7 @@ class DataBackupService {
       return true;
     } catch (e, st) {
       Log.e('Restore failed: $e\n$st', label: 'Restore Error');
-      await _crashlytics.recordError(e, st, reason: 'Restore Failed');
+      await _crashlytics?.recordError(e, st, reason: 'Restore Failed');
       return false;
     } finally {
       // Cleanup

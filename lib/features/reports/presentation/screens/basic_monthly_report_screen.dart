@@ -44,7 +44,9 @@ class BasicMonthlyReportScreen extends HookConsumerWidget {
               const Duration(days: 30),
             );
           },
-          icon: HugeIcons.strokeRoundedArrowLeft02,
+          icon: Directionality.of(context) == TextDirection.rtl
+              ? HugeIcons.strokeRoundedArrowRight02
+              : HugeIcons.strokeRoundedArrowLeft02,
         ),
         Gap(AppSpacing.spacing4),
         CustomIconButton(
@@ -54,7 +56,9 @@ class BasicMonthlyReportScreen extends HookConsumerWidget {
               const Duration(days: 30),
             );
           },
-          icon: HugeIcons.strokeRoundedArrowRight02,
+          icon: Directionality.of(context) == TextDirection.rtl
+              ? HugeIcons.strokeRoundedArrowLeft02
+              : HugeIcons.strokeRoundedArrowRight02,
         ),
       ],
       body: ListView(

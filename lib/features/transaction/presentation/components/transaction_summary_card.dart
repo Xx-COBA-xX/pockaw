@@ -99,7 +99,9 @@ class TransactionSummaryCard extends ConsumerWidget {
             borderColor: context.purpleButtonBorder,
             foregroundColor: context.secondaryText,
             labelTextStyle: AppTextStyles.body5,
-            suffixIcon: HugeIcons.strokeRoundedArrowRight01,
+            suffixIcon: Directionality.of(context) == TextDirection.rtl
+                ? HugeIcons.strokeRoundedArrowLeft01
+                : HugeIcons.strokeRoundedArrowRight01,
             onTap: () => context.push(
               Routes.basicMonthlyReports,
               extra: transactions.first.date,

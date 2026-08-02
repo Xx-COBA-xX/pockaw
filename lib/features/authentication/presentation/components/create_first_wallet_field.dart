@@ -11,33 +11,35 @@ import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 import 'package:pockaw/features/wallet/data/repositories/wallet_repo.dart';
 import 'package:pockaw/features/wallet/riverpod/wallet_providers.dart';
 import 'package:pockaw/features/wallet/screens/wallet_form_bottom_sheet.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 
 class CreateFirstWalletField extends HookConsumerWidget {
   const CreateFirstWalletField({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final wallet = ref.watch(activeWalletProvider).asData?.value;
     final initialText = wallet != null
         ? '${wallet.currencyByIsoCode(ref).symbol} ${wallet.balance.toPriceFormat()}'
-        : 'Setup Wallet'; // Fallback if no active wallet
+        : l10n.setupWallet;
 
     final textController = useTextEditingController(text: initialText);
 
     useEffect(() {
       final newText = wallet != null
           ? '${wallet.currencyByIsoCode(ref).symbol} ${wallet.balance.toPriceFormat()}'
-          : 'Setup Wallet';
+          : l10n.setupWallet;
       if (textController.text != newText) {
         textController.text = newText;
       }
       return null;
-    }, [wallet]);
+    }, [wallet, l10n]);
 
     return CustomTextField(
       context: context,
       controller: textController,
-      label: wallet?.name ?? 'Wallet', // Fallback label
-      hint: wallet != null ? '' : 'Tap to setup your first wallet',
+      label: wallet?.name ?? l10n.account,
+      hint: wallet != null ? '' : l10n.tapToSetupFirstWallet,
       prefixIcon: HugeIcons.strokeRoundedWallet01,
       suffixIcon: HugeIcons.strokeRoundedAdd01,
       readOnly: true,

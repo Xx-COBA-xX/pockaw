@@ -6,6 +6,7 @@ import 'package:pockaw/core/router/authentication_router.dart';
 import 'package:pockaw/core/router/budget_router.dart';
 import 'package:pockaw/core/router/category_router.dart';
 import 'package:pockaw/core/router/currency_router.dart';
+import 'package:pockaw/core/router/debt_router.dart';
 import 'package:pockaw/core/router/goal_router.dart'; // ← import your GoalRouter
 import 'package:pockaw/core/router/onboarding_router.dart';
 import 'package:pockaw/core/router/report_router.dart';
@@ -38,6 +39,7 @@ final router = GoRouter(
     ...CategoryRouter.routes,
     ...GoalRouter.routes,
     ...BudgetRouter.routes,
+    ...DebtRouter.routes,
     ...SettingsRouter.routes,
     ...CurrencyRouter.routes,
     ...WalletRouter.routes,

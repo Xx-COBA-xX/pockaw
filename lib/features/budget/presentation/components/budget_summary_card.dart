@@ -12,11 +12,14 @@ import 'package:pockaw/features/budget/presentation/components/budget_spent_card
 import 'package:pockaw/features/budget/presentation/components/budget_total_card.dart';
 import 'package:pockaw/features/budget/presentation/riverpod/budget_providers.dart';
 
+import 'package:pockaw/l10n/app_localizations.dart';
+
 class BudgetSummaryCard extends ConsumerWidget {
   const BudgetSummaryCard({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final budgetsAsync = ref.watch(budgetListProvider);
 
     return budgetsAsync.when(
@@ -69,7 +72,7 @@ class BudgetSummaryCard extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Total Remaining Budgets',
+                    l10n.totalRemainingBudgets,
                     style: AppTextStyles.body4.copyWith(
                       color: context.secondaryText,
                       height: 1,
@@ -109,7 +112,7 @@ class BudgetSummaryCard extends ConsumerWidget {
       ),
       error: (err, stack) => Padding(
         padding: const EdgeInsets.all(AppSpacing.spacing20),
-        child: Center(child: Text('Error loading budget summary: $err')),
+        child: Center(child: Text(l10n.budgetDetailsCouldNotBeLoaded)),
       ),
     );
   }

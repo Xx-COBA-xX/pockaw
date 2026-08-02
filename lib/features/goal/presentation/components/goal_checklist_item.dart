@@ -7,6 +7,7 @@ class GoalChecklistItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final l10n = AppLocalizations.of(context);
     final defaultCurrency = ref
         .read(activeWalletProvider)
         .value
@@ -61,8 +62,8 @@ class GoalChecklistItem extends ConsumerWidget {
                   constraints: const BoxConstraints(),
                   onPressed: () => toggle(context, ref),
                   tooltip: item.completed
-                      ? 'Mark as incomplete'
-                      : 'Mark as complete',
+                      ? l10n.markAsIncomplete
+                      : l10n.markAsComplete,
                 ),
                 const SizedBox(width: AppSpacing.spacing8),
                 // Title
@@ -122,41 +123,28 @@ class GoalChecklistItem extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) => AlertDialog(
-        backgroundColor: context.dialogBackground,
-        title: Text(
-          'Mark as ${item.completed ? 'Incomplete' : 'Complete'}',
-          style: AppTextStyles.body2,
-        ),
+    final l10n = AppLocalizations.of(context);
+    context.openBottomSheet(
+      child: AlertBottomSheet(
+        context: context,
+        title: item.completed ? l10n.markAsIncomplete : l10n.markAsComplete,
         content: Text(
-          'Are you sure you want to mark this item as ${item.completed ? 'incomplete' : 'complete'}?',
-          style: AppTextStyles.body3,
+          item.completed
+              ? l10n.confirmMarkIncomplete
+              : l10n.confirmMarkComplete,
+          style: AppTextStyles.body2,
+          textAlign: TextAlign.center,
         ),
-        actions: [
-          TextButton(
-            onPressed: () => context.pop(),
-            child: Text(
-              'Cancel',
-              style: AppTextStyles.body3.copyWith(color: context.purpleText),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              context.pop();
-              final updatedItem = item.toggleCompleted();
-              GoalFormService().toggleComplete(
-                ref,
-                checklistItem: updatedItem,
-              );
-            },
-            child: Text(
-              'OK',
-              style: AppTextStyles.body3.copyWith(color: context.purpleText),
-            ),
-          ),
-        ],
+        cancelText: l10n.cancel,
+        confirmText: l10n.confirm,
+        onConfirm: () {
+          context.pop();
+          final updatedItem = item.toggleCompleted();
+          GoalFormService().toggleComplete(
+            ref,
+            checklistItem: updatedItem,
+          );
+        },
       ),
     );
   }

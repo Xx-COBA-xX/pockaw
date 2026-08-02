@@ -74,25 +74,22 @@ class BudgetScreen extends HookConsumerWidget {
             initialIndex: initialTabIndex,
             child: Column(
               children: [
-                BudgetTabBar(),
+                BudgetTabBar(budgetPeriods: uniqueMonthYears),
                 const Gap(AppSpacing.spacing20),
                 Expanded(
                   child: TabBarView(
                     children: uniqueMonthYears.map((tabMonthDate) {
-                      // Filter transactions for the current tab's month,
-
-                      // Filter transactions for the current tab's month
-                      final transactionsForMonth = allBudgets.where((t) {
+                      final budgetsForMonth = allBudgets.where((t) {
                         return t.startDate.year == tabMonthDate.year &&
                             t.startDate.month == tabMonthDate.month;
                       }).toList();
 
-                      if (transactionsForMonth.isEmpty) {
-                        // This should ideally not happen if tabs are generated from existing transaction months,
-                        // but good for robustness.
+                      if (budgetsForMonth.isEmpty) {
                         return Center(
                           child: Text(
-                            'No transactions for ${tabMonthDate.month}/${tabMonthDate.year}.',
+                            l10n.noTransactionsForPeriod(
+                              '${tabMonthDate.month}/${tabMonthDate.year}',
+                            ),
                           ),
                         );
                       }
@@ -113,7 +110,9 @@ class BudgetScreen extends HookConsumerWidget {
           );
         },
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, stackTrace) => Center(child: Text('Error: $error')),
+        error: (error, stackTrace) => Center(
+          child: Text(l10n.budgetDetailsCouldNotBeLoaded),
+        ),
       ),
     );
   }
