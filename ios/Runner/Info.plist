@@ -52,5 +52,18 @@
 		<string>ar</string>
 		<string>en</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.pockaw.surrah</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>surrah</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

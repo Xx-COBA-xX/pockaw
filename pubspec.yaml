@@ -74,6 +74,7 @@ dependencies:
   hooks_riverpod: ^3.0.3
   http: ^1.5.0
   hugeicons: ^1.1.1
+  home_widget: ^0.9.3
   image_picker: ^1.1.2
   intl: ^0.20.2
   json_annotation: ^4.9.0
@@ -104,16 +105,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/icon/app-icon.png"
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   build_runner: ^2.7.1
   custom_lint:
   flutter_lints: ^6.0.0
@@ -123,6 +114,11 @@ flutter_icons:
   # riverpod_lint: ^2.6.4
   drift_dev: ^2.29.0
   test: ^1.26.2
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app-icon.png"
 
 # The following section is specific to Flutter packages.
 flutter:
