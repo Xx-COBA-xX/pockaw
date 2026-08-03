@@ -384,34 +384,32 @@ class DebtFormScreen extends HookConsumerWidget {
                         borderRadius: BorderRadius.circular(AppRadius.radius12),
                         border: Border.all(color: context.secondaryBorderLighter),
                       ),
-                      child: Column(
-                        children: [
-                          RadioListTile<bool>(
-                            title: Text(
-                              l10n.depositIntoAccountOption,
-                              style: AppTextStyles.body4.bold,
-                            ),
-                            value: true,
-                            groupValue: depositIntoAccount.value,
-                            onChanged: (val) {
-                              if (val != null) depositIntoAccount.value = val;
-                            },
-                          ),
-                          const Divider(height: 1),
-                          RadioListTile<bool>(
-                            title: Text(
-                              l10n.recordDebtOnlyOption,
-                              style: AppTextStyles.body4.copyWith(
-                                color: context.secondaryText,
+                      child: RadioGroup<bool>(
+                        groupValue: depositIntoAccount.value,
+                        onChanged: (val) {
+                          if (val != null) depositIntoAccount.value = val;
+                        },
+                        child: Column(
+                          children: [
+                            RadioListTile<bool>(
+                              title: Text(
+                                l10n.depositIntoAccountOption,
+                                style: AppTextStyles.body4.bold,
                               ),
+                              value: true,
                             ),
-                            value: false,
-                            groupValue: depositIntoAccount.value,
-                            onChanged: (val) {
-                              if (val != null) depositIntoAccount.value = val;
-                            },
-                          ),
-                        ],
+                            const Divider(height: 1),
+                            RadioListTile<bool>(
+                              title: Text(
+                                l10n.recordDebtOnlyOption,
+                                style: AppTextStyles.body4.copyWith(
+                                  color: context.secondaryText,
+                                ),
+                              ),
+                              value: false,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     if (depositIntoAccount.value)
