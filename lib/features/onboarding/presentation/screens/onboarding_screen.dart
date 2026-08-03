@@ -32,8 +32,8 @@ class OnboardingScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/icon/icon-transparent-full.png',
-                  width: 160,
+                  'assets/icon/icon.png',
+                  width: 250,
                 ),
                 const Gap(16),
                 Text(

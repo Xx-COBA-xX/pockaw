@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pockaw/core/constants/app_spacing.dart';
 import 'package:pockaw/core/constants/app_text_styles.dart';
+import 'package:pockaw/l10n/app_localizations.dart';
 import 'package:pockaw/core/database/database_provider.dart';
 import 'package:pockaw/core/router/app_router.dart';
 import 'package:pockaw/core/router/routes.dart';
@@ -80,6 +81,8 @@ class SplashScreen extends HookConsumerWidget {
       return null; // useEffect requires a dispose function or null
     }, const []); // Empty dependency array means this runs once
 
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
@@ -90,13 +93,13 @@ class SplashScreen extends HookConsumerWidget {
           children: [
             Image.asset(
               'assets/icon/icon.png',
-              width: 180,
-              height: 180,
-              cacheWidth: 180,
-              cacheHeight: 180,
+              width: 220,
+              height: 220,
+              cacheWidth: 220,
+              cacheHeight: 220,
               filterQuality: FilterQuality.low,
             ),
-            Text('Pockaw', style: AppTextStyles.heading3),
+            Text(l10n.appName, style: AppTextStyles.heading3),
           ],
         ),
       ),

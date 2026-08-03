@@ -12,7 +12,7 @@ class Logo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset('assets/icon/icon-transparent-full.png', width: size),
+          Image.asset('assets/icon/icon.png', width: size),
           const Gap(AppSpacing.spacing12),
           Text(
             AppLocalizations.of(context).appName,
