@@ -1957,6 +1957,372 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'### Summary\n- **Free License:** Pockaw is free for personal use.\n- **Your Responsibility:** You are responsible for your own backups and data security.\n- **No Warranty:** The app is provided \"as is\" without financial guarantees.\n\n### 1. Acceptance of Terms\nBy downloading, installing, or using Pockaw (\"the App\"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the App.\n\n### 2. User Responsibility for Data\nPockaw operates on an **offline-first model**. We do not store your financial data on our servers.\n\n#### 2.1. Data Loss & Backups\nYou acknowledge that you are solely responsible for maintaining backups of your data.\n- **Manual Backup Required:** The \"Backup & Restore\" feature requires manual initiation by you. Automatic cloud syncing is not enabled by default.\n- **Device Failure:** We are not liable for any data loss resulting from lost devices, uninstalled apps, or corrupted local storage.\n\n#### 2.2. Supported Environments\nPockaw is designed to work on standard, unmodified operating systems (Android, iOS, Windows, macOS, Linux). **We do not guarantee functionality or support for devices that have been \"rooted,\" \"jailbroken,\" or modified with custom ROMs.** Features like Local Backup may fail on such devices due to restricted file system permissions.\n\n### 3. Third-Party Services\n#### 3.1. Google Services\nIf you choose to use Google Sign-In or Google Drive Backups:\n- You agree to abide by Google\'s Terms of Service.\n- You understand that Pockaw only facilitates the connection to your Google Drive. We are not responsible for the availability or reliability of Google\'s services.\n\n### 4. Account Deletion\nSelecting \"Delete Account\" within the app performs a local reset of your current session and disconnects your Google account token. **It does not delete backup files** you may have previously exported to Google Drive or your device\'s internal storage. Managing and deleting those external files is your responsibility.\n\n### 5. Intellectual Property\nPockaw is Open Source software. While the source code is available for inspection and contribution under the LGPL v3 License, the Pockaw branding, logos, and visual assets are the intellectual property of the developers and may not be used for commercial purposes without permission.\n\n### 6. Disclaimer of Warranties\nThe App is provided \"AS IS\" and \"AS AVAILABLE\" without warranty of any kind.\n- **Not Financial Advice:** Pockaw is a tracking tool, not a financial advisor. We are not responsible for any financial decisions you make based on data presented in the App.\n- **Bugs & Errors:** While we strive for stability, we do not warrant that the App will be error-free or uninterrupted.\n\n### 7. Modifications to Terms\nWe reserve the right to modify these terms at any time. Continued use of the App following any changes signifies your acceptance of the new terms.\n\n### 8. Contact Us\nFor any questions regarding these terms, please contact us at: idlayground@gmail.com'**
   String get termsAndConditionsContent;
+
+  /// No description provided for @catFoodAndDrinks.
+  ///
+  /// In en, this message translates to:
+  /// **'Food & Drinks'**
+  String get catFoodAndDrinks;
+
+  /// No description provided for @catGroceries.
+  ///
+  /// In en, this message translates to:
+  /// **'Groceries'**
+  String get catGroceries;
+
+  /// No description provided for @catRestaurants.
+  ///
+  /// In en, this message translates to:
+  /// **'Restaurants'**
+  String get catRestaurants;
+
+  /// No description provided for @catCoffee.
+  ///
+  /// In en, this message translates to:
+  /// **'Coffee'**
+  String get catCoffee;
+
+  /// No description provided for @catSnacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Snacks'**
+  String get catSnacks;
+
+  /// No description provided for @catTakeout.
+  ///
+  /// In en, this message translates to:
+  /// **'Takeout'**
+  String get catTakeout;
+
+  /// No description provided for @catTransportation.
+  ///
+  /// In en, this message translates to:
+  /// **'Transportation'**
+  String get catTransportation;
+
+  /// No description provided for @catPublicTransport.
+  ///
+  /// In en, this message translates to:
+  /// **'Public Transport'**
+  String get catPublicTransport;
+
+  /// No description provided for @catFuelGas.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel/Gas'**
+  String get catFuelGas;
+
+  /// No description provided for @catTaxiRideshare.
+  ///
+  /// In en, this message translates to:
+  /// **'Taxi & Rideshare'**
+  String get catTaxiRideshare;
+
+  /// No description provided for @catVehicleMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle Maintenance'**
+  String get catVehicleMaintenance;
+
+  /// No description provided for @catParking.
+  ///
+  /// In en, this message translates to:
+  /// **'Parking'**
+  String get catParking;
+
+  /// No description provided for @catHousing.
+  ///
+  /// In en, this message translates to:
+  /// **'Housing'**
+  String get catHousing;
+
+  /// No description provided for @catRent.
+  ///
+  /// In en, this message translates to:
+  /// **'Rent'**
+  String get catRent;
+
+  /// No description provided for @catMortgage.
+  ///
+  /// In en, this message translates to:
+  /// **'Mortgage'**
+  String get catMortgage;
+
+  /// No description provided for @catUtilities.
+  ///
+  /// In en, this message translates to:
+  /// **'Utilities'**
+  String get catUtilities;
+
+  /// No description provided for @catMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance'**
+  String get catMaintenance;
+
+  /// No description provided for @catPropertyTax.
+  ///
+  /// In en, this message translates to:
+  /// **'Property Tax'**
+  String get catPropertyTax;
+
+  /// No description provided for @catEntertainment.
+  ///
+  /// In en, this message translates to:
+  /// **'Entertainment'**
+  String get catEntertainment;
+
+  /// No description provided for @catMovies.
+  ///
+  /// In en, this message translates to:
+  /// **'Movies'**
+  String get catMovies;
+
+  /// No description provided for @catStreaming.
+  ///
+  /// In en, this message translates to:
+  /// **'Streaming'**
+  String get catStreaming;
+
+  /// No description provided for @catGaming.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming'**
+  String get catGaming;
+
+  /// No description provided for @catEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'Events'**
+  String get catEvents;
+
+  /// No description provided for @catSubscriptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions'**
+  String get catSubscriptions;
+
+  /// No description provided for @catHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get catHealth;
+
+  /// No description provided for @catDoctorVisits.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor Visits'**
+  String get catDoctorVisits;
+
+  /// No description provided for @catPharmacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pharmacy'**
+  String get catPharmacy;
+
+  /// No description provided for @catHealthInsurance.
+  ///
+  /// In en, this message translates to:
+  /// **'Health Insurance'**
+  String get catHealthInsurance;
+
+  /// No description provided for @catFitness.
+  ///
+  /// In en, this message translates to:
+  /// **'Fitness'**
+  String get catFitness;
+
+  /// No description provided for @catDental.
+  ///
+  /// In en, this message translates to:
+  /// **'Dental'**
+  String get catDental;
+
+  /// No description provided for @catShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping'**
+  String get catShopping;
+
+  /// No description provided for @catClothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Clothing'**
+  String get catClothing;
+
+  /// No description provided for @catElectronics.
+  ///
+  /// In en, this message translates to:
+  /// **'Electronics'**
+  String get catElectronics;
+
+  /// No description provided for @catShoes.
+  ///
+  /// In en, this message translates to:
+  /// **'Shoes'**
+  String get catShoes;
+
+  /// No description provided for @catAccessories.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessories'**
+  String get catAccessories;
+
+  /// No description provided for @catOnlineShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Online Shopping'**
+  String get catOnlineShopping;
+
+  /// No description provided for @catEducation.
+  ///
+  /// In en, this message translates to:
+  /// **'Education'**
+  String get catEducation;
+
+  /// No description provided for @catTuition.
+  ///
+  /// In en, this message translates to:
+  /// **'Tuition'**
+  String get catTuition;
+
+  /// No description provided for @catBooks.
+  ///
+  /// In en, this message translates to:
+  /// **'Books'**
+  String get catBooks;
+
+  /// No description provided for @catOnlineCourses.
+  ///
+  /// In en, this message translates to:
+  /// **'Online Courses'**
+  String get catOnlineCourses;
+
+  /// No description provided for @catWorkshops.
+  ///
+  /// In en, this message translates to:
+  /// **'Workshops'**
+  String get catWorkshops;
+
+  /// No description provided for @catSchoolSupplies.
+  ///
+  /// In en, this message translates to:
+  /// **'School Supplies'**
+  String get catSchoolSupplies;
+
+  /// No description provided for @catTravel.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel'**
+  String get catTravel;
+
+  /// No description provided for @catFlights.
+  ///
+  /// In en, this message translates to:
+  /// **'Flights'**
+  String get catFlights;
+
+  /// No description provided for @catHotels.
+  ///
+  /// In en, this message translates to:
+  /// **'Hotels'**
+  String get catHotels;
+
+  /// No description provided for @catTours.
+  ///
+  /// In en, this message translates to:
+  /// **'Tours'**
+  String get catTours;
+
+  /// No description provided for @catTravelTransport.
+  ///
+  /// In en, this message translates to:
+  /// **'Transport'**
+  String get catTravelTransport;
+
+  /// No description provided for @catSouvenirs.
+  ///
+  /// In en, this message translates to:
+  /// **'Souvenirs'**
+  String get catSouvenirs;
+
+  /// No description provided for @catFinance.
+  ///
+  /// In en, this message translates to:
+  /// **'Finance'**
+  String get catFinance;
+
+  /// No description provided for @catLoanPayments.
+  ///
+  /// In en, this message translates to:
+  /// **'Loan Payments'**
+  String get catLoanPayments;
+
+  /// No description provided for @catSavings.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings'**
+  String get catSavings;
+
+  /// No description provided for @catInvestments.
+  ///
+  /// In en, this message translates to:
+  /// **'Investments'**
+  String get catInvestments;
+
+  /// No description provided for @catCreditCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Credit Card'**
+  String get catCreditCard;
+
+  /// No description provided for @catBankFees.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Fees'**
+  String get catBankFees;
+
+  /// No description provided for @catUtilitiesBill.
+  ///
+  /// In en, this message translates to:
+  /// **'Utilities'**
+  String get catUtilitiesBill;
+
+  /// No description provided for @catElectricity.
+  ///
+  /// In en, this message translates to:
+  /// **'Electricity'**
+  String get catElectricity;
+
+  /// No description provided for @catWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get catWater;
+
+  /// No description provided for @catGas.
+  ///
+  /// In en, this message translates to:
+  /// **'Gas'**
+  String get catGas;
+
+  /// No description provided for @catInternet.
+  ///
+  /// In en, this message translates to:
+  /// **'Internet'**
+  String get catInternet;
+
+  /// No description provided for @catPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get catPhone;
+
+  /// No description provided for @catDebts.
+  ///
+  /// In en, this message translates to:
+  /// **'Debts'**
+  String get catDebts;
 }
 
 class _AppLocalizationsDelegate

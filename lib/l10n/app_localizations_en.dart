@@ -988,4 +988,187 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get termsAndConditionsContent =>
       '### Summary\n- **Free License:** Pockaw is free for personal use.\n- **Your Responsibility:** You are responsible for your own backups and data security.\n- **No Warranty:** The app is provided \"as is\" without financial guarantees.\n\n### 1. Acceptance of Terms\nBy downloading, installing, or using Pockaw (\"the App\"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the App.\n\n### 2. User Responsibility for Data\nPockaw operates on an **offline-first model**. We do not store your financial data on our servers.\n\n#### 2.1. Data Loss & Backups\nYou acknowledge that you are solely responsible for maintaining backups of your data.\n- **Manual Backup Required:** The \"Backup & Restore\" feature requires manual initiation by you. Automatic cloud syncing is not enabled by default.\n- **Device Failure:** We are not liable for any data loss resulting from lost devices, uninstalled apps, or corrupted local storage.\n\n#### 2.2. Supported Environments\nPockaw is designed to work on standard, unmodified operating systems (Android, iOS, Windows, macOS, Linux). **We do not guarantee functionality or support for devices that have been \"rooted,\" \"jailbroken,\" or modified with custom ROMs.** Features like Local Backup may fail on such devices due to restricted file system permissions.\n\n### 3. Third-Party Services\n#### 3.1. Google Services\nIf you choose to use Google Sign-In or Google Drive Backups:\n- You agree to abide by Google\'s Terms of Service.\n- You understand that Pockaw only facilitates the connection to your Google Drive. We are not responsible for the availability or reliability of Google\'s services.\n\n### 4. Account Deletion\nSelecting \"Delete Account\" within the app performs a local reset of your current session and disconnects your Google account token. **It does not delete backup files** you may have previously exported to Google Drive or your device\'s internal storage. Managing and deleting those external files is your responsibility.\n\n### 5. Intellectual Property\nPockaw is Open Source software. While the source code is available for inspection and contribution under the LGPL v3 License, the Pockaw branding, logos, and visual assets are the intellectual property of the developers and may not be used for commercial purposes without permission.\n\n### 6. Disclaimer of Warranties\nThe App is provided \"AS IS\" and \"AS AVAILABLE\" without warranty of any kind.\n- **Not Financial Advice:** Pockaw is a tracking tool, not a financial advisor. We are not responsible for any financial decisions you make based on data presented in the App.\n- **Bugs & Errors:** While we strive for stability, we do not warrant that the App will be error-free or uninterrupted.\n\n### 7. Modifications to Terms\nWe reserve the right to modify these terms at any time. Continued use of the App following any changes signifies your acceptance of the new terms.\n\n### 8. Contact Us\nFor any questions regarding these terms, please contact us at: idlayground@gmail.com';
+
+  @override
+  String get catFoodAndDrinks => 'Food & Drinks';
+
+  @override
+  String get catGroceries => 'Groceries';
+
+  @override
+  String get catRestaurants => 'Restaurants';
+
+  @override
+  String get catCoffee => 'Coffee';
+
+  @override
+  String get catSnacks => 'Snacks';
+
+  @override
+  String get catTakeout => 'Takeout';
+
+  @override
+  String get catTransportation => 'Transportation';
+
+  @override
+  String get catPublicTransport => 'Public Transport';
+
+  @override
+  String get catFuelGas => 'Fuel/Gas';
+
+  @override
+  String get catTaxiRideshare => 'Taxi & Rideshare';
+
+  @override
+  String get catVehicleMaintenance => 'Vehicle Maintenance';
+
+  @override
+  String get catParking => 'Parking';
+
+  @override
+  String get catHousing => 'Housing';
+
+  @override
+  String get catRent => 'Rent';
+
+  @override
+  String get catMortgage => 'Mortgage';
+
+  @override
+  String get catUtilities => 'Utilities';
+
+  @override
+  String get catMaintenance => 'Maintenance';
+
+  @override
+  String get catPropertyTax => 'Property Tax';
+
+  @override
+  String get catEntertainment => 'Entertainment';
+
+  @override
+  String get catMovies => 'Movies';
+
+  @override
+  String get catStreaming => 'Streaming';
+
+  @override
+  String get catGaming => 'Gaming';
+
+  @override
+  String get catEvents => 'Events';
+
+  @override
+  String get catSubscriptions => 'Subscriptions';
+
+  @override
+  String get catHealth => 'Health';
+
+  @override
+  String get catDoctorVisits => 'Doctor Visits';
+
+  @override
+  String get catPharmacy => 'Pharmacy';
+
+  @override
+  String get catHealthInsurance => 'Health Insurance';
+
+  @override
+  String get catFitness => 'Fitness';
+
+  @override
+  String get catDental => 'Dental';
+
+  @override
+  String get catShopping => 'Shopping';
+
+  @override
+  String get catClothing => 'Clothing';
+
+  @override
+  String get catElectronics => 'Electronics';
+
+  @override
+  String get catShoes => 'Shoes';
+
+  @override
+  String get catAccessories => 'Accessories';
+
+  @override
+  String get catOnlineShopping => 'Online Shopping';
+
+  @override
+  String get catEducation => 'Education';
+
+  @override
+  String get catTuition => 'Tuition';
+
+  @override
+  String get catBooks => 'Books';
+
+  @override
+  String get catOnlineCourses => 'Online Courses';
+
+  @override
+  String get catWorkshops => 'Workshops';
+
+  @override
+  String get catSchoolSupplies => 'School Supplies';
+
+  @override
+  String get catTravel => 'Travel';
+
+  @override
+  String get catFlights => 'Flights';
+
+  @override
+  String get catHotels => 'Hotels';
+
+  @override
+  String get catTours => 'Tours';
+
+  @override
+  String get catTravelTransport => 'Transport';
+
+  @override
+  String get catSouvenirs => 'Souvenirs';
+
+  @override
+  String get catFinance => 'Finance';
+
+  @override
+  String get catLoanPayments => 'Loan Payments';
+
+  @override
+  String get catSavings => 'Savings';
+
+  @override
+  String get catInvestments => 'Investments';
+
+  @override
+  String get catCreditCard => 'Credit Card';
+
+  @override
+  String get catBankFees => 'Bank Fees';
+
+  @override
+  String get catUtilitiesBill => 'Utilities';
+
+  @override
+  String get catElectricity => 'Electricity';
+
+  @override
+  String get catWater => 'Water';
+
+  @override
+  String get catGas => 'Gas';
+
+  @override
+  String get catInternet => 'Internet';
+
+  @override
+  String get catPhone => 'Phone';
+
+  @override
+  String get catDebts => 'Debts';
 }

@@ -210,3 +210,4 @@ extension CategoryModelUtils on CategoryModel {
         return title;
     }
   }
+}
