@@ -144,25 +144,35 @@ class WalletFormBottomSheet extends HookConsumerWidget {
                   context.openBottomSheet(
                     child: AlertBottomSheet(
                       context: context,
-                      title: l10n.deleteTransaction,
+                      title: l10n.deleteWallet,
                       content: Text(
                         l10n.deleteWalletWarning,
                         style: AppTextStyles.body2,
                       ),
                       confirmText: l10n.delete,
-                      onConfirm: () {
-                        // final db = ref.read(databaseProvider);
-                        // db.walletDao.deleteWallet(wallet!.id!);
-                        context.pop(); // close this dialog
-                        context.pop(); // close form dialog
-                        toastification.show(
-                          autoCloseDuration: Duration(seconds: 3),
-                          showProgressBar: true,
-                          description: Text(
-                            l10n.deleteWalletComingSoon,
-                            style: AppTextStyles.body2,
-                          ),
-                        );
+                      onConfirm: () async {
+                        try {
+                          final db = ref.read(databaseProvider);
+                          await db.walletDao.deleteWallet(wallet!.id!);
+
+                          // If the deleted wallet was the active wallet, reset/switch default wallet
+                          final activeWallet =
+                              ref.read(activeWalletProvider).value;
+                          if (activeWallet?.id == wallet!.id) {
+                            await ref
+                                .read(activeWalletProvider.notifier)
+                                .setDefaultWallet();
+                          }
+
+                          if (context.mounted) {
+                            context.pop(); // close alert dialog
+                            context.pop(); // close wallet form dialog
+                          }
+                        } catch (e) {
+                          toastification.show(
+                            description: Text('Error deleting wallet: $e'),
+                          );
+                        }
                       },
                     ),
                   );

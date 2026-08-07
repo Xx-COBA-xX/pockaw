@@ -572,6 +572,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get viewReport => 'View report';
 
   @override
+  String get deleteWallet => 'Delete Wallet';
+
+  @override
   String get deleteWalletWarning =>
       'All transactions, budgets, and goals will also be deleted. This action cannot be undone.';
 

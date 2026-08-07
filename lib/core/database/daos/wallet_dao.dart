@@ -1,12 +1,16 @@
 import 'package:drift/drift.dart';
 import 'package:pockaw/core/database/pockaw_database.dart';
+import 'package:pockaw/core/database/tables/budgets_table.dart';
+import 'package:pockaw/core/database/tables/debt_payment_table.dart';
+import 'package:pockaw/core/database/tables/debt_table.dart';
+import 'package:pockaw/core/database/tables/transaction_table.dart';
 import 'package:pockaw/core/database/tables/wallet_table.dart';
 import 'package:pockaw/core/utils/logger.dart';
 import 'package:pockaw/features/wallet/data/model/wallet_model.dart';
 
 part 'wallet_dao.g.dart';
 
-@DriftAccessor(tables: [Wallets])
+@DriftAccessor(tables: [Wallets, Transactions, Budgets, Debts, DebtPayments])
 class WalletDao extends DatabaseAccessor<AppDatabase> with _$WalletDaoMixin {
   WalletDao(super.db);
 
@@ -71,10 +75,16 @@ class WalletDao extends DatabaseAccessor<AppDatabase> with _$WalletDaoMixin {
     return await update(wallets).replace(companion);
   }
 
-  /// Deletes a wallet by its ID.
-  Future<int> deleteWallet(int id) {
-    Log.d('Deleting Wallet with ID: $id', label: 'wallet');
-    return (delete(wallets)..where((w) => w.id.equals(id))).go();
+  /// Deletes a wallet by its ID along with associated records.
+  Future<int> deleteWallet(int id) async {
+    Log.d('Deleting Wallet with ID: $id and associated records', label: 'wallet');
+    return transaction(() async {
+      await (delete(db.transactions)..where((t) => t.walletId.equals(id))).go();
+      await (delete(db.budgets)..where((b) => b.walletId.equals(id))).go();
+      await (delete(db.debtPayments)..where((dp) => dp.walletId.equals(id))).go();
+      await (delete(db.debts)..where((d) => d.walletId.equals(id))).go();
+      return await (delete(wallets)..where((w) => w.id.equals(id))).go();
+    });
   }
 
   Future<void> upsertWallet(WalletModel walletModel) async {

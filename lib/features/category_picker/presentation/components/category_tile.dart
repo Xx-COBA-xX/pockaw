@@ -55,7 +55,12 @@ class CategoryTile extends StatelessWidget {
               ),
             ),
             const Gap(AppSpacing.spacing8),
-            Expanded(child: Text(category.title, style: AppTextStyles.body3)),
+            Expanded(
+              child: Text(
+                category.getLocalizedTitle(context),
+                style: AppTextStyles.body3,
+              ),
+            ),
             if (suffixIcon != null)
               CustomIconButton(
                 context,

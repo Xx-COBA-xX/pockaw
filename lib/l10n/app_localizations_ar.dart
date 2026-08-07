@@ -571,6 +571,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get viewReport => 'عرض التقرير';
 
   @override
+  String get deleteWallet => 'حذف المحفظة';
+
+  @override
   String get deleteWalletWarning =>
       'سيتم حذف جميع المعاملات والميزانيات والأهداف المقترنة بها أيضاً. لا يمكن التراجع عن هذا الإجراء.';
 

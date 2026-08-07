@@ -1208,6 +1208,12 @@ abstract class AppLocalizations {
   /// **'View report'**
   String get viewReport;
 
+  /// No description provided for @deleteWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Wallet'**
+  String get deleteWallet;
+
   /// No description provided for @deleteWalletWarning.
   ///
   /// In en, this message translates to:
